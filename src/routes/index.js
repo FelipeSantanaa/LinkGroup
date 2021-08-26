@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const loginController = require('../controllers/LoginController');
+const IndexController = require('../controllers/IndexController')
 
 /* GET home page. */
 router.get('/', IndexController.index);
 
-router.get('/login', loginController.index)
+
 
 module.exports = router;

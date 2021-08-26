@@ -1,8 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const LoginController = require('../controllers/LoginController');
 
-router.get('/login', function(req, res, next) {
-  res.render('login', { title: 'LinkGroup' });
-});
+router.get('/', LoginController.index)
 
 module.exports = router;
