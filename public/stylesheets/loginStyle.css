@@ -67,3 +67,34 @@ p {
 #dontAccount {
     margin-top: 3rem;
 }
+
+@media (min-width: 478px){
+    main{
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
+@media (min-width: 640px){
+    main{
+        width: 608px;
+    }
+}
+
+@media (min-width: 768px){
+    header {
+        margin: 1.5rem auto 5.5rem 3rem;
+        text-align: start;
+    }
+    main {
+        border: 1px solid rgba(153, 153, 153, 0.4);
+        border-radius: 0.7rem;
+        margin: 0 auto;
+        padding: 3rem 5rem;
+        text-align: center;
+        width: 640px
+    }
+    h2 {
+        margin-bottom: 2rem;
+    }
+}
