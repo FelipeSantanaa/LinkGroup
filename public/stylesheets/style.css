@@ -62,3 +62,14 @@ p{
   color: gray;
   font-size: 24px;
 }
+
+
+.graphics-style01 h2{
+    font-size: 32px;
+    text-align: center;
+}
+
+.graphics-style01{
+    display: flex;
+    flex-direction: column;
+}
