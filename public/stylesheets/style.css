@@ -1,3 +1,4 @@
+
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
 }
 
 .container-videos {
+    display: block;
     box-sizing: border-box;
 
 }
@@ -48,8 +50,6 @@ h2 {
     text-align: center;
 }
 
-
-
 .type-title-01 {
     margin-left: 10%;
 }
@@ -63,13 +63,28 @@ p{
   font-size: 24px;
 }
 
-
-.graphics-style01 h2{
-    font-size: 32px;
+.apenas-teste{
+    display: inline-flex;
+    align-items: center;
     text-align: center;
+    width: 100%;
+    margin: 20px;
 }
 
-.graphics-style01{
-    display: flex;
-    flex-direction: column;
+.graphics-style01,
+.graphics-style02,
+.graphics-style03{
+    width: 23%;
+}
+
+
+.text-style p{
+    font-size: 27px;
+    justify-content: center;
+    text-align: center;
+    width: 419px;
+}
+
+.text-style h2{
+    font-size: 30px;
 }
