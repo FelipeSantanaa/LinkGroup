@@ -41,6 +41,7 @@ button {
     border: 1px solid #d7dce1;
     border-radius: 0.2rem;
     color: #686d73;
+    cursor:pointer;
     padding: 0.4rem 0.75rem;
     position: absolute;
     right: 1rem;
@@ -59,16 +60,83 @@ button {
 .logo {
     position: absolute;
     left: 1rem;
-    width: 24px;
-    height: 20px;
-}
-
-.menu {
-    padding: 0;
+    top: 0.9rem;
+    width: 1.5rem;
+    height: 1.25rem;
 }
 
 .support {
-    fill: #acb5bf;
-    width: 24px;
-    margin: 0 20px;
+    cursor: pointer;
+    width: 1.5rem;
+    margin: 0 1.25rem;
+}
+
+#menu img {
+    margin: 10px;
+    width: 0.625rem;
+}
+
+#menu {
+    display: block;
+    position: absolute;
+    border: 1px solid #d7dce1;
+    border-radius: 8px;
+    width: 250px;
+    top: 2rem;
+    right: 2rem;
+    background: #fff;
+    transition: 0.1s;
+    z-index: 3;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+    padding-top: 1rem;
+  }
+
+  #nav.active #menu {
+    height: 260px;
+    width: 250px;
+    visibility: visible;
+  }
+
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+  }
+
+  #menu span {
+      padding: 10px 12px 5px;
+  }
+
+  #menu li {
+      margin: 10px;
+      display: flex;
+  }
+
+  #user-star {
+      background-color: #00d775;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+  }
+
+  #btn-mobile {
+    cursor: pointer;
+  }
+
+@media (min-width: 768px) {      
+      #btn-mobile {
+        display: none;
+      }
+
+      #menu {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+      }
+      
+      #menu a {
+        display: block;
+        padding: 0.5rem;
+      }
 }

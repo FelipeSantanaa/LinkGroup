@@ -14,9 +14,26 @@
 
 <body>
   <div class="sidebar-left">
-    <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 25"><path fill="#39E09B" d="M11.2.688c-.5-.9-1.8-.9-2.3 0l-8.6 15.6c-.399.8.2 1.7 1.101 1.7h5.8v5.9c0 .6.5 1.1 1.1 1.1h3.4c.6 0 1.1-.5 1.1-1.1v-5.9h-1.6c-.7 0-1.2-.5-1.3-1.1 0-.2 0-.4.1-.601l4.8-8.7L11.2.688z"/><path fill="#28BF7B" d="M18.8.688c.5-.9 1.8-.9 2.3 0l8.601 15.6c.399.8-.2 1.7-1.101 1.7h-5.7v5.9c0 .6-.5 1.1-1.101 1.1h-3.6c-.601 0-1.101-.5-1.101-1.1v-5.9H18.7c.7 0 1.2-.5 1.3-1.1 0-.2 0-.4-.1-.601l-4.801-8.7L18.8.688z"/></svg>
-    <svg class='support' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 18"><path d="M16.5 0h-14C1.1 0 0 1.1 0 2.5v10C0 13.9 1.1 15 2.5 15H4v2.5c0 .2.1.4.3.4 0 .1.1.1.2.1s.2 0 .3-.1L8.7 15h7.8c1.4 0 2.5-1.1 2.5-2.5v-10C19 1.1 17.9 0 16.5 0zM18 12.5c0 .8-.7 1.5-1.5 1.5h-8c-.1 0-.2 0-.3.1L5 16.5v-2c0-.3-.2-.5-.5-.5h-2c-.8 0-1.5-.7-1.5-1.5v-10C1 1.7 1.7 1 2.5 1h14c.8 0 1.5.7 1.5 1.5v10z"/><path d="M9.6 2.9h-.2C8.1 2.9 7 4 7 5.4v.4c0 .3.2.5.5.5s.5-.2.5-.5v-.4c0-.8.6-1.5 1.4-1.5h.3c.8 0 1.4.7 1.4 1.5 0 .5-.2.9-.5 1.1l-1 .8c-.4.2-.6.6-.6 1v1.1c0 .3.2.5.5.5s.5-.2.5-.5V8.3c0-.1 0-.2.1-.2l1-.8c.6-.5.9-1.2.9-1.9 0-1.4-1.1-2.5-2.4-2.5zm.4 7.9c-.2-.2-.7-.2-.9 0-.1.1-.2.1-.2.2s-.1.2-.1.2c0 .2.1.3.2.5s.3.2.5.2.3-.1.5-.2c.1-.1.2-.3.2-.5 0-.1 0-.2-.1-.2 0-.1-.1-.1-.1-.2z"/></svg>
-    <div class="menu">Menu</div>
+    <a href="/admin">
+      <img class="logo" src="/svg/linktree-min.svg" alt="Logo do Linktree">
+    </a>
+    <img class="support" src="/svg/support.svg" alt="Ajuda">
+
+    <div aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+      <img src="/svg/menu.svg" alt="Menu">
+    </div>
+    <nav id="nav">
+      <ul id="menu" role="menu">
+        <span>ALTAIR.JESUS</span>
+        <li><a href="/">My Account</a></li>
+        <li><a href="/">Logout</a></li>
+        <span>TREES</span>
+        <li id="user-star">
+          <a href="/">@altair.jesus</a>
+          <img src="/svg/star.svg" alt="">
+        </li>
+      </ul>
+    </nav>
   </div>
   <div class="link">
     <span>My Linktree: </span>
@@ -29,6 +46,25 @@
     <a href="">Settings</a>
     <a href="">PRO</a>
   </header>
+  <script>
+    const btnMobile = document.getElementById('btn-mobile');
+
+    function toggleMenu(event) {
+      if (event.type === 'touchstart') event.preventDefault();
+      const nav = document.getElementById('nav');
+      nav.classList.toggle('active');
+      const active = nav.classList.contains('active');
+      event.currentTarget.setAttribute('aria-expanded', active);
+      if (active) {
+        event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
+      } else {
+        event.currentTarget.setAttribute('aria-label', 'Abrir Menu');
+      }
+    }
+
+    btnMobile.addEventListener('click', toggleMenu);
+    btnMobile.addEventListener('touchstart', toggleMenu);
+  </script>
 </body>
 
 </html>
