@@ -17,8 +17,18 @@
     <a href="/admin">
       <img class="logo" src="/svg/linktree-min.svg" alt="Logo do Linktree">
     </a>
-    <img class="support" src="/svg/support.svg" alt="Ajuda">
-
+    <div aria-label="Abrir Support" id="btn-support" aria-haspopup="true" aria-controls="support" aria-expanded="false">
+      <img class="support" src="/svg/support.svg" alt="Ajuda">
+    </div>
+    <nav id="nav-support">
+      <ul id="support" role="support">
+        <span>SUPPORT</span>
+        <li><a href="/">Help Topics</a></li>
+        <li><a href="/">Get Started</a></li>
+        <li><a href="/">Ask A Question</a></li>
+        <li><a href="/">Submit Your Feed</a></li>
+      </ul>
+    </nav>
     <div aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
       <img src="/svg/menu.svg" alt="Menu">
     </div>
@@ -64,6 +74,24 @@
 
     btnMobile.addEventListener('click', toggleMenu);
     btnMobile.addEventListener('touchstart', toggleMenu);
+
+    const btnSupport = document.getElementById('btn-support');
+
+    function toggleSupport(event) {
+      if (event.type === 'touchstart') event.preventDefault();
+      const navSupport = document.getElementById('nav-support');
+      navSupport.classList.toggle('active');
+      const activeSupport = navSupport.classList.contains('active');
+      event.currentTarget.setAttribute('aria-expanded', activeSupport);
+      if (activeSupport) {
+        event.currentTarget.setAttribute('aria-label', 'Fechar Support');
+      } else {
+        event.currentTarget.setAttribute('aria-label', 'Abrir Support');
+      }
+    }
+
+    btnSupport.addEventListener('click', toggleSupport);
+    btnSupport.addEventListener('touchstart', toggleSupport);
   </script>
 </body>
 
