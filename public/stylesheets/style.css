@@ -1,4 +1,3 @@
-
 body {
     padding: 50px;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -6,7 +5,6 @@ body {
 }
 
 .container-videos {
-    display: block;
     box-sizing: border-box;
 
 }
@@ -33,13 +31,13 @@ h2 {
     padding-left: 10%;
 }
 
-.div-video1,
-.div-video2,
-.div-video3,
-.div-video4,
-.div-video5 {
+.div-video {
     display: flex;
     flex-flow: row nowrap;
+}
+
+.div-video5{
+    margin-bottom: 6%;
 }
 
 .type-title-02,
@@ -47,7 +45,6 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: center;
 }
 
 .type-title-01 {
@@ -60,20 +57,30 @@ h2 {
 
 p{
   color: gray;
-  font-size: 24px;
+  font-size: 1.66667vw;
+  letter-spacing: calc(-0.48px); /* Responsividade letras */
 }
 
-.apenas-teste{
-    display: inline-flex;
-    align-items: center;
+.graphics{
+    display: flex;
     text-align: center;
-    width: 100%;
+    align-items: flex-start;
+    width: 150%;
     margin: 20px;
 }
 
-.graphics-style01,
-.graphics-style02,
-.graphics-style03{
+.graphics div h2 {
+    display: inline-block;
+    text-align: center;
+}
+
+.graphics div p {
+    text-align: center;
+    display: inline-block;
+}
+
+
+.graphics--style{
     width: 23%;
 }
 
@@ -87,4 +94,29 @@ p{
 
 .text-style h2{
     font-size: 30px;
+}
+
+.btn--center{
+    margin: 0 auto;
+    display: table;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.btn--purple-hover{
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: bold;
+    color: rgb(117, 81, 233);
+
+    padding: 22px;
+
+    border: 1px solid rgb(117, 81, 233);
+    border-radius: calc(12px);
+    cursor: pointer;
+}
+
+.btn--purple-hover:hover{
+    background-color: rgb(117, 81, 233);
+    color: #fff;
 }
