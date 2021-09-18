@@ -36,7 +36,7 @@ span {
     font-weight: bold;
 }
 
-button {
+#button-share {
     background-color: #ffff;
     border: 1px solid #d7dce1;
     border-radius: 0.2rem;
@@ -71,7 +71,7 @@ button {
 }
 
 #menu img {
-    margin: 10px;
+    margin: 0.625rem;
     width: 0.625rem;
 }
 
@@ -80,14 +80,14 @@ button {
     display: block;
     position: absolute;
     border: 1px solid #d7dce1;
-    border-radius: 8px;
+    border-radius: 0,5rem;
     list-style: none;
     top: 2rem;
     right: 2rem;
     background: #fff;
     transition: 0.1s;
     z-index: 3;
-    height: 0px;
+    height: 0;
     visibility: hidden;
     padding-top: 1rem;
 }
@@ -97,14 +97,14 @@ button {
 }
 
 #nav.active #menu {
-    height: 260px;
-    width: 250px;
+    height: 16.25rem;
+    width: 15.625rem;
     visibility: visible;
 }
 
 #nav-support.active #support {
-    height: 300px;
-    width: 250px;
+    height: 18.75rem;
+    width: 15.625rem;
     visibility: visible;
 }
 
@@ -116,18 +116,18 @@ button {
 
 #menu span,
 #support span {
-    padding: 10px 12px 5px;
+    padding: 0.625rem 0.75rem 0.312rem;
 }
 
 #menu li,
 #support li {
-    margin: 10px;
+    margin: 0.625rem;;
     display: flex;
 }
 
 #user-star {
     background-color: #00d775;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -140,6 +140,89 @@ button {
 #btn-support {
     cursor: pointer;
     padding: 0;
+}
+
+.modal-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0, .5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container.mostrar {
+    display: flex;
+}
+
+.modal {
+    background-color: #fff;
+    position: absolute;
+    border: none;
+    border-radius: 0.5rem;
+    display: block;
+    height: auto;
+    margin: 0;
+    padding: 1rem 0.25rem 4.25rem;
+    width: 100vw;
+}
+
+@keyframes modal {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -60px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.mostrar .modal {
+    animation: modal .3s;
+}
+
+.modal div {
+    padding: 0.5rem;
+    border: none;
+    justify-content: center;
+}
+
+.modal-container-links{
+    border: none;
+    display: block;
+    height: auto;
+}
+
+.modal .modal-links {
+    height: auto;
+    border-bottom: 1px solid #d7dce1;
+    border-radius: 0.5rem;
+}
+
+.modal-links:hover {
+    background-color: #d7dce1;
+}
+
+.modal button {
+    background-color: rgba(0,0,0, 0);
+    border: none;
+    padding: 1rem;
+    text-align: start;
+    width: 100%;
+    cursor: pointer;
+}
+
+.modal .fechar {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
 }
 
 @media (min-width: 768px) {

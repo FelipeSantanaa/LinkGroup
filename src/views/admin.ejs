@@ -48,7 +48,7 @@
   <div class="link">
     <span>My Linktree: </span>
     <a class="myLink" href="https://linktr.ee/altair.jesus">https://linktr.ee/altair.jesus</a>
-    <button>Share</button>
+    <button id="button-share">Share</button>
   </div>
   <header>
     <a href="">Links</a>
@@ -56,14 +56,46 @@
     <a href="">Settings</a>
     <a href="">PRO</a>
   </header>
+
+  <div id="modal-share" class="modal-container">
+    <div class="modal">
+      <button class="fechar">x</button>
+      <div>
+        <b>Share your Linktree</b>
+      </div>
+      <div>
+        <p>Get more visitors by sharing your Linktree everywhere.</p>
+      </div>
+      <div class="modal-container-links">
+        <div class="modal-links">
+          <button>Add Linktree to your socials</button>
+        </div>
+        <div class="modal-links">
+          <button>Share my Linktree to..</button>
+        </div>
+        <div class="modal-links">
+          <button>My Linktree QR Code</button>
+        </div>
+      </div>
+      <div>
+        <button>svg/altair.jesus</button>Copy
+      </div>
+  </div>
+
+  </div>
+
   <script>
-    const btnMobile = document.getElementById('btn-mobile');
+    // Scripts Toggles
+    const btnMobile = document.getElementById('btn-mobile'),
+      btnSupport = document.getElementById('btn-support')
+    nav = document.getElementById('nav'),
+      navSupport = document.getElementById('nav-support'),
+      active = nav.classList.contains('active'),
+      activeSupport = navSupport.classList.contains('active')
 
     function toggleMenu(event) {
       if (event.type === 'touchstart') event.preventDefault();
-      const nav = document.getElementById('nav');
       nav.classList.toggle('active');
-      const active = nav.classList.contains('active');
       event.currentTarget.setAttribute('aria-expanded', active);
       if (active) {
         event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
@@ -75,13 +107,9 @@
     btnMobile.addEventListener('click', toggleMenu);
     btnMobile.addEventListener('touchstart', toggleMenu);
 
-    const btnSupport = document.getElementById('btn-support');
-
     function toggleSupport(event) {
       if (event.type === 'touchstart') event.preventDefault();
-      const navSupport = document.getElementById('nav-support');
       navSupport.classList.toggle('active');
-      const activeSupport = navSupport.classList.contains('active');
       event.currentTarget.setAttribute('aria-expanded', activeSupport);
       if (activeSupport) {
         event.currentTarget.setAttribute('aria-label', 'Fechar Support');
@@ -92,6 +120,25 @@
 
     btnSupport.addEventListener('click', toggleSupport);
     btnSupport.addEventListener('touchstart', toggleSupport);
+
+    //Script Modal
+    function initModal(modalID) {
+      const modal = document.getElementById(modalID);
+      console.log(modal)
+      if (modal) {
+        modal.classList.add('mostrar');
+        modal.addEventListener('click', (event) => {
+          if(event.target.id == modalID || event.target.className == 'fechar'){
+            modal.classList.remove('mostrar');
+          }
+        })
+      }
+    }
+    
+    const share = document.getElementById('button-share');
+    share.addEventListener('click', () => initModal('modal-share'))
+
+    console.log(share)
   </script>
 </body>
 
