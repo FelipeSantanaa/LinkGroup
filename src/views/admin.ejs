@@ -23,10 +23,10 @@
     <nav id="nav-support">
       <ul id="support" role="support">
         <span>SUPPORT</span>
-        <li><a href="/">Help Topics</a></li>
-        <li><a href="/">Get Started</a></li>
-        <li><a href="/">Ask A Question</a></li>
-        <li><a href="/">Submit Your Feed</a></li>
+        <li class="toggle-links"><a href="/">Help Topics</a></li>
+        <li class="toggle-links"><a href="/">Get Started</a></li>
+        <li class="toggle-links"><a href="/">Ask A Question</a></li>
+        <li class="toggle-links"><a href="/">Submit Your Feed</a></li>
       </ul>
     </nav>
     <div aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
@@ -35,8 +35,8 @@
     <nav id="nav">
       <ul id="menu" role="menu">
         <span>ALTAIR.JESUS</span>
-        <li><a href="/">My Account</a></li>
-        <li><a href="/">Logout</a></li>
+        <li class="toggle-links"><a href="/">My Account</a></li>
+        <li class="toggle-links"><a href="/">Logout</a></li>
         <span>TREES</span>
         <li id="user-star">
           <a href="/">@altair.jesus</a>
@@ -124,7 +124,6 @@
     //Script Modal
     function initModal(modalID) {
       const modal = document.getElementById(modalID);
-      console.log(modal)
       if (modal) {
         modal.classList.add('mostrar');
         modal.addEventListener('click', (event) => {
@@ -137,8 +136,6 @@
     
     const share = document.getElementById('button-share');
     share.addEventListener('click', () => initModal('modal-share'))
-
-    console.log(share)
   </script>
 </body>
 

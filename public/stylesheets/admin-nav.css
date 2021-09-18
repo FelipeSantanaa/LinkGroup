@@ -70,6 +70,15 @@ span {
     margin: 0 1.25rem;
 }
 
+.toggle-links:hover {
+    background-color: rgb(230, 228, 240);
+    border-radius: 0.5rem;
+}
+
+.toggle-links:hover a {
+    color: rgb(117, 81, 233);
+}
+
 #menu img {
     margin: 0.625rem;
     width: 0.625rem;
@@ -80,7 +89,7 @@ span {
     display: block;
     position: absolute;
     border: 1px solid #d7dce1;
-    border-radius: 0,5rem;
+    border-radius: 0.5rem;
     list-style: none;
     top: 2rem;
     right: 2rem;
@@ -94,6 +103,11 @@ span {
 
 #support {
     right: 5rem;
+}
+
+#menu span,
+#support span{
+    font-size: 0.7rem;
 }
 
 #nav.active #menu {
@@ -174,7 +188,7 @@ span {
 @keyframes modal {
     from {
         opacity: 0;
-        transform: translate3d(0, -60px, 0);
+        transform: translate3d(0, 60px, 0);
     }
     to {
         opacity: 1;
