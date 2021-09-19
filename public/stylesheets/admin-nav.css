@@ -216,6 +216,7 @@ span {
     height: auto;
     border-bottom: 1px solid #d7dce1;
     border-radius: 0.5rem;
+    justify-content: space-between;
 }
 
 .modal-links:hover {
@@ -234,9 +235,51 @@ span {
 .modal .fechar {
     cursor: pointer;
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 2rem;
+    top: 1rem;
+    right: 1rem;
+    width: 1rem;
+}
+
+.modal h2 {
+    font-weight: bold;
+}
+
+.btn-right {
+    width: 0.4rem;
+}
+
+.svg  {
+    width: 1.2rem;
+}
+
+.modal-account .account {
+    color: #686d73;
+}
+
+.modal .modal-account {
+    border: 1px solid #d7dce1;
+    border-radius: 0.5rem;
+    justify-content: space-between;
+    padding-right: 0;
+}
+
+.modal-account button:hover {
+    border: 1px solid greenyellow;
+    border-radius: 0.5rem;
+}
+
+.copy {
+    font-weight: normal;
+    padding: 1rem;
+}
+
+.copy:hover {
+    background-color: greenyellow;
+    font-weight: normal;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    padding: 0.9rem;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
