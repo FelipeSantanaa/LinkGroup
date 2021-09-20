@@ -72,11 +72,14 @@ span {
 
 .toggle-links:hover {
     background-color: rgb(230, 228, 240);
+    color: rgb(117, 81, 233);
+    display: block;
     border-radius: 0.5rem;
 }
 
-.toggle-links:hover a {
-    color: rgb(117, 81, 233);
+.toggle-links {
+    display: block;
+    padding: 0;
 }
 
 #menu img {
@@ -111,13 +114,13 @@ span {
 }
 
 #nav.active #menu {
-    height: 16.25rem;
+    height: 14rem;
     width: 15.625rem;
     visibility: visible;
 }
 
 #nav-support.active #support {
-    height: 18.75rem;
+    height: 16rem;
     width: 15.625rem;
     visibility: visible;
 }
@@ -126,6 +129,7 @@ span {
 #support a {
     padding: 1rem 0;
     margin: 0 1rem;
+    cursor: pointer;
 }
 
 #menu span,
@@ -135,22 +139,21 @@ span {
 
 #menu li,
 #support li {
-    margin: 0.625rem;;
+    margin: 0 0.625rem;;
     display: flex;
 }
 
-#user-star {
+#menu #user-star {
     background-color: #00d775;
     border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
 }
 
-#btn-mobile {
-    cursor: pointer;
-    padding: 0;
-}
-
+#btn-mobile,
 #btn-support {
     cursor: pointer;
     padding: 0;
@@ -215,12 +218,13 @@ span {
 .modal .modal-links {
     height: auto;
     border-bottom: 1px solid #d7dce1;
-    border-radius: 0.5rem;
     justify-content: space-between;
 }
 
 .modal-links:hover {
     background-color: #d7dce1;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .modal button {
@@ -252,19 +256,24 @@ span {
     width: 1.2rem;
 }
 
+.modal-logo {
+    margin-left: 0.25rem;
+}
+
 .modal-account .account {
     color: #686d73;
 }
 
-.modal .modal-account {
+.modal-account button {
+    display: flex;
+    justify-content: space-between;
     border: 1px solid #d7dce1;
     border-radius: 0.5rem;
-    justify-content: space-between;
-    padding-right: 0;
+    padding: 0;
 }
 
 .modal-account button:hover {
-    border: 1px solid greenyellow;
+    border: 1px solid #00d775;
     border-radius: 0.5rem;
 }
 
@@ -273,11 +282,10 @@ span {
     padding: 1rem;
 }
 
-.copy:hover {
-    background-color: greenyellow;
+.modal-account button:hover .copy {
+    background-color: #00d775;
     font-weight: normal;
     border-radius: 0.5rem;
-    cursor: pointer;
     padding: 0.9rem;
     margin: 0;
 }
