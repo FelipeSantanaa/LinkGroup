@@ -91,52 +91,52 @@ a {
 
 /* GRAFICOS */
 
-.graphics-container{
+.graphics-container {
     margin: 0px auto;
     padding: 4.44444vw 0px;
     position: relative;
     opacity: 1
 }
 
-.graphics-article-container{
+.graphics-article-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
 
 
-.graphics-container article{
- flex: 1 1 0px;
+.graphics-container article {
+    flex: 1 1 0px;
     display: flex;
- flex-direction: column;
- align-items: flex-start;
- width: 100%;
- padding: 0px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0px 24px;
 }
 
-.graphics-container article h2{ 
+.graphics-container article h2 {
     padding: 20px;
     width: 100%;
     text-align: center;
-   }
+}
 
-   .graphics-container article p{ 
+.graphics-container article p {
     text-align: center;
     color: rgb(38, 50, 56);
     letter-spacing: calc(-0.4px);
     line-height: 1.6;
-   }
+}
 
 
 /* BOTÃO HOVER */
 
-.btn--center{
+.btn--center {
     margin: 0 auto;
     display: table;
     margin-top: 5%;
     margin-bottom: 5%;
 }
 
-.btn--purple-hover{
+.btn--purple-hover {
     font-size: 19px;
     text-decoration: none;
     font-weight: bold;
@@ -148,7 +148,64 @@ a {
     cursor: pointer;
 }
 
-.btn--purple-hover:hover{
+.btn--purple-hover:hover {
     background-color: rgb(117, 81, 233);
     color: #fff;
+}
+
+/* LINKTREE COMMUNITY */
+
+.community-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 64px;
+    padding-bottom: 96px;
+}
+
+
+.community-content-container {
+    border-top: 1px solid rgb(218, 222, 224);
+    padding: 96px 0px;
+    margin: 0px 64px;
+}
+
+
+.community-content-container h2 {
+    margin-bottom: 24px;
+    font-size: 48px;
+    line-height: 1.17;
+    letter-spacing: calc(-.96px);
+    font-weight: normal;
+    display: block;
+}
+
+.community-content-container p {
+    color: rgb(38, 50, 56);
+    font-size: 20px;
+    line-height: 1.6;
+    letter-spacing: calc(-0.4px);
+    font-weight: normal;
+    display: block;
+}
+
+/* CARROSSEL COMMUNITY */
+
+.community-carrossel-container {
+    display: flex;
+    flex-direction: row;
+    padding-left: calc((100vw - 1152px) / 2);
+    overflow-x: scroll;
+    padding-bottom: 50px;
+}
+
+.community-carrossel-container div {
+    padding-right: 48px;
+}
+
+.community-carrossel-container div a img {
+    top: 0px;
+    left: 0px;
+    transition: all 500ms ease 0s;
+    border-radius: 50px;
 }
