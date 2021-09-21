@@ -277,12 +277,12 @@ span {
     border-radius: 0.5rem;
 }
 
-.copy {
+#copy {
     font-weight: normal;
     padding: 1rem;
 }
 
-.modal-account button:hover .copy {
+.modal-account button:hover #copy {
     background-color: #00d775;
     font-weight: normal;
     border-radius: 0.5rem;

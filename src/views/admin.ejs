@@ -90,13 +90,13 @@
         </div>
       </div>
       <div class="modal-account">
-        <button>
+        <button id="my-account" onclick="myAccount()" value="https://linktr.ee/altair.jesus">
           <div>
             <img class="svg" src="/svg/linktree-min.svg" alt="">
             <p class="modal-logo">linktr.ee/</p>
             <p class="account">altair.jesus</p>
           </div>
-          <span class="copy">Copy</span>
+          <span id="copy">Copy</span>
         </button>
       </div>
   </div>
@@ -155,6 +155,17 @@
     
     const share = document.getElementById('button-share');
     share.addEventListener('click', () => initModal('modal-share'))
+
+    //Script copiar conta
+    function myAccount (){
+      const linkAccount = document.getElementById('my-account'),
+        copy = document.getElementById('copy')
+      navigator.clipboard.writeText(linkAccount.value)
+      copy.innerHTML = "Copied!"
+      setTimeout(() => {
+        copy.innerHTML = "Copy"
+      }, 1000);
+    }
   </script>
 </body>
 
