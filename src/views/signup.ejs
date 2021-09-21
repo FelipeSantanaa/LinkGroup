@@ -13,41 +13,43 @@
 </head>
 
 <body>
-    <header>
-        <a href="#">
-            <img class="logo" src="img/linktree-logo.svg" alt="Logo do Linktree">
-        </a>
-    </header>
-
-    <main>
-        <div class="cabecalho">
-            <span id="criar">Create an account for free</span>
-            <p>Free forever. No payment needed.</p>
-        </div>
-        <div>
-            <form>
-                <div>
-                    <input type="text" id="username" name="username" placeholder="Username" class="input">
-                    <input type="email" id="email" name="email" placeholder="Email" class="input">
-                    <input type="password" id="password" name="password" placeholder="Password" class="input">
-                </div>
-                <label for="termos-de-condicoes" class="termos">
-                    <input type="checkbox" name="termos" id="termos" class="checkbox">By creating an account you are agreeing to our <a href="#"
-                    target="_blank" rel="noopener noreferrer"> Terms and Conditions </a> and <a href="#"
-                        rel="noopener noreferrer">
-                        Privacy Police.</a>
-                </label>
-                <button type="submit">Sign up with email</button>
-            </form>
-            <a href="/login" class="login">
-                <span>Already have an account?</span>
+    <div class="main-section">
+        <header>
+            <a href="#">
+                <img class="logo" src="img/linktree-logo.svg" alt="Logo do Linktree">
             </a>
-        </div>
-        
-        <div>
-
-        </div>
-    </main>
+        </header>
+        <main>
+            <div>
+                <div class="title">
+                    <span class="title-item">Create an account for free</span>
+                    <p>Free forever. No payment needed.</p>
+                </div>
+                <div>
+                    <form>
+                        <div>
+                            <input type="text" id="username" name="username" placeholder="Username" class="input">
+                            <input type="email" id="email" name="email" placeholder="Email" class="input">
+                            <input type="password" id="password" name="password" placeholder="Password" class="input">
+                        </div>
+                        <label for="termos-de-condicoes" class="termos">
+                            <input type="checkbox" name="termos" id="termos" class="checkbox">By creating an account you
+                            are
+                            agreeing to our <a href="#" target="_blank" rel="noopener noreferrer"> Terms and Conditions
+                            </a>
+                            and <a href="#" rel="noopener noreferrer">
+                                Privacy Police.</a>
+                        </label>
+                        <button type="submit">Sign up with email</button>
+                    </form>
+                    <a href="/login" id="login">
+                        <span>Already have an account?</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+        <img src="img\signup-banner.jpg" alt="" class="banner">
+    </div>
 </body>
 
 </html>
