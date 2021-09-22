@@ -48,9 +48,13 @@ span {
 }
 
 .myLink {
-    margin-left: 0.25rem;
     text-decoration: underline;
     text-align: start;
+    font-size: 0.9rem;
+}
+
+.myLink span {
+    margin-right: 0.25rem;
 }
 
 .sidebar-left {
@@ -291,8 +295,44 @@ span {
 }
 
 @media (min-width: 768px) {
+    .sidebar-left {
+        border-bottom: none;
+        border-right: 1px solid #d7dce1;
+        flex-flow: column;
+        height: 100%;
+        position: fixed;
+        width: 4rem;
+    }
+
+    .link {
+        float: right;
+        font-size: 0.9rem;
+        width: 18.75rem;
+    }
+
+    .link span {
+        margin-right: 0.25rem;
+        white-space: nowrap;
+        font-size: 0.9rem;
+    }
+    
+    .myLink {
+        margin-right: 5rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    header {
+        margin-left: 4rem;
+        border-right: 1px solid #d7dce1;
+    }
+
     #btn-mobile {
-        display: none;
+        display: flex;
+    }
+
+    #btn-support {
+        border-bottom: none;
     }
     #menu {
         display: flex;
@@ -302,5 +342,12 @@ span {
     #menu a {
         display: block;
         padding: 0.5rem;
+    }
+}
+
+@media (min-width:992px){
+    .link {
+        width: 27.2rem;
+        padding: 0 1.5rem;
     }
 }

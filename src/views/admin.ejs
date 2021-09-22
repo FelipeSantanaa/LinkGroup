@@ -115,7 +115,6 @@
     function toggleMenu(event) {
       if (event.type === 'touchstart') event.preventDefault();
       nav.classList.toggle('active');
-      event.currentTarget.setAttribute('aria-expanded', active);
       if (active) {
         event.currentTarget.setAttribute('aria-label', 'Fechar Menu');
       } else {
@@ -129,7 +128,6 @@
     function toggleSupport(event) {
       if (event.type === 'touchstart') event.preventDefault();
       navSupport.classList.toggle('active');
-      event.currentTarget.setAttribute('aria-expanded', activeSupport);
       if (activeSupport) {
         event.currentTarget.setAttribute('aria-label', 'Fechar Support');
       } else {
@@ -164,7 +162,7 @@
       copy.innerHTML = "Copied!"
       setTimeout(() => {
         copy.innerHTML = "Copy"
-      }, 1000);
+      }, 1500);
     }
   </script>
 </body>
