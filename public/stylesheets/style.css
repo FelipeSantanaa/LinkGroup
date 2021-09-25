@@ -41,7 +41,7 @@ a {
 
 .video-article-container {
     align-items: center;
-    display: flex;
+    display: table;
     flex-flow: column nowrap;
     justify-content: center;
     padding: 4.44444vw 0;
@@ -56,9 +56,16 @@ a {
     text-align: left;
 }
 
+.video-right .video-content{
+    order: -1;
+}
+
 .video-article-container article:not(:last-child) {
     margin-bottom: 6.66667vw;
 }
+
+
+
 
 .video-article-container video {
     width: 100%;
@@ -127,21 +134,24 @@ a {
 }
 
 
-/* BOTÃO HOVER */
+/* BOTÕES HOVER */
 
 .btn--center {
     margin: 0 auto;
     display: table;
     margin-top: 5%;
     margin-bottom: 5%;
+    height: 48px;
+    padding: 0 calc(24px);
 }
 
 .btn--purple-hover {
-    font-size: 19px;
+    font-size: 16px;
     text-decoration: none;
     font-weight: bold;
     color: rgb(117, 81, 233);
     padding: 22px;
+    
 
     border: 1px solid rgb(117, 81, 233);
     border-radius: calc(12px);
@@ -150,6 +160,26 @@ a {
 
 .btn--purple-hover:hover {
     background-color: rgb(117, 81, 233);
+    color: #fff;
+}
+
+
+.btn--purple {
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    padding: 22px;
+    background-color: rgb(117, 81, 233);
+    
+
+    border: 1px solid rgb(117, 81, 233);
+    border-radius: calc(12px);
+    cursor: pointer;
+}
+
+.btn--purple:hover {
+    background-color: rgb(72, 34, 194);
     color: #fff;
 }
 
@@ -167,7 +197,7 @@ a {
 .community-content-container {
     border-top: 1px solid rgb(218, 222, 224);
     padding: 96px 0px;
-    margin: 0px 64px;
+    margin: 0px calc((100vw - 1152px) / 2);
 }
 
 
@@ -178,6 +208,7 @@ a {
     letter-spacing: calc(-.96px);
     font-weight: normal;
     display: block;
+    width: 50%;
 }
 
 .community-content-container p {
@@ -187,6 +218,7 @@ a {
     letter-spacing: calc(-0.4px);
     font-weight: normal;
     display: block;
+    width: 50%;
 }
 
 /* CARROSSEL COMMUNITY */
@@ -200,12 +232,61 @@ a {
 }
 
 .community-carrossel-container div {
-    padding-right: 48px;
+    margin-right: 48px;
+    
 }
 
 .community-carrossel-container div a img {
     top: 0px;
     left: 0px;
-    transition: all 500ms ease 0s;
+    transition: all 0.1s ease 0s;
     border-radius: 50px;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.community-carrossel-container div a > img:hover{
+  
+    }
+    
+/* FEATURE EMPRESAS */
+
+.featured-container{
+    padding: 4.44444vw 0px;
+    border-top: 1px solid rgb(218, 222, 224);
+    text-align: center;
+}
+
+.featured-container article{
+    box-sizing: border-box;
+    margin: 0px auto;
+    width: 100%;
+    max-width: calc(1280px);
+    padding: 0px 64px;
+
+}
+
+.featured-container p {
+    display: block;
+    padding-bottom: 24px;
+    font-size: 20px;
+    color: rgb(38, 50, 56);
+    line-height: 1.6;
+}
+
+.featured-container div{
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 48px;
+}
+
+.featured-container div div{
+    border-radius: 10px;
+    background-color: rgb(245, 247, 248);
+    width: 240px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
