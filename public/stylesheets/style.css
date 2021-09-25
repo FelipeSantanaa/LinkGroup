@@ -290,3 +290,44 @@ a {
     justify-content: center;
     align-items: center;
 }
+
+
+/* FOOTER */
+
+footer{
+    box-sizing: border-box;
+    margin: 0 102px;
+    padding-top: 32px;
+    display: flex;
+    
+}
+
+.footer-container{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 100px;
+    padding-bottom: 72px;
+}
+
+.footer-container div {
+    padding-right: 64px;
+
+}
+
+.footer-container h3 {
+    padding-bottom: 16px;
+    color:rgb(66, 64, 64);
+    font-size: 16px;
+}
+
+.footer-container li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: rgb(38, 50, 56);
+    padding-bottom: 10px;
+    list-style-type: none;
+}
+
+.footer-container li:hover{
+    text-decoration: underline;
+}
