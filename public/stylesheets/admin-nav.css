@@ -71,6 +71,7 @@ ul {
 
 .nav__toggle span{
     font-size: 0.7rem;
+    font-weight: bold;
     padding-left: 0.75rem;
 }
 
@@ -190,6 +191,7 @@ ul {
 }
 
 .aside span {
+    font-weight: bold;
     margin-right: 0.25rem;
 }
 
@@ -216,36 +218,32 @@ ul {
     margin: 0 1.25rem;
 }
 
-span {
-    font-weight: bold;
-}
-
-.modal-container {
-    display: none;
-    width: 100vw;
-    height: 100vh;
+.modal {
+    align-items: center;
     background: rgba(0,0,0, .5);
+    display: none;
+    height: 100vh;
+    justify-content: center;
+    left: 0;
     position: fixed;
     top: 0;
-    left: 0;
+    width: 100vw;
     z-index: 10;
-    justify-content: center;
-    align-items: center;
 }
 
-.modal-container.mostrar {
+.modal.show {
     display: flex;
 }
 
-.modal {
+.modal__container {
     background-color: #fff;
-    position: absolute;
     border: none;
     border-radius: 0.5rem;
     display: block;
     height: auto;
     margin: 0;
     padding: 1rem 0.25rem 4.25rem;
+    position: absolute;
     width: 100vw;
 }
 
@@ -260,44 +258,54 @@ span {
     }
 }
 
-.mostrar .modal {
+.show .modal {
     animation: modal .3s;
 }
 
-.modal div {
-    padding: 0.5rem;
-    border: none;
-    justify-content: center;
+.modal__header {
+    height: 3rem;
+    text-align: center;
 }
 
-.modal-container-links{
+.modal__description {
+    color: var(--color-gray);
+}
+
+.modal__container--links{
     border: none;
     display: block;
     height: auto;
 }
 
-.modal .modal-links {
+.modal__links {
+    border-bottom: 1px solid var(--color-gray-light);
+    display: flex;
     height: auto;
-    border-bottom: 1px solid #d7dce1;
     justify-content: space-between;
+    margin: 0 1rem;
+    padding: 1rem 0;
 }
 
-.modal-links:hover {
-    background-color: #d7dce1;
+.modal__links:hover {
+    background-color: var(--color-gray-light);
     border-radius: 0.5rem;
     cursor: pointer;
+}
+
+.modal__links div {
+    display: flex;
+    margin-left: 1rem;
 }
 
 .modal button {
     background-color: rgba(0,0,0, 0);
     border: none;
+    cursor: pointer;
     padding: 1rem;
     text-align: start;
-    width: 100%;
-    cursor: pointer;
 }
 
-.modal .fechar {
+.modal .close {
     cursor: pointer;
     position: absolute;
     top: 1rem;
@@ -305,11 +313,8 @@ span {
     width: 1rem;
 }
 
-.modal h2 {
-    font-weight: bold;
-}
-
-.btn-right {
+.btn__right {
+    margin-right: 1rem;
     width: 0.4rem;
 }
 
@@ -317,38 +322,40 @@ span {
     width: 1.2rem;
 }
 
-.modal-logo {
+.modal__logo {
     margin-left: 0.25rem;
 }
 
-.modal-account .account {
-    color: #686d73;
+.modal__username {
+    color: var(--color-gray);
 }
 
-.modal-account button {
+.modal__account div {
+    display: flex;
+}
+
+.modal__account button {
+    align-items: center;
+    border: 1px solid var(--color-gray-light);
+    border-radius: 0.5rem;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #d7dce1;
-    border-radius: 0.5rem;
-    padding: 0;
-}
-
-.modal-account button:hover {
-    border: 1px solid #00d775;
-    border-radius: 0.5rem;
-}
-
-#copy {
-    font-weight: normal;
+    margin: 1rem;
     padding: 1rem;
+    width: 94%;
 }
 
-.modal-account button:hover #copy {
-    background-color: #00d775;
+.modal__account button:hover {
+    border: 1px solid var(--color-green);
+    border-radius: 0.5rem;
+    padding: 0 0 0 1rem;
+}
+
+.modal__account button:hover #copy {
+    background-color: var(--color-green);
     border-radius: 0.5rem;
     font-weight: normal;
     padding: 0.9rem;
-    margin: 0;
 }
 
 @media (min-width: 768px) {
@@ -405,6 +412,10 @@ span {
 
     #btn-mobile {
         display: none;
+    }
+
+    .modal__container {
+        width: 40rem;
     }
 }
 

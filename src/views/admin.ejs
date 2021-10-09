@@ -98,44 +98,40 @@
     <a href="#">PRO</a>
   </nav>
 
-  <div id="modal-share" class="modal-container">
-    <div class="modal">
-      <img src="/svg/close.svg" class="fechar">
-      <div>
-        <h2>Share your Linktree</h2>
-      </div>
-      <div>
-        <p>Get more visitors by sharing your Linktree everywhere.</p>
-      </div>
-      <div class="modal-container-links">
-        <div class="modal-links">
+  <div id="modal-share" class="modal">
+    <div class="modal__container">
+      <img src="/svg/close.svg" class="close">
+      <h4 class="modal__header">Share your Linktree</h4>
+      <p class="modal__header modal__description">Get more visitors by sharing your Linktree everywhere.</p>
+      <ul class="modal__container--links">
+        <li class="modal__links">
           <div>
             <img src="/img/socials.png" alt="">
             <button>Add Linktree to your socials</button>
           </div>
-          <img class="btn-right" src="/svg/right.svg" alt="">
-        </div>
-        <div class="modal-links">
+          <img class="btn__right" src="/svg/right.svg" alt="">
+        </li>
+        <li class="modal__links">
           <div>
             <img class="svg" src="/svg/share.svg" alt="">
             <button>Share my Linktree to..</button>
           </div>
-          <img class="btn-right" src="/svg/right.svg" alt="">
-        </div>
-        <div class="modal-links">
+          <img class="btn__right" src="/svg/right.svg" alt="">
+        </li>
+        <li class="modal__links">
           <div>
             <img class="svg" src="/svg/qrcode.svg" alt="">
             <button>My Linktree QR Code</button>
           </div>
-          <img class="btn-right" src="/svg/right.svg" alt="">
-        </div>
-      </div>
-      <div class="modal-account">
+          <img class="btn__right" src="/svg/right.svg" alt="">
+        </li>
+      </ul>
+      <div class="modal__account">
         <button id="my-account" onclick="myAccount()" value="https://linktr.ee/altair.jesus">
           <div>
             <img class="svg" src="/svg/linktree-min.svg" alt="">
-            <p class="modal-logo">linktr.ee/</p>
-            <p class="account">altair.jesus</p>
+            <p class="modal__logo">linktr.ee/</p>
+            <p class="modal__username">altair.jesus</p>
           </div>
           <span id="copy">Copy</span>
         </button>
@@ -181,10 +177,10 @@
     function initModal(modalID) {
       const modal = document.getElementById(modalID);
       if (modal) {
-        modal.classList.add('mostrar');
+        modal.classList.add('show');
         modal.addEventListener('click', (event) => {
-          if (event.target.id == modalID || event.target.className == 'fechar') {
-            modal.classList.remove('mostrar');
+          if (event.target.id == modalID || event.target.className == 'close') {
+            modal.classList.remove('show');
           }
         })
       }
