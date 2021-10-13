@@ -117,7 +117,7 @@ text-align: center;
 }
 
 .community-content-container h2{
-    padding: 55px 15px;
+    padding: 31px 15px;
 }
 
 .community-carrossel-container {
@@ -192,15 +192,30 @@ text-align: center;
 
 /* NAO ESTÁ RECONHECENDO */
 
-.featured-container div div{
+.featured-container{
+    display: flex;
+}
+
+.featured-container article div div{
     border-radius: 10px;
     background-color: rgb(245, 247, 248);
     width: 240px;
     height: 80px;
-   display: grid;
-   grid-template-columns: repeat(2, 1fr);
 }
 
+.featured-container p {
+    display: block;
+    padding-bottom: 24px;
+    font-size: 20px;
+    color: rgb(38, 50, 56);
+    line-height: 1.6;
+}
+
+.featured-content-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+}
 /* TABLET */
 
 /* @media only screen and (min-width: 600px){
@@ -284,6 +299,7 @@ text-align: center;
 
 .background-graphics-mobile{
     border-radius: 0px;
+    display: flex;
     background: white;
 }
 
@@ -307,7 +323,7 @@ text-align: center;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    padding: 0px 24px;
+    padding: 0px 86px;
 }
 
 .graphics-container article h2 {
@@ -321,6 +337,7 @@ text-align: center;
     color: rgb(38, 50, 56);
     letter-spacing: calc(-0.4px);
     line-height: 1.6;
+    font-size: 20px;
 }
 
 /* LINKTREE COMMUNITY */
@@ -408,14 +425,6 @@ text-align: center;
     max-width: calc(1280px);
     padding: 0px 64px;
 
-}
-
-.featured-container p {
-    display: block;
-    padding-bottom: 24px;
-    font-size: 20px;
-    color: rgb(38, 50, 56);
-    line-height: 1.6;
 }
 
 .featured-container div{
