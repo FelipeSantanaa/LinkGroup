@@ -606,6 +606,8 @@ a.banner__login--text {
     color: rgb(38, 50, 56);
 }
 
+/* FELIPE */
+
 .video-container p {
     font-size: 20px;
     line-height: 1.6;
@@ -730,7 +732,6 @@ text-align: center;
     color: #fff;
 }
 
-
 .btn--purple {
     font-size: 16px;
     text-decoration: none;
@@ -751,8 +752,6 @@ text-align: center;
 }
 
 /* FEATURE EMPRESAS */
-
-/* NAO ESTÁ RECONHECENDO */
 
 .featured-container{
     display: flex;
