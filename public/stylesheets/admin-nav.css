@@ -186,7 +186,7 @@ ul {
     text-decoration: underline;
 }
 
-.aside {
+.aside__profile {
     align-items: center;
     border-bottom: 1px solid var(--color-gray-light);
     display: flex;
@@ -214,6 +214,10 @@ ul {
     padding: 0.4rem 0.75rem;
     position: absolute;
     right: 1rem;
+}
+
+#fone {
+    display: none;
 }
 
 .nav__header {
@@ -371,7 +375,6 @@ ul {
 @media (min-width: 768px) {
     .nav__sidebar-left {
         border-bottom: none;
-        border-right: 1px solid var(--color-gray-light);
         flex-flow: column;
         height: 100%;
         position: fixed;
@@ -401,12 +404,18 @@ ul {
     }
 
     .aside {
+        border-left: 1px solid var(--color-gray-light);
         float: right;
+        height: 100vh;
         width: 18.75rem;
     }
 
     .aside span {
         white-space: nowrap;
+    }
+
+    #fone {
+        display: block;
     }
     
     .a--myLink {
@@ -415,8 +424,9 @@ ul {
         text-overflow: ellipsis;
     }
 
-    .nav__header {
-        border-right: 1px solid var(--color-gray-light);
+    .main {
+        border-left: 1px solid var(--color-gray-light);
+        height: 100vh;
         margin-left: 4rem;
     }
 
@@ -431,7 +441,10 @@ ul {
 
 @media (min-width:992px){
     .aside {
-        padding: 0 1.5rem;
         width: 27.2rem;
+    }
+
+    .aside__profile {
+        padding: 0 1.5rem;
     }
 }
