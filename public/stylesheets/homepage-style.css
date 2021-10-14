@@ -159,3 +159,23 @@ footer {
     font-size: .8125rem;
     font-weight: bold;
 }
+
+/* MENU TOGGLE */
+
+#menu-toggle {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    height: 22px;
+    position: relative;
+    width: auto;
+}
+
+.menu-toggle__item {
+    background: black;
+    height: 2px;
+    position: relative;
+    width: 24px;
+}
