@@ -349,3 +349,243 @@ nav ul>li a {
 .menu-mobile__footer-icons svg:hover {
     fill: var(--button-green-light);
 }
+
+/*  MAIN */
+
+
+/* BANNER - TITLE */
+
+.container-body {
+    padding: 3.5rem 0 0;
+}
+
+.banner {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    justify-content: center;
+    padding: 104px 0 128px;
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+.banner__title {
+    padding: 0 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.banner__title h1 {
+    font-size: 2.5rem;
+    font-weight: normal;
+    letter-spacing: -0.04rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.banner__title p {
+    color: rgb(38, 50, 56);
+    font-size: 1.25rem;
+    font-weight: normal;
+    letter-spacing: -0.025rem;
+    line-height: 1.6;
+    padding: .5rem 0 0;
+    text-align: center;
+}
+
+.banner__btn {
+    background: var(--button-blue-normal);
+    cursor: pointer;
+    border-radius: .75rem;
+    height: 48px;
+    padding: 0 1.5rem;
+}
+
+.banner__btn:hover {
+    background: var(--button-blue-dark);
+}
+
+.banner__btn span {
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.banner__login {
+    display: flex;
+    max-width: 256px;
+    padding-top: 1rem;
+}
+
+.banner__login--text {
+    color: rgb(19, 20, 21);
+    font-family: 'Karla', 'Roboto', sans-serif;
+    font-size: 1rem;
+    letter-spacing: calc(-0.32px);
+    line-height: 1.75;
+}
+
+a.banner__login--text {
+    text-decoration: underline;
+}
+
+
+/* TRANSFORM */
+
+.element-hidden {
+    display: none;
+}
+
+
+/****** DEVICE - IMAGE ******/
+
+
+/* BODY */
+
+.device-container {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    height: auto;
+    position: relative;
+    width: 100%;
+    z-index: 2;
+}
+
+.device-body {
+    height: 432px;
+    position: relative;
+    width: 200px;
+}
+
+.device-body--background {
+    background-image: linear-gradient(155deg, rgb(11, 175, 255), rgb(57, 224, 155) 50%, rgb(255, 194, 19));
+    border-radius: 2%;
+    /* overflow: hidden; */
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 96px 96px 0px;
+}
+
+.device-body::after {
+    background-image: url("https://d1nnwinjc04txl.cloudfront.net/static/device-deee8c126310b52fd50ed2fdb21ba2cd.png");
+    background-repeat: round;
+    content: '';
+    inset: -1.8% -5.6%;
+    position: absolute;
+}
+
+
+/* HEADER */
+
+.device-header {
+    background: var(--bgc-light);
+    border-radius: 50%;
+    display: block;
+    height: 42px;
+    margin: 1.25rem auto 1.3125rem;
+    opacity: 1;
+    position: relative;
+    width: 42px;
+}
+
+
+/* CONTEÚDO */
+
+.device-content {
+    background: var(--bgc-light);
+    border-radius: 4px;
+    height: auto;
+    margin: 0 auto .625rem;
+    padding: 1.75rem 0 0;
+    width: 173px;
+}
+
+
+/* FOOTER */
+
+.device-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem auto 0;
+    width: 96px;
+    -webkit-box-pack: justify;
+}
+
+.device-footer__items {
+    display: block;
+    height: 16px;
+    width: 16px;
+}
+
+.device-footer__items--style {
+    fill: var(--bgc-light);
+    stroke: none;
+}
+
+
+/* ANIMATION */
+
+.device-animation {
+    min-height: 200px;
+    width: 100%;
+}
+
+.device-animation__line {
+    height: 168px;
+    margin: 0 auto;
+    width: 0;
+}
+
+.device-animation__line--style {
+    border-left-style: dashed;
+    border-left-color: rgb(117, 81, 233);
+    border-width: 0px 0px 0px 2px;
+    border-image: initial;
+}
+
+.device-animation__box {
+    background: var(--bgc-light);
+    border: 1px solid rgb(117, 81, 233);
+    border-radius: 48px;
+    height: 64px;
+    margin: 0 auto;
+    max-width: 84vw;
+    /* transform-origin: 50% 50%; */
+    transform: translateY(-50%);
+    width: 320px;
+}
+
+.device-animation__box form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 100%;
+    padding: 0 .5rem 0 1.5rem;
+}
+
+.device-animation__box form>svg {
+    height: 24px;
+    margin: 0 5px 0 0;
+    width: 24px;
+}
+
+.form__svg--first {
+    fill: var(--button-green-light);
+}
+
+.form__svg--second {
+    fill: var(--button-green-normal);
+}
+
+.device-animation__box form div>span {
+    color: rgb(204, 204, 204);
+    font-size: 1.25rem;
+    letter-spacing: -0.64px;
+}
+
+.device-animation__box form div>span:not(:last-child) {
+    color: rgb(38, 50, 56);
+}
