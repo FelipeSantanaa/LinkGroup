@@ -1,15 +1,8 @@
-:root {
-    /* BG COLORS */
-    --bg-light-primary: rgb(255, 255, 255);
-    --bg-light-secondary: rgb(244, 244, 244);
-    --bg-grey-light: rgb(196, 196, 196);
-    --bg-purple: rgb(117, 81, 233);
-    --bg-purple-dark: rgb(99, 68, 198);
-    --bg-green-light: rgb(57, 224, 155);
-    --bg-green: rgb(40, 191, 123);
-    /* FONT COLORS*/
-    --black-titles: rgb(19, 20, 21);
-    --black-paragraph: rgb(38, 50, 56);
-    /* FONT STYLE */
-    --font-primary: 'Karla', sans-serif;
+@import url('/public/stylesheets/variables.css');
+
+/* RESET */
+*, *::after, *::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
