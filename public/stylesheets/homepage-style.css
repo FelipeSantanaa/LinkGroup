@@ -179,3 +179,41 @@ footer {
     position: relative;
     width: 24px;
 }
+
+/* NAV - ITEMS */
+
+nav ul {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 1 100%;
+}
+
+nav ul li {
+    height: 100%;
+    width: 100%;
+}
+
+nav ul>li a {
+    color: var(--dark);
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.header__menu {
+    align-items: center;
+    display: flex;
+    background: var(--grey-light);
+    height: 48px;
+    margin-top: 3.5rem;
+    position: fixed;
+    width: 100%;
+    transform: translateY(calc(0px));
+    transition: transform 0.3s ease-in-out 0s;
+    z-index: 4;
+}
+
+.navbar-transition {
+    transform: translateY(calc(-48px));
+}
