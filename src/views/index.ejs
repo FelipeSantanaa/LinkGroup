@@ -5,39 +5,66 @@
   <title>Linktree&trade; | The Only Link You'll Ever Need</title>
   <link rel="icon" href="https://d1nnwinjc04txl.cloudfront.net/favicon-32x32.png?v=530918d2c86b9dd11c4fde40fa99d1b4"
     type="image/png">
-    <link rel="stylesheet" type="text/css" href="public/stylesheets/homepage-style.css">
+    <link rel="stylesheet" href="/public/stylesheets/homepage-style.css">
 </head>
 
 <body>
 
-  <header class="header">
-    <div class="header__content">
-      <a href=""><img src="/svg/linktree-svg.svg" alt="Logo do Linktree" width="85" height="20"></a>
-      <nav class="nav">
+  <header>
+
+    <div class="header-container">
+
+        <div class="header__logo">
+            <a href="#"><img class="logo-linktree" src="/public/svg/linktree-1.svg" alt="Linktree"></a>
+
+            <div class="header__items-nav">
+                <ul>
+                    <li>
+                        <a href="#" class="size-items-menu-mobile header__items--bcg">Blog</a>
+                    </li>
+                    <li>
+                        <a href="#" class="size-items-menu-mobile header__items--bcg">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#" class="size-items-menu-mobile header__items--bcg">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="header__items-login">
+            <a id="login" href="#" class="size-items-menu-mobile underline-text">Log in</a>
+            <a href="#">
+                <button class="btn-sign-up cursor-pointer" type="button">
+                    <span>sign up free</span>
+                </button>
+            </a>
+
+            <button id="menu-toggle">
+                <div class="menu-toggle__item"></div>
+                <div class="menu-toggle__item"></div>
+                <div class="menu-toggle__item"></div>
+            </button>
+        </div>
+
+    </div>
+
+    <nav class="header__menu">
         <ul>
-          <li><a href="">Blog</a></li>
-          <li><a href="">Pricing</a></li>
-          <li><a href="">Help</a></li>
+            <li>
+                <a href="#" class="size-items-menu-mobile underline-text">Blog</a>
+            </li>
+            <li>
+                <a href="#" class="size-items-menu-mobile underline-text">Pricing</a>
+            </li>
+            <li>
+                <a href="#" class="size-items-menu-mobile underline-text">Help</a>
+            </li>
         </ul>
-      </nav>
-    </div>
-
-    <div class="header__content">
-      <a href="">Log in</a>
-      <a href="" class="header__button">sign up free</a>
-      <button id="btn-toggle"></button>
-    </div>
-  </header>
-
-  <aside>
-    <nav class="nav">
-      <ul>
-        <li><a href="">Blog</a></li>
-        <li><a href="">Pricing</a></li>
-        <li><a href="">Help</a></li>
-      </ul>
     </nav>
-  </aside>
+
+</header>
+
 
 
 </body>
