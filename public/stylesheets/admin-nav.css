@@ -378,7 +378,7 @@ ul {
         flex-flow: column;
         height: 100%;
         position: fixed;
-        width: 3.7rem;
+        width: 3.5rem;
     }
 
     #nav__support {
@@ -427,7 +427,7 @@ ul {
     .main {
         border-left: 1px solid var(--color-gray-light);
         height: 100vh;
-        margin-left: 4rem;
+        margin-left: 3.5rem;
     }
 
     #btn-mobile {
