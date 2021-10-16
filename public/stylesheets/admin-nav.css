@@ -232,6 +232,11 @@ ul {
     margin: 0 1.25rem;
 }
 
+.nav__header a.active {
+    border-bottom: 2px solid var(--color-gray-dark);
+    padding: 0.9rem 0;
+}
+
 .modal {
     align-items: center;
     background: rgba(0,0,0, .5);
