@@ -3,6 +3,7 @@
     --button-green-light: rgb(57, 224, 155);
     --button-green-normal: rgb(40, 191, 123);
     --grey-light: rgb(244, 244, 244);
+    --grey-light-line: rgb(218, 222, 224);
     --dark: rgb(38, 50, 56);
     --button-blue-normal: rgb(117, 81, 233);
     --button-blue-dark: rgb(99, 68, 198);
@@ -671,14 +672,14 @@ video{
     position: relative;    
 }
 
-/* .graphics-max-container > div::before{
+.graphics-max-container > div::before{
     position: absolute;
-    inset: 0 -25%; 
+    inset: 0; 
     z-index: -1;
     content: "";
     border-radius: 100vw 100vw 0 0;
-    background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(218, 222, 224));
-} */
+    background-image: linear-gradient(to top, rgb(255, 255, 255), var(--grey-light-line));
+}
 
 .graphics-max-container > div h2{
     padding-bottom: 4rem;
@@ -695,7 +696,7 @@ video{
 }
 
 .graphics-articles article{
-    align-items: flex-start;
+    align-items: center;
     display: flex;
     flex: 1 1 0;
     flex-flow: column nowrap;
@@ -764,8 +765,9 @@ video{
 }
 
 .community-content-container{
-    padding: 2rem 0;
+    border-top:1px solid var(--grey-light-line);
     margin: 1rem 2rem 4rem;
+    padding: 2rem 0;
 }
 
 .community-content-container h2{
@@ -786,20 +788,21 @@ video{
 
 .community-carrossel-container {
     display: flex;
-    align-items: center;
     overflow-x: scroll;
-    padding-bottom: 50px;
+    padding-left: 2rem;
 }
 
-.community-carrossel-container div {
-    margin-right: 8px;
-    min-width: 300px;
-    display: flex;
-    justify-content: center;    
+.community-carrossel-container > div:not(:last-child) {
+    padding-right: 3.33333vw;
+}
+
+.community-container button{
+    margin: 6rem auto 4rem;
 }
 
 .community-carrossel-container div a img {
     border-radius: 30px;
+    content: attr('badge');
     object-fit: cover;
     object-position: center center;
     width: 280px;
@@ -871,7 +874,6 @@ video{
 
 
 /* MEDIA QUERIES */
-
 @media screen and (max-width: 767px) {
     .banner__login {
         display: none;
@@ -1023,41 +1025,49 @@ video{
 
     /* GRAFICOS */
 
-    .graphics-container {
-        display: flex;
-        margin: 0px auto;
-        padding: 4.44444vw 0px;
-        position: relative;
-        opacity: 1
+    .graphics-max-container {
+        padding: 0 4rem;
     }
 
-    .graphics-articles {
+    .graphics-max-container > div{
+        margin: 0px auto;
+        padding: 4.44444vw 0px;  
+    }
+
+    .graphics-articles{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 1fr;
+        gap: 64px 3.33%;
+    }    
+
+    .graphics-articles article {
+        padding: 0px 1.25rem;
     }
 
-
-    .graphics-container article {
-        flex: 1 1 0px;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        width: 100%;
-        padding: 0px 86px;
+    .graphics-articles article div:first-child {
+        margin: 0 0 2rem;
     }
 
-    .graphics-container article h2 {
-        padding: 20px;
-        width: 100%;
-        text-align: center;
+    .graphics-articles article div > img {    
+        width: 158px;
     }
 
-    .graphics-container article p {
-        text-align: center;
-        color: rgb(38, 50, 56);
-        letter-spacing: calc(-0.4px);
+    .graphics-articles h3{    
+        font-size: 2.22222vw;
+        line-height: 1.25;
+    }
+    
+    .graphics-articles p {
+        font-size: 1.66667vw;
+        letter-spacing: -0.4px;
         line-height: 1.6;
-        font-size: 20px;
+        padding: .5rem;
+    }
+
+    .graphics-max-container > div h2,
+    .graphics-max-container > div::before{
+        display: none;
     }
 
     /* LINKTREE COMMUNITY */
