@@ -5,10 +5,17 @@
     padding: 0;
     --color-blue: #3778ff;
     --color-gray-light: #d7dce1;
+    --color-gray-light-2: #f3f3f3;
     --color-gray: #666;
     --color-gray-dark: #222c36;
     --color-green: #00d775;
     --color-purple: #4f29cc;
+    --color-purple-light: #7c41ff;
+    --color-purple-light-2: #a071ff;
+}
+
+.container {
+    display: grid;
 }
 
 a {
@@ -20,6 +27,10 @@ ul {
     list-style: none;
 }
 
+.aside {
+    order:-1;
+}
+
 .nav__sidebar-left {
     align-items: center;
     border-bottom: 1px solid var(--color-gray-light);
@@ -27,7 +38,6 @@ ul {
     height: 3rem;
     justify-content: flex-end;
     padding: 0 1rem;
-    position: relative;
 }
 
 #logo {
@@ -377,13 +387,62 @@ ul {
     padding: 0.9rem;
 }
 
+.section__links {
+    background-color: var(--color-gray-light-2);
+    height: 80vh;
+    padding: 3rem 1rem 0 1rem;
+}
+
+.button {
+    background-color: var(--color-purple-light);
+    border: none;
+    border-radius: 12px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 3rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.button:hover {
+    background-color: var(--color-purple-light-2);
+}
+
+.section__links p {
+    color: var(--color-gray-dark);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.section__analytics {
+    align-items: center;
+    border-bottom: 1px solid var(--color-gray-light);
+    display: flex;
+    height: 3rem;
+    padding: 1rem;
+}
+
+.span__bold {
+    font-size: 0.875rem;
+    font-weight: bold;
+}
+
 @media (min-width: 768px) {
+    .container {
+        grid-template-columns: 3.5rem 1fr;
+        height: 100vh;
+        overflow-y: hidden;
+    }
+
+    .container__main {
+        grid-template-columns: 2fr 18.75rem;
+    }
+
     .nav__sidebar-left {
         border-bottom: none;
         flex-flow: column;
         height: 100%;
-        position: fixed;
-        width: 3.5rem;
     }
 
     #nav__support {
@@ -410,9 +469,7 @@ ul {
 
     .aside {
         border-left: 1px solid var(--color-gray-light);
-        float: right;
-        height: 100vh;
-        width: 18.75rem;
+        order: 0;
     }
 
     .aside span {
@@ -420,7 +477,9 @@ ul {
     }
 
     #fone {
+        background-color: var(--color-gray-light-2);
         display: block;
+        height: 100vh;
     }
     
     .a--myLink {
@@ -431,8 +490,6 @@ ul {
 
     .main {
         border-left: 1px solid var(--color-gray-light);
-        height: 100vh;
-        margin-left: 3.5rem;
     }
 
     #btn-mobile {
@@ -442,14 +499,14 @@ ul {
     .modal__container {
         width: 40rem;
     }
+
+    .section__links {
+        height: 100vh;
+    }
 }
 
 @media (min-width:992px){
-    .aside {
-        width: 27.2rem;
-    }
-
-    .aside__profile {
-        padding: 0 1.5rem;
+    .container__main {
+        grid-template-columns: 1fr 27.2rem;
     }
 }

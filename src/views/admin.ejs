@@ -1,4 +1,21 @@
 <%- include('./partials/nav-admin'); %>
+<div class="container container__main">
+  <main class="main">
+    <nav class="nav__header">
+      <a class="active" href="#">Links</a>
+      <a href="#">Appearance</a>
+      <a href="#">Settings</a>
+      <a href="#">PRO</a>
+    </nav>
+    <section class="section__analytics">
+      <span class="span__bold">Lifetime Analytics:</span>
+    </section>
+    <section class="section__links">
+      <button class="btn button">Add New Link</button>
+      <p>You don't have any links to display.</p>
+      <p>Click the button above to add one.</p>
+    </section>
+  </main>
   <aside class="aside">
     <section class="aside__profile">
       <span>My Linktree:</span>
@@ -9,12 +26,5 @@
       celular
     </section>
   </aside>
-  <main class="main">
-    <nav class="nav__header">
-      <a class="active" href="#">Links</a>
-      <a href="#">Appearance</a>
-      <a href="#">Settings</a>
-      <a href="#">PRO</a>
-    </nav>
-  </main>
+</div>
   <%- include('./partials/footer-admin') %>
