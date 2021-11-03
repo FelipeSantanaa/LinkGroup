@@ -1,33 +1,35 @@
 <%- include('./partials/nav-admin'); %>
-  <div class="container container__main">
-    <main class="main">
-      <nav class="nav__header">
-        <a class="active" href="#">Links</a>
-        <a href="#">Appearance</a>
-        <a href="#">Settings</a>
-        <a href="#">PRO</a>
-      </nav>
-      <section class="section__analytics">
-        <span class="span__bold">Lifetime Analytics:</span>
-      </section>
-      <section class="section__links">
-        <button class="btn button" id="btn-newLink" onclick="showFormLink()">Add New Link</button>
-        <div id="nolinks">
-          <p>You don't have any links to display.</p>
-          <p>Click the button above to add one.</p>
-        </div>
-        <div id=section__links--new-links></div>
-      </section>
-    </main>
-    <aside class="aside">
-      <section class="aside__profile">
-        <span>My Linktree:</span>
-        <a class="a a--myLink" href="https://linktr.ee/altair.jesus">https://linktr.ee/altair.jesus</a>
-        <button id="button-share">Share</button>
-      </section>
-      <section id="fone">
-        celular
-      </section>
-    </aside>
-  </div>
-  <%- include('./partials/footer-admin') %>
+<div class="container container__main">
+  <main class="main">
+    <nav class="nav__header">
+      <a class="active" href="#">Links</a>
+      <a href="#">Appearance</a>
+      <a href="#">Settings</a>
+      <a href="#">PRO</a>
+    </nav>
+    <section class="section__analytics">
+      <span class="span__bold">Lifetime Analytics:</span>
+    </section>
+    <section class="section__links">
+      <button class="btn button" id="btn-newLink" onclick="showFormLink()">
+        Add New Link
+      </button>
+      <div id="nolinks">
+        <p>You don't have any links to display.</p>
+        <p>Click the button above to add one.</p>
+      </div>
+      <div id="section__links--new-links"></div>
+    </section>
+  </main>
+  <aside class="aside">
+    <section class="aside__profile">
+      <span>My Linktree:</span>
+      <a class="a a--myLink" href="https://linktr.ee/altair.jesus"
+        >https://linktr.ee/altair.jesus</a
+      >
+      <button id="button-share">Share</button>
+    </section>
+    <section id="fone">celular</section>
+  </aside>
+</div>
+<%- include('./partials/footer-admin') %>
