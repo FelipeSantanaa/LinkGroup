@@ -1,105 +1,124 @@
 <div id="modal-share" class="modal">
-    <div class="modal__container">
-      <img src="/svg/close.svg" class="close">
-      <h4 class="modal__header">Share your Linktree</h4>
-      <p class="modal__header modal__description">Get more visitors by sharing your Linktree everywhere.</p>
-      <ul class="modal__container--links">
-        <li class="modal__links">
-          <div>
-            <img src="/img/socials.png" alt="">
-            <button>Add Linktree to your socials</button>
-          </div>
-          <img class="btn__right" src="/svg/right.svg" alt="">
-        </li>
-        <li class="modal__links">
-          <div>
-            <img class="svg" src="/svg/share.svg" alt="">
-            <button>Share my Linktree to..</button>
-          </div>
-          <img class="btn__right" src="/svg/right.svg" alt="">
-        </li>
-        <li class="modal__links">
-          <div>
-            <img class="svg" src="/svg/qrcode.svg" alt="">
-            <button>My Linktree QR Code</button>
-          </div>
-          <img class="btn__right" src="/svg/right.svg" alt="">
-        </li>
-      </ul>
-      <div class="modal__account">
-        <button id="my-account" onclick="myAccount()" value="https://linktr.ee/altair.jesus">
-          <div>
-            <img class="svg" src="/svg/linktree-min.svg" alt="">
-            <p class="modal__logo">linktr.ee/</p>
-            <p class="modal__username">altair.jesus</p>
-          </div>
-          <span id="copy">Copy</span>
-        </button>
-      </div>
+  <div class="modal__container">
+    <img src="/svg/close.svg" class="close">
+    <h4 class="modal__header">Share your Linktree</h4>
+    <p class="modal__header modal__description">Get more visitors by sharing your Linktree everywhere.</p>
+    <ul class="modal__container--links">
+      <li class="modal__links">
+        <div>
+          <img src="/img/socials.png" alt="">
+          <button>Add Linktree to your socials</button>
+        </div>
+        <img class="btn__right" src="/svg/right.svg" alt="">
+      </li>
+      <li class="modal__links">
+        <div>
+          <img class="svg" src="/svg/share.svg" alt="">
+          <button>Share my Linktree to..</button>
+        </div>
+        <img class="btn__right" src="/svg/right.svg" alt="">
+      </li>
+      <li class="modal__links">
+        <div>
+          <img class="svg" src="/svg/qrcode.svg" alt="">
+          <button>My Linktree QR Code</button>
+        </div>
+        <img class="btn__right" src="/svg/right.svg" alt="">
+      </li>
+    </ul>
+    <div class="modal__account">
+      <button id="my-account" onclick="myAccount()" value="https://linktr.ee/altair.jesus">
+        <div>
+          <img class="svg" src="/svg/linktree-min.svg" alt="">
+          <p class="modal__logo">linktr.ee/</p>
+          <p class="modal__username">altair.jesus</p>
+        </div>
+        <span id="copy">Copy</span>
+      </button>
     </div>
-
   </div>
 
-  <script>
-    // Scripts Toggles
-    const btnMobile = document.getElementById('btn-mobile'),
-      btnDesktop = document.getElementById('btn-desktop'),
-      btnHeadway = document.getElementById('btn-headway'),
-      btnSupport = document.getElementById('btn-support'),
-      nav = document.getElementById('nav__menu'),
-      navHeadway = document.getElementById('nav__headway'),
-      navSupport = document.getElementById('nav__support'),
-      active = nav.classList.contains('active'),
-      activeSupport = navSupport.classList.contains('active')
+</div>
 
-    function toggleMenu(event) {
-      if (event.type === 'touchstart') event.preventDefault();
-      if (this.id == "btn-mobile" || this.id == "btn-desktop") {
-        nav.classList.toggle('active');
-      } else if (this.id == "btn-headway") {
-        navHeadway.classList.toggle('active');
-      }
-      else if (this.id == "btn-support") {
-        navSupport.classList.toggle('active');
-      }
+<script>
+  // Scripts Toggles
+  const btnMobile = document.getElementById('btn-mobile'),
+    btnDesktop = document.getElementById('btn-desktop'),
+    btnHeadway = document.getElementById('btn-headway'),
+    btnSupport = document.getElementById('btn-support'),
+    nav = document.getElementById('nav__menu'),
+    navHeadway = document.getElementById('nav__headway'),
+    navSupport = document.getElementById('nav__support'),
+    active = nav.classList.contains('active'),
+    activeSupport = navSupport.classList.contains('active')
+
+  function toggleMenu(event) {
+    if (event.type === 'touchstart') event.preventDefault();
+    if (this.id == "btn-mobile" || this.id == "btn-desktop") {
+      nav.classList.toggle('active');
+    } else if (this.id == "btn-headway") {
+      navHeadway.classList.toggle('active');
     }
-
-    btnMobile.addEventListener('click', toggleMenu);
-    btnDesktop.addEventListener('click', toggleMenu);
-    btnHeadway.addEventListener('click', toggleMenu);
-    btnSupport.addEventListener('click', toggleMenu);
-    btnMobile.addEventListener('touchstart', toggleMenu);
-    btnDesktop.addEventListener('touchstart', toggleMenu);
-    btnHeadway.addEventListener('touchstart', toggleMenu);
-    btnSupport.addEventListener('touchstart', toggleMenu);
-
-    //Script Modal
-    function initModal(modalID) {
-      const modal = document.getElementById(modalID);
-      if (modal) {
-        modal.classList.add('show');
-        modal.addEventListener('click', (event) => {
-          if (event.target.id == modalID || event.target.className == 'close') {
-            modal.classList.remove('show');
-          }
-        })
-      }
+    else if (this.id == "btn-support") {
+      navSupport.classList.toggle('active');
     }
+  }
 
-    const share = document.getElementById('button-share');
-    share.addEventListener('click', () => initModal('modal-share'))
+  btnMobile.addEventListener('click', toggleMenu);
+  btnDesktop.addEventListener('click', toggleMenu);
+  btnHeadway.addEventListener('click', toggleMenu);
+  btnSupport.addEventListener('click', toggleMenu);
+  btnMobile.addEventListener('touchstart', toggleMenu);
+  btnDesktop.addEventListener('touchstart', toggleMenu);
+  btnHeadway.addEventListener('touchstart', toggleMenu);
+  btnSupport.addEventListener('touchstart', toggleMenu);
 
-    //Script copiar conta
-    function myAccount() {
-      const linkAccount = document.getElementById('my-account'),
-        copy = document.getElementById('copy')
-      navigator.clipboard.writeText(linkAccount.value)
-      copy.innerHTML = "Copied!"
-      setTimeout(() => {
-        copy.innerHTML = "Copy"
-      }, 1500);
+  //Script Modal
+  function initModal(modalID) {
+    const modal = document.getElementById(modalID);
+    if (modal) {
+      modal.classList.add('show');
+      modal.addEventListener('click', (event) => {
+        if (event.target.id == modalID || event.target.className == 'close') {
+          modal.classList.remove('show');
+        }
+      })
     }
-  </script>
+  }
+
+  const share = document.getElementById('button-share');
+  share.addEventListener('click', () => initModal('modal-share'))
+
+  //Script copiar conta
+  function myAccount() {
+    const linkAccount = document.getElementById('my-account'),
+      copy = document.getElementById('copy')
+    navigator.clipboard.writeText(linkAccount.value)
+    copy.innerHTML = "Copied!"
+    setTimeout(() => {
+      copy.innerHTML = "Copy"
+    }, 1500);
+  }
+
+  //Script para adicionar novos links
+  let countClick = 0
+  function showFormLink() {
+    const btnNewLink = document.getElementById('btn-newLink'),
+      divNoLinks = document.getElementById('nolinks'),
+      sectionNewLinks = document.getElementById('section__links--new-links'),
+      newForm = `<div class="form__container" id="form${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='#' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'></form><img class="form__svg trash" id="${countClick}" onclick="removeLink(${countClick})" src='/svg/trash.svg'></div></div>`
+      
+    divNoLinks.classList.add('disable')
+    sectionNewLinks.insertAdjacentHTML('afterbegin', newForm)
+    countClick++
+  }
+
+  //Script para remover links (ocultar, a princípio)
+  function removeLink(counter) {
+    const divLink = document.getElementById(`form${counter}`)
+    divLink.classList.add('disable')
+  }
+</script>
 </body>
 
 </html>
