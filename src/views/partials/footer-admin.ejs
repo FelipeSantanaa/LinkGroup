@@ -105,7 +105,7 @@
     const btnNewLink = document.getElementById('btn-newLink'),
       divNoLinks = document.getElementById('nolinks'),
       sectionNewLinks = document.getElementById('section__links--new-links'),
-      newForm = `<div class="form__container" id="form${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='#' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'></form><img class="form__svg trash" id="${countClick}" onclick="removeLink(${countClick})" src='/svg/trash.svg'></div></div>`
+      newForm = `<div class="form__container" id="form${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='#' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form><img class="form__svg trash" id="${countClick}" onclick="removeLink(${countClick})" src='/svg/trash.svg'></div></div>`
       
     divNoLinks.classList.add('disable')
     sectionNewLinks.insertAdjacentHTML('afterbegin', newForm)

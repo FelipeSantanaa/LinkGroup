@@ -452,7 +452,7 @@ ul {
   display: flex;
   flex-flow: column nowrap;
   padding: 1rem;
-  width: 90%;
+  width: 80%;
 }
 
 #section__links--new-links div {
@@ -476,11 +476,29 @@ ul {
   cursor: pointer;
   right: 1rem;
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
 }
 
 .disable {
-  display: none !important;
+  opacity:0;
+  width:0;
+  height:0;
+  visibility:hidden;
+  padding: 0;
+  margin: 0;
+}
+
+.btn__add {
+  background-color: var(--color-purple-light);
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-weight: bold;
+  padding: 00.5rem;
+  position: absolute;
+  right: 0.5rem;
+  top: 0.5rem;
+  width: 4rem;
 }
 
 @media (min-width: 768px) {
