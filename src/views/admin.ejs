@@ -2,8 +2,8 @@
 <div class="container container__main">
   <main class="main">
     <nav class="nav__header">
-      <a class="active" href="#">Links</a>
-      <a href="#">Appearance</a>
+      <a class="active" href="/admin">Links</a>
+      <a href="/admin/appearance">Appearance</a>
       <a href="#">Settings</a>
       <a href="#">PRO</a>
     </nav>
@@ -11,7 +11,7 @@
       <span class="span__bold">Lifetime Analytics:</span>
     </section>
     <section class="section__links">
-      <button class="btn button" id="btn-newLink" onclick="showFormLink()">
+      <button class="btn button button--newLink" id="btn-newLink" onclick="showFormLink()">
         Add New Link
       </button>
       <div id="nolinks">
@@ -20,38 +20,4 @@
       </div>
       <div id="section__links--new-links"></div>
     </section>
-  </main>
-  <aside class="aside">
-    <section class="aside__profile">
-      <span>My Linktree:</span>
-      <a class="a a--myLink" href="https://linktr.ee/altair.jesus"
-        >https://linktr.ee/altair.jesus</a
-      >
-      <button id="button-share">Share</button>
-    </section>
-    <section id="fone">
-      <section class="device-container">
-        <div class="device-body device-body--background">
-          <span>
-            <div class="device-header">
-              <img src="/img/default-profile.png" alt="Foto de Perfil">
-              <span>@username</span>
-            </div>
-          </span>
-          <span>
-            <div class="device-content"></div>
-            <div class="device-content"></div>
-            <div class="device-content"></div>
-            <div class="device-content"></div>
-            <div class="device-content"></div>
-          </span>
-          <span>
-            <div class="device-footer">
-              <img src="/svg/linktree-1.svg" alt="Logo Linktree">
-            </div>
-          </span>
-        </div>
-    </section>
-  </aside>
-</div>
 <%- include('./partials/footer-admin') %>

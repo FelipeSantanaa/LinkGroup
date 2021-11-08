@@ -390,7 +390,7 @@ ul {
 
 .section__links {
   background-color: var(--color-gray-light-2);
-  height: 83vh;
+  height: 100%;
   padding: 3rem 1rem 0 1rem;
 }
 
@@ -402,6 +402,9 @@ ul {
   font-size: 1rem;
   font-weight: bold;
   height: 3rem;
+}
+
+.button--newLink {
   margin-bottom: 3rem;
   width: 100%;
 }
@@ -501,21 +504,96 @@ ul {
   width: 4rem;
 }
 
+.article {
+  margin-top: 2rem;
+}
+
+.appearance__container {
+  background-color: #fff;
+  color: var(--color-gray);
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.profile__content {
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1rem;
+}
+
+.profile__content img {
+  border-radius: 50%;
+  width: 7rem;
+}
+
+.profile__content div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.button__remove {
+  background-color: var(--color-gray-light-2);
+  color: var(--color-gray-dark)
+}
+
+.input__profile {
+  border: none;
+  border-bottom: 1px solid var(--color-gray-light);
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.textarea__profile {
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.25rem;
+  padding: 0.5rem 0.725rem;
+  margin-top: 0.25rem;
+  text-align: justify;
+  width: 100%;
+}
+
+.div__theme {
+  padding: 0.5rem;
+}
+
+.div__theme img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.div__theme p {
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   .container {
-    grid-template-columns: 3.5rem 1fr;
+    /* grid-template-columns: 3.5rem 1fr; */
     height: 100vh;
-    overflow-y: hidden;
+    /* overflow-y: hidden; */
   }
 
   .container__main {
+    margin-left: 3.5rem;
     grid-template-columns: 2fr 18.75rem;
+    position: inherit;
+  }
+
+  .main {
+    width: 100%;
   }
 
   .nav__sidebar-left {
     border-bottom: none;
+    border-right: 1px solid var(--color-gray-light);
     flex-flow: column;
     height: 100%;
+    left: 0;
+    position: fixed;
+    width: 3.5rem;
   }
 
   #nav__support {
@@ -543,6 +621,9 @@ ul {
   .aside {
     border-left: 1px solid var(--color-gray-light);
     order: 0;
+    position: fixed;
+    right: 0;
+    width: 18.75rem;
   }
 
   .aside span {
@@ -561,10 +642,6 @@ ul {
     text-overflow: ellipsis;
   }
 
-  .main {
-    border-left: 1px solid var(--color-gray-light);
-  }
-
   #btn-mobile {
     display: none;
   }
@@ -573,13 +650,17 @@ ul {
     width: 40rem;
   }
 
-  .section__links {
-    height: 100vh;
+  .theme__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 992px) {
   .container__main {
     grid-template-columns: 1fr 27.2rem;
+  }
+  .aside {
+    width: 27.2rem;
   }
 }
