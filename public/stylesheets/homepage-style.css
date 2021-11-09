@@ -340,7 +340,7 @@ nav ul > li a {
 .menu-mobile__footer-items a {
   display: block;
   font-size: 0.875rem;
-  color: rgb(19, 20, 21);
+  color: var(--dark);
   line-height: 1.6;
 }
 
@@ -373,7 +373,7 @@ nav ul > li a {
 
 /* BANNER - TITLE */
 
-.container-body {
+main {
   padding: 3.5rem 0 0;
 }
 
@@ -437,7 +437,7 @@ nav ul > li a {
 }
 
 .banner__login--text {
-  color: rgb(19, 20, 21);
+  color: var(--dark);
   font-family: 'Karla', 'Roboto', sans-serif;
   font-size: 1rem;
   letter-spacing: calc(-0.32px);
@@ -619,10 +619,6 @@ video {
 }
 
 .video-article-container {
-  align-items: center;
-  display: block;
-  flex-flow: row nowrap;
-  justify-content: center;
   padding: 4.44444vw 0;
   text-align: center;
 }
@@ -655,7 +651,20 @@ video {
   display: block;
 }
 
-.background-graphics-mobile {
+/* GRAPHICS */
+
+.graphics-container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 1.5rem;
+}
+
+.graphics-articles {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.graphics-articles::before {
   position: sticky;
   inset: 0px -25%;
   z-index: -1;
@@ -669,23 +678,55 @@ video {
   );
 }
 
-.graphics-container {
+.graphics-articles span {
   display: block;
+  padding-bottom: 4rem;
+}
+
+.graphics-articles span h2 {
+  font-size: 2rem;
+  font-weight: normal;
+  line-height: 1.38;
+}
+
+.graphics-articles > div {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 1fr;
+  gap: 4rem;
+}
+
+.graphics-articles article {
+  align-items: flex-start;
+  display: flex;
+  flex: 1 1 0;
   flex-direction: column;
+  margin: 0 auto;
+  max-width: 350px;
+  padding: 0 1.5rem;
 }
 
-.graphics-container article div {
-  text-align: center;
+.graphics-articles article > div:nth-child(1) {
+  margin: 0 3.5rem 1rem;
 }
 
-.graphics-container article div > img {
-  width: 245px;
-  height: auto;
+.graphics-articles article img {
+  height: 198px;
+  width: 198px;
 }
 
-.graphics-container p {
-  font-size: 13px;
-  padding-bottom: 20px;
+.graphics-articles h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.6;
+  padding-bottom: 0.5rem;
+}
+
+.graphics-articles p {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.75;
+  padding: 0 1rem;
 }
 
 .community-content-container h2 {
@@ -715,13 +756,13 @@ video {
 
 /* BOTÕES HOVER */
 
-.btn--center {
+.graphics-button {
   margin: 0 auto;
   display: table;
   margin-top: 5%;
   margin-bottom: 5%;
   height: 48px;
-  padding: 0 calc(24px);
+  padding: 0 1.5rem;
 }
 
 .btn--purple-hover {
@@ -886,16 +927,14 @@ video {
 
   .video-article-container {
     align-items: center;
-    display: table;
+    display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    padding: 4.44444vw 0;
   }
 
   .video-article-container article {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
     column-gap: 3.33333%;
     direction: ltr;
     text-align: left;
