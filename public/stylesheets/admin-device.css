@@ -16,9 +16,7 @@
 }
 
 .device-body--background {
-    /* background-image: linear-gradient(155deg, rgb(11, 175, 255), rgb(57, 224, 155) 50%, rgb(255, 194, 19)); */
     border-radius: 2%;
-    /* overflow: hidden; */
     box-shadow: rgba(0, 0, 0, 0.08) 0px 96px 96px 0px;
 }
 
@@ -30,12 +28,10 @@
     position: absolute;
 }
 
-
 /* HEADER */
 
 .device-header {
     align-items: center;
-    /* background: var(--bgc-light); */
     border-radius: 50%;
     display: flex;
     flex-flow: column wrap;
@@ -60,7 +56,6 @@
 /* CONTEÚDO */
 
 .device-content {
-    /* background: var(--color-green); */
     border-radius: 4px;
     height: auto;
     margin: 0 auto .625rem;
