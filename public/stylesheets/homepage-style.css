@@ -829,7 +829,6 @@ video {
 }
 
 /* MEDIA QUERIES */
-
 @media screen and (max-width: 767px) {
   .banner__login {
     display: none;
