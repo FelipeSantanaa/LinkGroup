@@ -990,39 +990,38 @@ video {
   }
 
   .graphics-container {
-    display: flex;
-    margin: 0px auto;
-    padding: 4.44444vw 0px;
-    position: relative;
-    opacity: 1;
+    margin: 0 auto;
+    max-width: 1280px;
+    padding: 0 4rem;
   }
 
-  .graphics-article-container {
-    display: grid;
+  .graphics-articles {
+    margin: 0 auto;
+    padding: 4.44444vw 0;
+    width: 100%;
+  }
+
+  .graphics-articles > div {
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
+    gap: 64px 3.33%;
   }
 
-  .graphics-container article {
+  .graphics-articles > div article {
     flex: 1 1 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    padding: 0 1.5rem;
     width: 100%;
-    padding: 0px 86px;
   }
 
-  .graphics-container article h2 {
-    padding: 20px;
+  .graphics-articles > div article > div:nth-child(1) {
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+    margin: 0 0 2rem;
     width: 100%;
-    text-align: center;
-  }
-
-  .graphics-container article p {
-    text-align: center;
-    color: var(--dark);
-    letter-spacing: calc(-0.4px);
-    line-height: 1.6;
-    font-size: 20px;
   }
 
   /* LINKTREE COMMUNITY */
