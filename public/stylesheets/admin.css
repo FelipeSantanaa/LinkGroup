@@ -13,6 +13,7 @@
   --color-purple: #4f29cc;
   --color-purple-light: #7c41ff;
   --color-purple-light-2: #a071ff;
+  --color-white: #fff;
 }
 
 a {
@@ -38,7 +39,7 @@ ul {
 
 .nav__sidebar-left {
   align-items: center;
-  background-color: #fff;
+  background-color: var(--color-white);
   border-bottom: 1px solid var(--color-gray-light);
   display: flex;
   height: 3rem;
@@ -75,7 +76,7 @@ ul {
 /* Menus Toggles */
 
 .nav__toggle {
-  background: #fff;
+  background: var(--color-white);
   border: 1px solid var(--color-gray-light);
   border-radius: 0.5rem;
   display: block;
@@ -179,7 +180,7 @@ ul {
 .toggle__headway span {
   background-color: var(--color-blue);
   border-radius: 1.25rem;
-  color: #fff;
+  color: var(--color-white);
   display: inline;
   padding: 0.1rem 0.6rem;
   text-align: center;
@@ -226,7 +227,7 @@ ul {
 }
 
 #button-share {
-  background-color: #fff;
+  background-color: var(--color-white);
   border: 1px solid var(--color-gray-light);
   border-radius: 0.2rem;
   color: var(--color-gray);
@@ -286,7 +287,7 @@ ul {
   background-color: var(--color-purple-light);
   border: none;
   border-radius: 12px;
-  color: #fff;
+  color: var(--color-white);
   font-size: 1rem;
   font-weight: bold;
   height: 3rem;
@@ -313,7 +314,7 @@ ul {
 }
 
 .form__container {
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 0.5rem;
   box-shadow: 0 0.1rem 0 var(--color-gray-light);
   display: flex;
@@ -369,7 +370,7 @@ ul {
   background-color: var(--color-purple-light);
   border: none;
   border-radius: 0.5rem;
-  color: #fff;
+  color: var(--color-white);
   font-weight: bold;
   padding: 00.5rem;
   position: absolute;
@@ -387,7 +388,7 @@ ul {
 }
 
 .appearance__container {
-  background-color: #fff;
+  background-color: var(--color-white);
   color: var(--color-gray);
   margin-top: 1rem;
   padding: 1rem;
@@ -476,7 +477,7 @@ ul {
 }
 
 .modal__container {
-  background-color: #fff;
+  background-color: var(--color-white);
   border: none;
   border-radius: 0.5rem;
   display: block;
@@ -646,7 +647,7 @@ ul {
   /* BARRA NAV PRINCIPAL */
 
   .nav__header {
-    background-color: #fff;
+    background-color: var(--color-white);
     position: sticky;
     top: 0;
   }
