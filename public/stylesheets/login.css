@@ -1,3 +1,4 @@
+/* RESET */
 * {
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
@@ -5,17 +6,19 @@
     padding: 0;
 }
 
+/* LOGO */
 .header {
     margin: 1.5rem auto 3rem;
     text-align: center;
 }
 
-.main {
-    padding: 16px;
-}
-
 .img__logo {
     width: 85px;
+}
+
+/* CONTAINER PRINCIPAL */
+.main {
+    padding: 16px;
 }
 
 .main h2 {
@@ -81,10 +84,13 @@ a.create {
 }
 
 @media (min-width: 768px){
+    /* LOGO */
     .header {
         margin: 1.5rem auto 5.5rem 3rem;
         text-align: start;
     }
+
+    /* CONTAINER PRINCIPAL */
     .main {
         border: 1px solid rgba(153, 153, 153, 0.4);
         border-radius: 0.7rem;
