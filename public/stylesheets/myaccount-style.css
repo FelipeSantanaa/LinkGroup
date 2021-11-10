@@ -34,7 +34,6 @@ img{
 
 .header-container{
     background-color: white;
-    display: flex;
     height: 48px;
     z-index: 1;
     border-bottom: 1px solid #d7dce1;
@@ -44,6 +43,18 @@ img{
     width: 40px;
     height: 40px;
     display:flex;
+}
+
+.items-nav-right{
+display: flex;
+}
+
+.logo-linktree{
+    display: flex;
+}
+
+.right-header{
+    right: auto;
 }
 
 .side-header{
@@ -135,22 +146,25 @@ transform-origin: left;
     transform: scaleX(1);
 }
 
+.btn-danger-zone,
 .btn-reset-password,
 .btn-purple,
 .btn-white,
 .btn{
+    font-size: 15px;
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding: 0.4rem;
-    background-color: rgb(228, 228, 228);
+    background-color: rgb(233, 231, 231);
     cursor: pointer;
     color: rgb(7, 6, 6);
     font-weight: 300;
     border-radius: 10px;
     max-width: 100%;
-    width: 80%;
+    width: 90%;
     height: 3rem;
     align-items: center;
+
 }
 
 .btn-white{
@@ -181,12 +195,20 @@ transform-origin: left;
     text-align: -webkit-center;
 }
 
+.btn-danger-zone{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: red;
+    color: white;
+}
+
 .end-buttons{
     display: block;
     text-align: -webkit-center;;
 }
 
 /* SEGUNDO FORM */
+
 
 .reset-password,
 .form-information{
@@ -195,15 +217,22 @@ transform-origin: left;
     border-radius: 15px;
 }
 
+.danger-zone,
 .actions-account{
    display: flex;
    flex-direction: column;
 }
 
+.danger-zone{
+    margin-bottom: 1rem;
+}
+
+.danger-zone > div,
 .actions-account > div {
     margin-top: 0px;
 }
 
+.danger-zone h1,
 .actions-account h1 {
     margin-bottom: 2rem;
     margin-top: 2rem;
@@ -220,7 +249,7 @@ transform-origin: left;
 .image-information{
     width: 54px;
     position: absolute;
-    
+    display: none;
 }
 
 .image-information img{
