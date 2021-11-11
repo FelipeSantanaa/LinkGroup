@@ -25,11 +25,6 @@ form {
     margin-top: 48px;
 }
 
-iframe {
-    display: flex;
-    justify-content: center;
-}
-
 button {
     border: none;
     outline: none;
@@ -84,7 +79,7 @@ button {
 
 .preferences__group {
     padding-top: 24px;
-    padding-bottom: 32px;
+    padding-bottom: 24px;
 }
 
 .buttons__preferences {
@@ -118,38 +113,8 @@ button {
     color: var(--primary-color);
 }
 
-.terms {
-    display: block;
-    margin-top: 48px;
-    font-size: 14px;
+.recaptcha {
     text-align: center;
-}
-
-.terms a {
-    color: var(--primary-color);
-}
-
-.checkbox {
-    cursor: pointer;
-    border-bottom-left-radius: 2px;
-    border-bottom-right-radius: 2px;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    color: var(--primary-color);
-    background-color: rgb(255, 255, 255);
-    border-bottom-color: grey;
-}
-
-.login {
-    display: block;
-    margin-top: 24;
-    margin-bottom: 48px;
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 16px;
-    text-decoration: none;
-    line-height: 1.75;
-    cursor: pointer;
 }
 
 .button__submit {
@@ -210,13 +175,5 @@ button {
     
     .container__title {
         margin-bottom: 20px;
-    }
-    
-    .login {
-        margin-top: 0px;
-    }
-    
-    .login:hover {
-        text-decoration: underline;
     }
 }
