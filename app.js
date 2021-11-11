@@ -4,9 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+const adminRouter = require('./src/routes/admin')
 const loginRouter = require('./src/routes/login');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use('/admin', adminRouter)
 app.use('/login', loginRouter);
 
 // catch 404 and forward to error handler

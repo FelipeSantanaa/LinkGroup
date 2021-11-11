@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Linktree Admin</title>
+    <link rel="stylesheet" href="/stylesheets/admin.css" />
+    <link rel="stylesheet" href="/stylesheets/admin-device.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="nav__sidebar-left">
+        <a href="/admin">
+          <img id="logo" src="/svg/linktree-min.svg" alt="Logo do Linktree" />
+        </a>
+        <img class="btn" src="/svg/support.svg" id="btn-support" alt="Ajuda" />
+        <nav class="nav__toggle" id="nav__support">
+          <ul>
+            <span>SUPPORT</span>
+            <a class="toggle__links" href="#">
+              <li>Help Topics</li>
+            </a>
+            <a class="toggle__links" href="#">
+              <li>Get Started</li>
+            </a>
+            <a class="toggle__links" href="#">
+              <li>Ask A Question</li>
+            </a>
+            <a class="toggle__links" href="#">
+              <li>Submit Your Feed</li>
+            </a>
+          </ul>
+        </nav>
+        <img
+          class="btn img__menu-complete"
+          src="/svg/headway.svg"
+          id="btn-headway"
+          alt="Avisos"
+        />
+        <nav class="nav__toggle" id="nav__headway">
+          <h4>Latest changes</h4>
+          <ul>
+            <li class="toggle__headway">
+              <a href="#">
+                <p>
+                  <span>New</span>
+                  <strong
+                    >Give exclusive access to your links by requiring a secret
+                    code.</strong
+                  >
+                  If you have Linktree PRO, you cn now require your visitors to
+                  enter a code to access specific...
+                </p>
+              </a>
+            </li>
+            <li class="toggle__headway">
+              <a href="#">
+                <p>
+                  <span>New</span>
+                  <strong
+                    >Personalize your Linktree with new fonts and font
+                    colors.</strong
+                  >
+                  There are 21 new fonts option for you to choose from and you
+                  can now change the color of the...
+                </p>
+              </a>
+            </li>
+            <li class="toggle__headway">
+              <a href="#">
+                <p>
+                  <span>New</span>
+                  <strong>Get more streams with Music Links.</strong>
+                  Show your Linktree visitors everywhere an album or song is
+                  available to strem so no matter...
+                </p>
+              </a>
+            </li>
+          </ul>
+          <a href="#">Linktree updates</a>
+        </nav>
+        <img
+          class="btn img__menu-complete img__circle"
+          id="btn-desktop"
+          src="/img/default-profile.png"
+          alt="Menu"
+        />
+        <img class="btn" src="/svg/menu.svg" id="btn-mobile" alt="Menu" />
+        <nav class="nav__toggle toggle__menu" id="nav__menu">
+          <ul>
+            <span>USERNAME</span>
+            <a class="toggle__links" href="/">
+              <li>My Account</li>
+            </a>
+            <a class="toggle__links" href="/">
+              <li>Logout</li>
+            </a>
+            <span>TREES</span>
+            <a class="toggle__links--user-star">
+              <p>@username</p>
+              <img id="star" src="/svg/star.svg" />
+            </a>
+          </ul>
+        </nav>
+      </nav>
+
