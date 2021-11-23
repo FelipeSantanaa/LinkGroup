@@ -26,6 +26,7 @@ html {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
 
@@ -44,13 +45,16 @@ a {
 }
 
 button {
-  background: transparent;
   align-items: center;
-  border-radius: 0.5rem;
+  background: transparent;
   border: 0;
+  border-radius: 0.75rem;
+  cursor: pointer;
   display: flex;
-  flex-flow: row nowrap;
+  height: 48px;
   justify-content: center;
+  padding: 0 1.5rem;
+  width: auto;
 }
 
 button span {
@@ -412,19 +416,15 @@ main {
   text-align: center;
 }
 
-.banner__btn {
+.banner--btn {
   background: var(--button-blue-normal);
-  cursor: pointer;
-  border-radius: 0.75rem;
-  height: 48px;
-  padding: 0 1.5rem;
 }
 
-.banner__btn:hover {
+.banner--btn:hover {
   background: var(--button-blue-dark);
 }
 
-.banner__btn span {
+.banner--btn > span {
   color: rgb(255, 255, 255);
   font-size: 1rem;
   font-weight: bold;
@@ -556,14 +556,14 @@ a.banner__login--text {
 
 .device-animation__line--style {
   border-left-style: dashed;
-  border-left-color: rgb(117, 81, 233);
+  border-left-color: var(--button-blue-normal);
   border-width: 0px 0px 0px 2px;
   border-image: initial;
 }
 
 .device-animation__box {
   background: var(--bgc-light);
-  border: 1px solid rgb(117, 81, 233);
+  border: 1px solid var(--button-blue-normal);
   border-radius: 48px;
   height: 64px;
   margin: 0 auto;
@@ -648,7 +648,22 @@ video {
 
 .card-container {
   margin: 0 auto;
+  overflow: hidden;
   padding: 4rem 1.5rem;
+  position: relative;
+}
+
+.card-container::before {
+  background-image: linear-gradient(
+    to top,
+    rgb(255, 255, 255),
+    rgb(218, 222, 224)
+  );
+  border-radius: 100vw 100vw 0 0;
+  content: '';
+  inset: 0 -25%;
+  position: absolute;
+  z-index: -1;
 }
 
 .card-container > span {
@@ -703,6 +718,28 @@ article.card {
   padding: 0 1rem;
 }
 
+.card__button {
+  display: flex;
+  justify-content: center;
+  padding-top: 4rem;
+}
+
+.card--button {
+  color: var(--button-blue-normal);
+  border: 1px solid var(--button-blue-normal);
+}
+
+.card--button:hover {
+  background: var(--button-blue-normal);
+  color: rgb(255, 255, 255);
+}
+
+.card--button > span {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 /* MEDIA QUERIES */
 @media screen and (max-width: 767px) {
   .banner__login {
@@ -750,10 +787,10 @@ article.card {
   .banner__title p {
     font-size: 1.5rem;
   }
-  .banner__btn span {
+  .banner--btn > span {
     font-size: 1.25rem;
   }
-  .banner__btn {
+  .banner--btn {
     border-radius: 1rem;
     height: 64px;
     padding: 0 2rem;
