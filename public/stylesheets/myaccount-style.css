@@ -18,13 +18,13 @@ html {
   max-height: 100vw;
 }
 
-body{
+body {
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
-main{
+main {
   max-width: 768px;
   margin-left: 30px;
   margin-right: 30px;
@@ -40,7 +40,7 @@ img {
   cursor: pointer;
 }
 
-header{
+header {
   width: 100%;
 }
 
@@ -49,8 +49,8 @@ header{
 @media screen and (max-width: 768px) {
 
   .side-header-container {
-        display: none;
-    }
+    display: none;
+  }
 
   .header-container {
     background-color: white;
@@ -63,8 +63,13 @@ header{
     align-items: center;
   }
 
+
   .items-nav-right {
     display: flex;
+  }
+
+  .items-nav-right > a {
+    padding-left: 15px;
   }
 
   .logo-linktree {
@@ -154,28 +159,26 @@ form .input-field:first-child {
   transform-origin: left;
 }
 
-.input-field input:focus ~ .underline::after {
+.input-field input:focus~.underline::after {
   transform: scaleX(1);
 }
 
-.btn-danger-zone,
-.btn-reset-password,
-.btn-purple,
-.btn-white,
+/* BOTOES  */
+
 .btn {
   font-size: 15px;
   margin-top: 2rem;
   margin-bottom: 2rem;
   padding: 0.4rem;
-  background-color: rgb(233, 231, 231);
   cursor: pointer;
-  color: rgb(7, 6, 6);
   font-weight: 300;
   border-radius: 10px;
   max-width: 100%;
   width: 90%;
   height: 3rem;
   align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .btn-white {
@@ -186,11 +189,6 @@ form .input-field:first-child {
 .btn-purple {
   background-color: #7c41ff;
   color: white;
-}
-
-.btn {
-  display: flex;
-  justify-content: center;
 }
 
 .btn-reset-password {
@@ -214,6 +212,21 @@ form .input-field:first-child {
   text-align: -webkit-center;
 }
 
+/* HOVER BOTOES  */
+.btn-reset-password:hover,
+.btn-white:hover{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.btn-purple:hover{
+  background-color: #8a58f5;
+}
+
+.btn-danger-zone:hover{
+  background-color: rgb(243, 54, 54);
+}
+
 /* SEGUNDO FORM */
 
 .reset-password,
@@ -233,8 +246,8 @@ form .input-field:first-child {
   margin-bottom: 4rem;
 }
 
-.danger-zone > div,
-.actions-account > div {
+.danger-zone>div,
+.actions-account>div {
   margin-top: 0px;
 }
 
@@ -251,6 +264,7 @@ form .input-field:first-child {
   border-bottom: 0.5px rgb(206, 206, 206) solid;
   padding: 1rem;
 }
+
 .image-information {
   width: 54px;
   position: absolute;
@@ -270,10 +284,16 @@ form .input-field:first-child {
   }
 
   .header-container {
-  display: none;
-}
+    display: none;
+  }
 
-.side-header-container {
+  .user-image{
+    width: 30px;
+    height: auto;
+    border-radius: 20px;
+  }
+
+  .side-header-container {
     background-color: white;
     height: 100vh;
     max-height: 100vh;
@@ -288,16 +308,19 @@ form .input-field:first-child {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-    
+
   }
 
-  .side-items-nav-down{
+  .side-items-nav-down {
     display: flex;
     flex-flow: column;
-
   }
 
-  .end-buttons{
+  .side-items-nav-down > a {
+    padding-bottom: 15px;
+  }
+
+  .end-buttons {
     display: flex;
     flex-flow: row nowrap;
     max-height: 100%;
@@ -307,9 +330,9 @@ form .input-field:first-child {
   }
 
   .btn-white,
-  .btn-purple{
-      width: auto;
-      margin-left: 0.5rem;
+  .btn-purple {
+    width: auto;
+    margin-left: 0.5rem;
   }
 
 }
