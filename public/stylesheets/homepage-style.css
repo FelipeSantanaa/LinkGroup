@@ -292,6 +292,7 @@ nav ul > li a {
   flex: 0 1 100%;
   justify-content: space-between;
   height: 100%;
+  padding: 0;
   width: 100%;
 }
 
@@ -734,42 +735,91 @@ article.card {
 
 /* CAROUSEL ======================= */
 .carousel-container {
-  margin-top: 4rem;
   padding-bottom: 6rem;
 }
 
 .carousel__content-text {
-  border-top: 1px solid var(--inline);
-  margin: 0 4rem;
-  padding: 6rem 0;
+  /* border-top: 1px solid var(--inline); */
+  margin: 1rem 2rem;
+  padding: 2rem 0;
 }
 
 .carousel__content-text h2,
 .carousel__content-text p {
   display: block;
-  width: 50%;
+  width: 100%;
 }
 
 .carousel__content-text h2 {
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: normal;
-  letter-spacing: -0.96px;
-  line-height: 1.17;
-  margin-bottom: 1.5rem;
+  letter-spacing: -0.48px;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
 }
 
 .carousel__content-text p {
   color: var(--dark);
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: normal;
-  letter-spacing: -0.4px;
-  line-height: 1.6;
+  letter-spacing: -0.32px;
+  line-height: 1.5rem;
+  max-width: 760px;
 }
 
 .carousel {
   display: flex;
-  padding-left: 4rem;
-  overflow: scroll;
+  padding-left: 2rem;
+  overflow-x: scroll;
+}
+
+.carousel > :not(:last-child) {
+  padding-right: 3.33333vw;
+}
+
+.carousel > :last-child {
+  padding-right: 2rem;
+}
+
+.carousel__item > a {
+  display: block;
+  position: relative;
+}
+
+.carousel__item > a img {
+  clip-path: inset(0 round 1rem);
+  display: block;
+  margin-bottom: 1.5rem;
+  max-width: 320px;
+  min-width: 247px;
+  width: 21.6667vw;
+}
+
+.carousel__item svg {
+  bottom: 1rem;
+  left: 1rem;
+  position: absolute;
+  width: 25px;
+}
+
+.carousel__avatar {
+  align-items: flex-start;
+  display: flex;
+}
+
+.carousel__avatar > img {
+  border-radius: 50%;
+  margin-right: 1rem;
+  width: 2rem;
+}
+
+.carousel__avatar > span {
+  color: var(--dark);
+  display: block;
+  font-size: 1.25rem;
+  font-weight: normal;
+  line-height: 1.6;
+  letter-spacing: -0.4px;
 }
 
 /* FEATURES ======================= */
@@ -820,6 +870,14 @@ article.card {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 576px) {
+  /* CAROUSEL ======================= */
+  .carousel > :not(:last-child) {
+    padding-right: 1.5rem;
+  }
+  .carousel > :last-child {
+    padding-right: 2rem;
+  }
+
   /* FEATURES ======================= */
   .feature__block > div img {
     max-height: 1.5rem;
@@ -1009,6 +1067,33 @@ article.card {
 
   .card__button {
     padding-top: 4.44444vw;
+  }
+
+  /* CAROUSEL ======================= */
+
+  .carousel__content-text {
+    margin: 0 4rem;
+    padding: 6rem 0 3rem;
+  }
+
+  .carousel__content-text h2 {
+    font-size: 2rem;
+    letter-spacing: -0.64px;
+    line-height: 1.25;
+  }
+
+  .carousel__content-text p {
+    font-size: 1.25rem;
+    letter-spacing: -0.4px;
+    line-height: 1.6rem;
+  }
+
+  .carousel {
+    padding-left: 4rem;
+  }
+
+  .carousel__item > a img {
+    margin-bottom: 1rem;
   }
 
   /* FEATURES ======================= */
