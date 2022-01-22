@@ -36,6 +36,7 @@
     border: none;
     border-radius: 12px;
     color: rgb(255, 255, 255);
+    cursor: pointer;
     font-weight: bold;
     height: 3rem;
     margin-top: 1.5rem;
