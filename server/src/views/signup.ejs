@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap" rel="stylesheet">
+    <title>Linktree</title>
+    <link rel="stylesheet" href="/stylesheets/signup-style.css">
+</head>
+
+<body>
+    <main>
+        <a href="/">
+            <img class="logo" src="img/linktree-logo.svg" alt="Logo do Linktree">
+        </a>
+        <div class="container">
+            <div class="container__title">
+                <span class="container__title--item">Create an account for free</span>
+                <p>Free forever. No payment needed.</p>
+            </div>
+            <form action="" method="POST">
+                <input type="text" id="username" name="username" placeholder="Username" class="input" required>
+                <input type="email" id="email" name="email" placeholder="Email" class="input" required>
+                <input type="password" id="password" name="password" placeholder="Password" class="input" required>
+                <label for="termos-de-condicoes" class="terms">
+                    <input type="checkbox" name="termos" id="termos" class="checkbox">By creating an account you are agreeing to our <a href="#" target="_blank"> Terms and Conditions</a> and <a href="#"> Privacy Police.</a>
+                </label>
+                <button type="submit">Sign up with email</button>
+            </form>
+            <a href="/login" class="login">
+                <span>Already have an account?</span>
+            </a>
+        </div>
+    </main>
+    <aside>
+        <img src="img\signup-banner.jpg" alt="Banner com personalidades" class="banner">
+    </aside>
+</body>
+
+</html>

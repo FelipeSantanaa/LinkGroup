@@ -1,0 +1,180 @@
+ :root {
+    --primary-color: rgb(19, 20, 21);
+ }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+
+body {
+    height: 100vh;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 32px 24px;
+}
+
+form {
+    flex-direction: column;
+    margin-top: 48px;
+}
+
+button {
+    width: 100%;
+    height: 48px;
+    margin: 24px 0px;
+    border-radius: 12px;
+    border-style: none;
+    padding-left: 24px;
+    padding-right: 24px;
+    background-color: rgb(117, 81, 233);
+    color: rgb(255, 255, 255);
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+.logo {
+    position: relative;
+    top: 0px;
+    left: 50%;
+    width: 85px;
+    height: 20px;
+    z-index: 1;
+    transform: translateX(-50%);
+}
+
+.banner {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+}
+
+.container__title {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+
+.container__title--item {
+    margin-bottom: 15px;
+    height: 44px;
+    color: var(--primary-color);
+    font-size: 32px;
+    letter-spacing: calc(-0.64px);
+}
+
+.input,
+.input:hover {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 16px 12px 24px 12px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(248, 248, 248);
+    color: var(--primary-color);
+}
+
+.terms {
+    display: block;
+    margin-top: 48px;
+    font-size: 14px;
+    text-align: center;
+}
+
+.terms a {
+    color: var(--primary-color);
+}
+
+.checkbox {
+    cursor: pointer;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    color: var(--primary-color);
+    background-color: rgb(255, 255, 255);
+    border-bottom-color: grey;
+}
+
+.login {
+    display: block;
+    margin-top: 48px;
+    margin-bottom: 48px;
+    color: var(--primary-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+@media (min-width: 600px) {
+    body {
+        display: flex;
+    }
+    
+    main {
+        width: 100%;
+        overflow-y: scroll;
+    }
+
+    aside {
+        width: 50%;
+    }
+
+    form {
+        margin-top: 60px;
+    }
+
+    .logo {
+        position: static;
+        width: 105px;
+        height: 30px;
+        margin-left: 75px;
+    }
+    
+    .banner {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        object-fit: cover;
+    }
+    
+    .container {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto
+    }
+    
+    .container__title {
+        margin-bottom: 20px;
+    }
+    
+    .login::before {
+    display: block;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    margin-bottom: 24px;
+    margin-top: 0px;
+    background-color: rgb(218, 222, 224);
+    }
+    
+    .login {
+        margin-top: 0px;
+    }
+    
+    .login:hover {
+        text-decoration: underline;
+    }
+}
