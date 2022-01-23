@@ -1,6 +1,6 @@
 const myAccountController = {
     index: (req, res) => {
-        res.render('myAccount')
+        res.render('my-account')
     }
 }
 
