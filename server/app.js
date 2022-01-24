@@ -4,6 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+/* Middlewares, sessions and cookies */
+const session = require('express-session');
+
+/* Routes */
 const indexRouter = require('./src/routes/index');
 const adminRouter = require('./src/routes/admin');
 const myAccountRouter = require('./src/routes/my-account');
@@ -23,8 +27,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+/* Middlewares, sessions and cookies */
+app.use(session({
+  secret: "Linktree - New Version DH",
+  resave: true,
+  saveUninitialized: true
+}))
+
+/* Routes */
 app.use('/', indexRouter);
-app.use('/admin', adminRouter)
+app.use('/admin', adminRouter);
 app.use('/login', loginRouter);
 app.use('/my-account', myAccountRouter);
 app.use('/register', signupRouter);
