@@ -9,7 +9,7 @@ const SignUpController = {
   addUser: async (req, res, next) => {
     let user = {}
 
-    user.nome = req.body.name
+    user.nome = req.body.nome
     user.nome_usuario = req.body.username
     user.email = req.body.email
     user.senha = bcrypt.hashSync(req.body.password, 10)
@@ -17,7 +17,8 @@ const SignUpController = {
     user.criado_em = new Date()
     user.modificado_em = new Date()
 
-    let creation = await createUser(user)
+    console.log(req.body.value)
+    //let creation = await createUser(user)
 
     if (creation) {
       return res.redirect('./login')
