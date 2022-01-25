@@ -3,21 +3,21 @@ module.exports = {
     username: 'root',
     password: null,
     database: 'linkgroup',
-    host: '127.0.0.1',
+    host: 'localhost',
     dialect: 'mysql'
   },
   test: {
     username: 'root',
     password: null,
     database: 'linkgroup',
-    host: '127.0.0.1',
+    host: 'localhost',
     dialect: 'mysql'
   },
   production: {
     username: 'root',
     password: null,
     database: 'linkgroup',
-    host: '127.0.0.1',
+    host: 'localhost',
     dialect: 'mysql'
   }
 }

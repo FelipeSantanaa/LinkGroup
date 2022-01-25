@@ -1,30 +1,30 @@
-const { Usuario } = require('../../database/models')
+const { createUser } = require('../../services/usuario')
 const bcrypt = require('bcryptjs')
 
-const SignupController = {
+const SignUpController = {
   index: (req, res) => {
     return res.render('signup')
   },
 
-  createUser: async (req, res, next) => {
-    let { name, username, email, password, termo } = await req.body
+  addUser: async (req, res, next) => {
+    let user = {}
 
-    let usuario = await Usuario.create({
-      nome: name,
-      nome_usuario: username,
-      email: email,
-      senha: bcrypt.hashSync(password, 10),
-      admin: 0,
-      criado_em: new Date(),
-      modificado_em: new Date()
-    })
+    user.nome = req.body.name
+    user.nome_usuario = req.body.username
+    user.email = req.body.email
+    user.senha = bcrypt.hashSync(req.body.password, 10)
+    user.admin = 0
+    user.criado_em = new Date()
+    user.modificado_em = new Date()
 
-    if (usuario) {
-      res.redirect('./login')
+    let creation = await createUser(user)
+
+    if (creation) {
+      return res.redirect('./login')
     } else {
-      res.status(500).send('Ops... Algo deu errado!')
+      return res.status(500).send('Ops... Algo deu errado!')
     }
   }
 }
 
-module.exports = SignupController
+module.exports = SignUpController
