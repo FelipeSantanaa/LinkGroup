@@ -97,7 +97,7 @@
         <nav class="nav__toggle toggle__menu" id="nav__menu">
           <ul>
             <span>USERNAME</span>
-            <a class="toggle__links" href="/">
+            <a class="toggle__links" href="/my-account">
               <li>My Account</li>
             </a>
             <a class="toggle__links" href="/logout">
@@ -105,7 +105,7 @@
             </a>
             <span>TREES</span>
             <a class="toggle__links--user-star">
-              <p>@username</p>
+              <p><%= user.nome_usuario%></p>
               <img id="star" src="/svg/star.svg" />
             </a>
           </ul>

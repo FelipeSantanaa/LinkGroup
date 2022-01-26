@@ -1,10 +1,14 @@
 const AdminController = {
-    index: (req, res) => {
-        res.render('admin')
-    },
-    appearance: (req, res) => {
-        res.render('appearance')
-    }
+  index: async (req, res, next) => {
+    res.render('admin', {
+      user: req.cookies.usuario
+    })
+  },
+  appearance: (req, res, next) => {
+    res.render('appearance', {
+      user: req.cookies.usuario
+    })
+  }
 }
 
 module.exports = AdminController

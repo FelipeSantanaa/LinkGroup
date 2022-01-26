@@ -8,7 +8,7 @@
   <title>My Account</title>
   <link rel="icon" href="https://d1nnwinjc04txl.cloudfront.net/favicon-32x32.png?v=530918d2c86b9dd11c4fde40fa99d1b4"
     type="image/png">
-  <link rel="stylesheet" href="/stylesheets/myaccount-style.css">
+  <link rel="stylesheet" href="/server/public/stylesheets/myaccount-style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,400&display=swap"
@@ -32,7 +32,7 @@
   </div>
 
   <!-- SIDE HEADER -->
-  <div class="side-header-container">
+  <div class="side-header-container"> 
 
 
     <a href="#"><img class="logo-linktree" src="/svg/footer-linktree.svg" id="logo-linktree-color" alt="Linktree"></a>
@@ -45,7 +45,9 @@
 
 
       <div class="side-user-image">
-        <a href="#"><img class="user-image" src="https://assets.production.linktr.ee/e2c242d8d3dfb2784986b905a963c99417eff1e5/images/default_profile_picture.png" alt="userImage"> </a>
+        <a href="#"><img class="user-image" src=
+          "https://assets.production.linktr.ee/e2c242d8d3dfb2784986b905a963c99417eff1e5/images/default_profile_picture.png" 
+           alt="userImage"> </a>
 
       </div>
     </div>
@@ -64,12 +66,12 @@
       <form action="">
         <div class="input-field">
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="@name">
+          <input type="text" name="name" id="name" placeholder="<%= usuario.nome %>">
           <div class="underline"></div>
         </div>
         <div class="input-field">
           <label for="email">Email</label>
-          <input type="text" name="email" id="email" placeholder="@email">
+          <input type="text" name="email" id="email" placeholder="<%= usuario.email %>">
           <div class="underline"></div>
         </div>
     </div>
@@ -94,7 +96,7 @@
         </div>
 
         <div class="name-information">
-          <h4>@name</h4>
+          <h4>@<%= usuario.nome_usuario %></h4>
         </div>
 
         <div class="plan-information">
@@ -133,7 +135,7 @@
     </article>
 
     <article class="actions-account">
-      <h1>Account actions for @name</h1>
+      <h1>Account actions for @<%= usuario.nome_usuario %></h1>
 
       <div class="btn-position reset-password">
         <div>

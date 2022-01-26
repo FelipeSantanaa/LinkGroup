@@ -1,6 +1,10 @@
 const myAccountController = {
   index: (req, res) => {
-    res.render('my-account')
+    let { usuario, admin } = req.cookies
+
+    res.render('my-account', {
+      usuario
+    })
   }
 }
 

@@ -1,3 +1,7 @@
+:root {
+  --error-message: rgb(244, 54, 54);
+}
+
 *,
 ::after,
 ::before {
@@ -10,7 +14,7 @@
 
 body,
 html {
-  font-family: "Karla", "Roboto", sans-serif;
+  font-family: 'Karla', 'Roboto', sans-serif;
   font-size: 16px;
   background-color: rgb(248, 248, 248);
   text-align: left;
@@ -44,10 +48,15 @@ header {
   width: 100%;
 }
 
+#error-message {
+  color: var(--error-message);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
 /* ATÉ DESK */
 
 @media screen and (max-width: 768px) {
-
   .side-header-container {
     display: none;
   }
@@ -62,7 +71,6 @@ header {
     justify-content: space-between;
     align-items: center;
   }
-
 
   .items-nav-right {
     display: flex;
@@ -137,7 +145,7 @@ form .input-field:first-child {
 }
 
 .input-field .underline::before {
-  content: "";
+  content: '';
   position: absolute;
   height: 1px;
   width: 100%;
@@ -147,7 +155,7 @@ form .input-field:first-child {
 }
 
 .input-field .underline::after {
-  content: "";
+  content: '';
   position: absolute;
   height: 1px;
   width: 100%;
@@ -159,7 +167,7 @@ form .input-field:first-child {
   transform-origin: left;
 }
 
-.input-field input:focus~.underline::after {
+.input-field input:focus ~ .underline::after {
   transform: scaleX(1);
 }
 
@@ -214,16 +222,16 @@ form .input-field:first-child {
 
 /* HOVER BOTOES  */
 .btn-reset-password:hover,
-.btn-white:hover{
+.btn-white:hover {
   background-color: rgb(37, 37, 37);
   color: white;
 }
 
-.btn-purple:hover{
+.btn-purple:hover {
   background-color: #8a58f5;
 }
 
-.btn-danger-zone:hover{
+.btn-danger-zone:hover {
   background-color: rgb(243, 54, 54);
 }
 
@@ -246,8 +254,8 @@ form .input-field:first-child {
   margin-bottom: 4rem;
 }
 
-.danger-zone>div,
-.actions-account>div {
+.danger-zone > div,
+.actions-account > div {
   margin-top: 0px;
 }
 
@@ -281,13 +289,14 @@ form .input-field:first-child {
   main {
     margin-left: 5rem;
     margin-right: 2rem;
+    padding: 4rem 0;
   }
 
   .header-container {
     display: none;
   }
 
-  .user-image{
+  .user-image {
     width: 30px;
     height: auto;
     border-radius: 20px;
@@ -308,7 +317,6 @@ form .input-field:first-child {
     flex-flow: column;
     justify-content: space-between;
     align-items: center;
-
   }
 
   .side-items-nav-down {
@@ -334,5 +342,4 @@ form .input-field:first-child {
     width: auto;
     margin-left: 0.5rem;
   }
-
 }

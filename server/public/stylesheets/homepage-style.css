@@ -182,6 +182,14 @@ footer {
   font-weight: bold;
 }
 
+.btn-sign-up svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  stroke: none;
+  margin-right: 10px;
+}
+
 /* MENU TOGGLE ======================= */
 #menu-toggle {
   align-items: center;

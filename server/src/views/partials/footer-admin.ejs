@@ -2,8 +2,8 @@
 <aside class="aside">
   <section class="aside__profile">
     <span>My Linktree:</span>
-    <a class="a a--myLink" href="https://linktr.ee/altair.jesus"
-      >https://linktr.ee/username</a
+    <a class="a a--myLink" href="https://linktr.ee/<%= user.nome_usuario%>"
+      >https://linktr.ee/<%= user.nome_usuario%></a
     >
     <button id="button-share">Share</button>
   </section>
@@ -13,7 +13,7 @@
         <span>
           <div class="device-header">
             <img src="/img/default-profile.png" alt="Foto de Perfil">
-            <span>@username</span>
+            <span>@<%= user.nome_usuario%></span>
           </div>
         </span>
         <span>
@@ -84,7 +84,6 @@
     navSupport = document.getElementById('nav__support'),
     active = nav.classList.contains('active'),
     activeSupport = navSupport.classList.contains('active')
-
   function toggleMenu(event) {
     if (event.type === 'touchstart') event.preventDefault();
     if (this.id == "btn-mobile" || this.id == "btn-desktop") {
@@ -96,7 +95,6 @@
       navSupport.classList.toggle('active');
     }
   }
-
   btnMobile.addEventListener('click', toggleMenu);
   btnDesktop.addEventListener('click', toggleMenu);
   btnHeadway.addEventListener('click', toggleMenu);
@@ -105,7 +103,6 @@
   btnDesktop.addEventListener('touchstart', toggleMenu);
   btnHeadway.addEventListener('touchstart', toggleMenu);
   btnSupport.addEventListener('touchstart', toggleMenu);
-
   //Script Modal
   function initModal(modalID) {
     const modal = document.getElementById(modalID);
@@ -118,10 +115,8 @@
       })
     }
   }
-
   const share = document.getElementById('button-share');
   share.addEventListener('click', () => initModal('modal-share'))
-
   //Script copiar conta
   function myAccount() {
     const linkAccount = document.getElementById('my-account'),
@@ -132,7 +127,6 @@
       copy.innerHTML = "Copy"
     }, 1500);
   }
-
   //Script para adicionar novos links
   let countClick = 0
   function showFormLink() {
@@ -145,7 +139,6 @@
     sectionNewLinks.insertAdjacentHTML('afterbegin', newForm)
     countClick++
   }
-
   //Script para remover links (ocultar, a princípio)
   function removeLink(counter) {
     const divLink = document.getElementById(`form${counter}`)
