@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       email: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       senha: {
         type: DataTypes.STRING,
@@ -23,7 +24,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       nome_usuario: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        unique: true
       },
       imagem_perfil: DataTypes.STRING,
       plano_id: DataTypes.STRING,

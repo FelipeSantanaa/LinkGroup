@@ -14,6 +14,7 @@ const myAccountRouter = require('./src/routes/my-account')
 const loginRouter = require('./src/routes/login')
 const signupRouter = require('./src/routes/signup')
 const yourInformationRouter = require('./src/routes/your-information')
+const logoutRouter = require('./src/routes/logout')
 
 const app = express()
 
@@ -31,7 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(
   session({
     secret: 'Linktree - New Version DH',
-    resave: false,
+    resave: true,
     saveUninitialized: true
   })
 )
@@ -43,6 +44,7 @@ app.use('/login', loginRouter)
 app.use('/my-account', myAccountRouter)
 app.use('/register', signupRouter)
 app.use('/your-information', yourInformationRouter)
+app.use('/logout', logoutRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
