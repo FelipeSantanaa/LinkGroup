@@ -2,7 +2,15 @@ const { getUserByUsername } = require('../../services/usuario')
 
 const LoginController = {
   index: async (req, res, next) => {
-    res.render('login')
+    let user = await req.cookies.usuario
+
+    if (user) {
+      res.render('admin', {
+        user
+      })
+    } else {
+      res.render('login')
+    }
   },
 
   auth: async (req, res, next) => {
