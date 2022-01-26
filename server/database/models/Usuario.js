@@ -32,7 +32,9 @@ module.exports = (sequelize, DataTypes) => {
       admin: DataTypes.INTEGER,
       layout_id: DataTypes.INTEGER,
       criado_em: DataTypes.DATE,
-      modificado_em: DataTypes.DATE
+      modificado_em: DataTypes.DATE,
+      bio: DataTypes.STRING,
+      titulo_perfil: DataTypes.STRING
     },
     { tableName: 'usuarios', timestamps: false }
   )
