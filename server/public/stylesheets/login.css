@@ -78,6 +78,7 @@ a.create {
   color: var(--color-error-message);
   line-height: 1.5;
   font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 @media (min-width: 478px) {
@@ -96,7 +97,7 @@ a.create {
 @media (min-width: 768px) {
   /* LOGO */
   .header {
-    margin: 1.5rem auto 5.5rem 3rem;
+    margin: 1.5rem auto 3rem 3rem;
     text-align: start;
   }
 
