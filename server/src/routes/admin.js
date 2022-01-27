@@ -4,6 +4,7 @@ const express = require('express'),
   authLogin = require('../../middlewares/validateLogin')
 
 router.get('/', authLogin, AdminController.index)
+router.post('/', authLogin, AdminController.addLink)
 router.get('/appearance', authLogin, AdminController.appearance)
 router.get('/account', authLogin, AdminController.account)
 
