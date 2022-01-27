@@ -7,11 +7,26 @@ module.exports = (sequelize, DataType) => {
         primaryKey: true,
         autoIncrement: true
       },
-      nome: DataType.STRING,
-      url: DataType.STRING,
-      usuarios_id: DataType.INTEGER,
-      criado_em: DataType.DATE,
-      modificado_em: DataType.DATE
+      nome: {
+        type: DataType.STRING,
+        allowNull: false
+      },
+      url: {
+        type: DataType.STRING,
+        allowNull: false
+      },
+      usuario_id: {
+        type: DataType.INTEGER,
+        allowNull: false
+      },
+      criado_em: {
+        type: DataType.DATE,
+        allowNull: false
+      },
+      modificado_em: {
+        type: DataType.DATE,
+        allowNull: false
+      }
     },
     {
       tableName: 'links',
