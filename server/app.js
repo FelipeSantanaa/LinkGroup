@@ -10,7 +10,7 @@ const session = require('express-session')
 /* Routes */
 const indexRouter = require('./src/routes/index')
 const adminRouter = require('./src/routes/admin')
-const myAccountRouter = require('./src/routes/my-account')
+// const myAccountRouter = require('./src/routes/my-account')
 const loginRouter = require('./src/routes/login')
 const signupRouter = require('./src/routes/signup')
 const yourInformationRouter = require('./src/routes/your-information')
@@ -43,7 +43,7 @@ app.use('/login', loginRouter)
 app.use('/register', signupRouter)
 
 // Rotas que só podem ser acessadas se autenticadas
-app.use('/my-account', myAccountRouter)
+// app.use('/my-account', myAccountRouter)
 app.use('/admin', adminRouter)
 app.use('/your-information', yourInformationRouter)
 app.use('/logout', logoutRouter)

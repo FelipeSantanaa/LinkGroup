@@ -4,6 +4,7 @@ const express = require('express'),
   authLogin = require('../../middlewares/validateLogin')
 
 router.get('/', authLogin, AdminController.index)
-router.get('/appearance', AdminController.appearance)
+router.get('/appearance', authLogin, AdminController.appearance)
+router.get('/account', authLogin, AdminController.account)
 
 module.exports = router

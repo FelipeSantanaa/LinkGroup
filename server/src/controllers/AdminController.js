@@ -16,6 +16,14 @@ const AdminController = {
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin
     })
+  },
+
+  account: (req, res, next) => {
+    let { usuario, admin } = req.cookies
+
+    res.render('account', {
+      usuario
+    })
   }
 }
 
