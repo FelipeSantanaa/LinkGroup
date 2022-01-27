@@ -2,8 +2,8 @@
 <aside class="aside">
   <section class="aside__profile">
     <span>My Linktree:</span>
-    <a class="a a--myLink" href="https://linktr.ee/<%= user.nome_usuario%>"
-      >https://linktr.ee/<%= user.nome_usuario%></a
+    <a class="a a--myLink" href="https://linktr.ee/<%= usuario.nome_usuario%>"
+      >https://linktr.ee/<%= usuario.nome_usuario%></a
     >
     <button id="button-share">Share</button>
   </section>
@@ -13,7 +13,7 @@
         <span>
           <div class="device-header">
             <img src="/img/default-profile.png" alt="Foto de Perfil">
-            <span>@<%= user.nome_usuario%></span>
+            <span>@<%= usuario.nome_usuario%></span>
           </div>
         </span>
         <span>
@@ -65,7 +65,7 @@
         <div>
           <img class="svg" src="/svg/linktree-min.svg" alt="">
           <p class="modal__logo">linktr.ee/</p>
-          <p class="modal__username">altair.jesus</p>
+          <p class="modal__username"><%= usuario.nome_usuario %></p>
         </div>
         <span id="copy">Copy</span>
       </button>

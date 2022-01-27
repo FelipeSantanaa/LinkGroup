@@ -2,12 +2,14 @@ const { getUserByUsername } = require('../../services/usuario')
 
 const LoginController = {
   index: async (req, res, next) => {
-    let user = await req.cookies.usuario
+    let { usuario } = await req.cookies
 
-    if (user) {
-      res.render('admin', {
-        user
-      })
+    if (usuario) {
+      res
+        .render('admin', {
+          usuario
+        })
+        .res.redirect('./admin')
     } else {
       res.render('login', {
         error: null
