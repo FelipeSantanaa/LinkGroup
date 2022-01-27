@@ -1,11 +1,11 @@
 const login = async (req, res, next) => {
-  let usuarioLogado = req.cookies.usuario
+  let { usuario, admin } = req.cookies
 
-  if (!usuarioLogado) {
+  if (!usuario) {
     res.render('login', {
       erro: 'Faça login para visualizar a página!',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin
+      usuarioLogado: usuario,
+      usuarioAdmin: admin
     })
 
     return

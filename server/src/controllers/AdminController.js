@@ -1,12 +1,20 @@
 const AdminController = {
   index: async (req, res, next) => {
+    let { usuario } = req.cookies
+
     res.render('admin', {
-      user: req.cookies.usuario
+      usuario,
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin
     })
   },
   appearance: (req, res, next) => {
+    let { usuario } = req.cookies
+
     res.render('appearance', {
-      user: req.cookies.usuario
+      usuario,
+      usuarioLogado: req.cookies.usuario,
+      usuarioAdmin: req.cookies.admin
     })
   }
 }
