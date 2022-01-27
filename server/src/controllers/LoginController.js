@@ -9,7 +9,9 @@ const LoginController = {
         user
       })
     } else {
-      res.render('login')
+      res.render('login', {
+        error: null
+      })
     }
   },
 
