@@ -6,7 +6,6 @@ var logger = require('morgan')
 
 /* Middlewares, sessions and cookies */
 const session = require('express-session')
-const loginMiddleware = require('./middlewares/validateLogin')
 
 /* Routes */
 const indexRouter = require('./src/routes/index')
@@ -44,10 +43,10 @@ app.use('/login', loginRouter)
 app.use('/register', signupRouter)
 
 // Rotas que só podem ser acessadas se autenticadas
-app.use('/my-account', loginMiddleware, myAccountRouter)
-app.use('/admin', loginMiddleware, adminRouter)
-app.use('/your-information', loginMiddleware, yourInformationRouter)
-app.use('/logout', loginMiddleware, logoutRouter)
+app.use('/my-account', myAccountRouter)
+app.use('/admin', adminRouter)
+app.use('/your-information', yourInformationRouter)
+app.use('/logout', logoutRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

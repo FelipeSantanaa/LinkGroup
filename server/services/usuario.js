@@ -32,4 +32,12 @@ usuarioInterface.getUserByUsername = async username => {
   return user
 }
 
+usuarioInterface.destroyUser = async user => {
+  return await Usuario.destroy({
+    where: {
+      id: user.id
+    }
+  })
+}
+
 module.exports = usuarioInterface
