@@ -1,10 +1,12 @@
-const { addLink } = require('../../services/links')
+const { addLink, getLinksByUserId } = require('../../services/links')
 
 const AdminController = {
   index: async (req, res, next) => {
-    let { usuario } = req.cookies
+    let { usuario } = await req.cookies
+    let links = await getLinksByUserId(usuario.id)
 
     res.render('admin', {
+      links,
       usuario,
       usuarioLogado: req.cookies.usuario,
       usuarioAdmin: req.cookies.admin
@@ -41,7 +43,10 @@ const AdminController = {
     }
 
     try {
-      return await addLink(link)
+      let add = await addLink(link)
+      if (add) {
+        res.redirect('./admin')
+      }
     } catch (e) {
       return console.log(e)
     }

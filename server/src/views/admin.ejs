@@ -18,11 +18,43 @@
       >
         Add New Link
       </button>
+      <% if (links.length == 0) {%>
       <div id="nolinks">
         <p>You don't have any links to display.</p>
         <p>Click the button above to add one.</p>
       </div>
-      <div id="section__links--new-links"></div>
+      <% } %>
+      <div id="section__links--new-links">
+        <% for (link of links) { %>
+        <div class="form__container" id="form<%= link.id %>">
+          <img class="form__svg" src="/svg/ellipsis.svg" />
+          <div>
+            <form class="form__link" action="#" method="post">
+              <input
+                type="text"
+                id="title"
+                name="title"
+                placeholder="Title"
+                value="<%= link.nome %>"
+              /><input
+                type="text"
+                id="url"
+                name="url"
+                placeholder="URL"
+                value="<%= link.url %>"
+              /><button class="btn btn__add" type="submit">Add</button>
+            </form>
+            <img
+              class="form__svg btn trash"
+              id=""
+              onclick=""
+              src="/svg/trash.svg"
+            />
+          </div>
+        </div>
+
+        <% } %>
+      </div>
     </section>
     <%- include('./partials/footer-admin') %>
   </main>
