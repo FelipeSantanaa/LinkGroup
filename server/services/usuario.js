@@ -32,6 +32,14 @@ usuarioInterface.getUserByUsername = async username => {
   return user
 }
 
+usuarioInterface.updateUser = async (user, values) => {
+  return await Usuario.update(values, {
+    where: {
+      id: user.id
+    }
+  })
+}
+
 usuarioInterface.destroyUser = async user => {
   return await Usuario.destroy({
     where: {
