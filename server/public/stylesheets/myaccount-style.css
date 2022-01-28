@@ -105,7 +105,7 @@ form {
 
 .form-account {
   background-color: #fff;
-  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .input-field {
@@ -165,11 +165,9 @@ form .input-field:first-child {
 
 .btn {
   font-size: 15px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
   padding: 0.4rem;
   cursor: pointer;
-  font-weight: 300;
   border-radius: 10px;
   max-width: 100%;
   width: 90%;
@@ -177,6 +175,7 @@ form .input-field:first-child {
   align-items: center;
   display: flex;
   justify-content: center;
+  font-weight: bold;
 }
 
 .btn-white {

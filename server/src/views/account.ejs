@@ -61,20 +61,21 @@
       <form action="">
         <div class="input-field">
           <label for="name">Name</label>
-          <input type="text" name="name" id="name" placeholder="<%= usuario.nome %>">
+          <input type="text" name="name" id="name" placeholder="<%= usuario.nome %>" value="<%= usuario.nome %>">
           <div class="underline"></div>
         </div>
         <div class="input-field">
           <label for="email">Email</label>
-          <input type="text" name="email" id="email" placeholder="<%= usuario.email %>">
+          <input type="text" name="email" id="email" placeholder="<%= usuario.email %>" value="<%= usuario.email %>">
           <div class="underline"></div>
+        </div>
+        <div class="btn-position">
+          <input class="btn" type="submit" value="Save details">
         </div>
       </form>
     </div>
     
-    <div class="btn-position">
-      <input class="btn" type="submit" value="Save details">
-    </div>
+    
 
     <!-- SEGUNDO FORM -->
     <h2> Current account</h2>
