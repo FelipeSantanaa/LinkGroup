@@ -43,10 +43,15 @@
                 placeholder="URL"
                 value="<%= link.url %>"
               />
+
+              <!-- REMOVIDO SE O LINK ESTÁ CADASTRADO NO BD -->
               <% if (!link) { %>
               <button class="btn btn__add" type="submit">Add</button>
               <% } %>
             </form>
+
+            <!-- SETADO SOMENTE SE EXISTIR UM LINK CADASTRADO PARA O USUÁRIO -->
+            <% if (link) { %>
             <form action="/admin/delete" method="POST">
               <input type="hidden" name="link_id" value="<%= link.id %>" />
               <button type="submit">
@@ -57,15 +62,8 @@
                   src="/svg/trash.svg"
                 />
               </button>
-              <button type="submit">
-                <img
-                  class="form__svg btn trash"
-                  id=""
-                  onclick="removeLink('<%= link.id %>')"
-                  src="/svg/trash.svg"
-                />
-              </button>
             </form>
+            <% } %>
           </div>
         </div>
 

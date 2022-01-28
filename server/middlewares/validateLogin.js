@@ -3,7 +3,7 @@ const login = async (req, res, next) => {
 
   if (!usuario) {
     res.render('login', {
-      erro: 'Faça login para visualizar a página!',
+      error: 'Faça login para visualizar a página!',
       usuarioLogado: usuario,
       usuarioAdmin: admin
     })

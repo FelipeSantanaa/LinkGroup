@@ -20,9 +20,7 @@ const AdminController = {
     let { usuario } = req.cookies
 
     res.render('appearance', {
-      usuario,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin
+      usuario
     })
   },
 
