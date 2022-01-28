@@ -3,10 +3,10 @@ const express = require('express'),
   AdminController = require('../controllers/AdminController'),
   authLogin = require('../../middlewares/validateLogin')
 
-router.get('/', authLogin, AdminController.index)
-router.post('/', authLogin, AdminController.addLink)
-router.post('/delete', authLogin, AdminController.deleteLink)
-router.get('/appearance', authLogin, AdminController.appearance)
-router.get('/account', authLogin, AdminController.account)
+router.get('/', AdminController.index)
+router.post('/', AdminController.addLink)
+router.post('/delete', AdminController.deleteLink)
+router.get('/appearance', AdminController.appearance)
+router.get('/account', AdminController.account)
 
 module.exports = router

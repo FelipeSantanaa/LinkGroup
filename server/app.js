@@ -11,7 +11,6 @@ const authLogin = require('./middlewares/validateLogin')
 /* Routes */
 const indexRouter = require('./src/routes/index')
 const adminRouter = require('./src/routes/admin')
-// const myAccountRouter = require('./src/routes/my-account')
 const loginRouter = require('./src/routes/login')
 const signupRouter = require('./src/routes/signup')
 const yourInformationRouter = require('./src/routes/your-information')
@@ -37,8 +36,6 @@ app.use(
     saveUninitialized: true
   })
 )
-
-app.use(authLogin)
 
 /* Routes */
 app.use('/', indexRouter)

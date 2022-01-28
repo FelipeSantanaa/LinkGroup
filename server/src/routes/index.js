@@ -1,7 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var IndexController = require('../controllers/IndexController')
-const SignupController = require('../controllers/SignupController')
+const IndexController = require('../controllers/IndexController')
 
 /* GET home page. */
 router.get('/', IndexController.index)
