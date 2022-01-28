@@ -43,7 +43,9 @@
                 placeholder="URL"
                 value="<%= link.url %>"
               />
+              <% if (!link) { %>
               <button class="btn btn__add" type="submit">Add</button>
+              <% } %>
             </form>
             <form action="/admin/delete" method="POST">
               <input type="hidden" name="link_id" value="<%= link.id %>" />

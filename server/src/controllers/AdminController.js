@@ -49,7 +49,7 @@ const AdminController = {
     try {
       let add = await addLink(link)
       if (add) {
-        res.redirect('./admin')
+        res.redirect('../admin')
       }
     } catch (e) {
       return console.log(e)
