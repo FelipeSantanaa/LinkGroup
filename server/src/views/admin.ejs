@@ -29,7 +29,7 @@
         <div class="form__container" id="form<%= link.id %>">
           <img class="form__svg" src="/svg/ellipsis.svg" />
           <div>
-            <form class="form__link" action="" method="POST">
+            <form class="form__link" action="/admin" method="POST">
               <input
                 type="text"
                 id="title"
@@ -42,14 +42,20 @@
                 name="url"
                 placeholder="URL"
                 value="<%= link.url %>"
-              /><button class="btn btn__add" type="submit">Add</button>
+              />
+              <button class="btn btn__add" type="submit">Add</button>
             </form>
-            <img
-              class="form__svg btn trash"
-              id=""
-              onclick=""
-              src="/svg/trash.svg"
-            />
+            <form action="/admin/delete" method="POST">
+              <input type="hidden" name="link_id" value="<%= link.id %>" />
+              <button type="submit">
+                <img
+                  class="form__svg btn trash"
+                  id=""
+                  onclick="removeLink('<%= link.id %>')"
+                  src="/svg/trash.svg"
+                />
+              </button>
+            </form>
           </div>
         </div>
 

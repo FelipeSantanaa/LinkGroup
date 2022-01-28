@@ -1,4 +1,8 @@
-const { addLink, getLinksByUserId } = require('../../services/links')
+const {
+  addLink,
+  getLinksByUserId,
+  deleteLink
+} = require('../../services/links')
 
 const AdminController = {
   index: async (req, res, next) => {
@@ -49,6 +53,19 @@ const AdminController = {
       }
     } catch (e) {
       return console.log(e)
+    }
+  },
+
+  deleteLink: async (req, res, next) => {
+    let { link_id } = req.body
+    console.log(link_id)
+
+    try {
+      let deletion = await deleteLink(link_id)
+      console.log(deletion)
+      res.redirect('./')
+    } catch (e) {
+      console.log(e)
     }
   }
 }

@@ -13,6 +13,14 @@ const linkInterface = {
     })
     console.log(links)
     return links
+  },
+
+  deleteLink: async id => {
+    return await Link.destroy({
+      where: {
+        id
+      }
+    })
   }
 }
 
