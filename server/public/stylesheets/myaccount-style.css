@@ -282,6 +282,10 @@ form .input-field:first-child {
     padding: 4rem 0;
   }
 
+  main h1 {
+    margin-top: 0;
+  }
+
   .header-container {
     display: none;
   }
