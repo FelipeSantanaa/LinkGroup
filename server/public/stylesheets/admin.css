@@ -221,7 +221,7 @@ ul {
   text-decoration: underline;
 }
 
-.aside span {
+.aside__profile span {
   font-weight: bold;
   margin-right: 0.25rem;
 }
@@ -662,7 +662,7 @@ ul {
     width: 18.75rem;
   }
 
-  .aside span {
+  .aside__profile span {
     white-space: nowrap;
   }
 

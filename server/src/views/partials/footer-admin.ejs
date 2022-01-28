@@ -17,11 +17,15 @@
           </div>
         </span>
         <span>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
+          <% for (link of links ) { %>
+            <div class="device-content">
+              <a href="<%= link.url %>" target="_blank">
+                <%= link.nome %>
+              </a>
+            </div>
+                         
+            
+          <% } %>
         </span>
         <span>
           <div class="device-footer">
@@ -141,7 +145,7 @@
       divNoLinks = document.getElementById('nolinks'),
       sectionNewLinks = document.getElementById('section__links--new-links'),
 
-      newForm = `<div class="form__container" id=""><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form><img class="form__svg btn trash" id="" onclick="removeLink(<% links.id %>)" src='/svg/trash.svg'></div></div>`
+      newForm = `<div class="form__container" id=""><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form></div></div>`
       
     // adiciona a class '.disable' somente se o elemento existir na página  
     if (divNoLinks) divNoLinks.classList.add('disable')
