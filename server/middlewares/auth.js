@@ -23,11 +23,11 @@ module.exports = async (req, res, next) => {
 
     // definição de cookies
     res.cookie('usuario', user, {
-      expires: new Date(Date.now() + 900000),
+      expires: new Date(Date.now() + 3600000),
       httpOnly: true
     })
     res.cookie('admin', user.admin, {
-      expires: new Date(Date.now() + 900000),
+      expires: new Date(Date.now() + 3600000),
       httpOnly: true
     })
 
