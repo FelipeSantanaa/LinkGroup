@@ -32,10 +32,10 @@ usuarioInterface.getUserByUsername = async username => {
   return user
 }
 
-usuarioInterface.updateUser = async (user, values) => {
+usuarioInterface.updateUser = async (id, values) => {
   return await Usuario.update(values, {
     where: {
-      id: user.id
+      id
     }
   })
 }

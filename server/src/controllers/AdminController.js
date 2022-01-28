@@ -4,6 +4,8 @@ const {
   deleteLink
 } = require('../../services/links')
 
+const { updateUser } = require('../../services/usuario')
+
 const AdminController = {
   index: async (req, res, next) => {
     let { usuario } = await req.cookies
@@ -25,7 +27,8 @@ const AdminController = {
   },
 
   account: (req, res, next) => {
-    let { usuario, admin } = req.cookies
+    let { usuario } = req.cookies
+    console.log(usuario.nome)
 
     res.render('account', {
       usuario
@@ -46,9 +49,7 @@ const AdminController = {
 
     try {
       let add = await addLink(link)
-      if (add) {
-        res.redirect('../admin')
-      }
+      res.redirect('../admin')
     } catch (e) {
       return console.log(e)
     }
@@ -62,6 +63,21 @@ const AdminController = {
       let deletion = await deleteLink(link_id)
       console.log(deletion)
       res.redirect('./')
+    } catch (e) {
+      console.log(e)
+    }
+  },
+
+  updateDataUser: async (req, res, next) => {
+    let { id } = await req.cookies.usuario
+    let { name, email } = await req.body
+
+    let dados = { nome: name, email }
+
+    try {
+      let update = await updateUser(id, dados)
+      console.log(update)
+      res.redirect('../account')
     } catch (e) {
       console.log(e)
     }
