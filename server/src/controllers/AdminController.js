@@ -63,18 +63,19 @@ const AdminController = {
     let { link_id, title, url } = await req.body
     let modificado_em = new Date()
 
-    try {
-      let update = await updateLink(link_id, {
-        nome: title,
-        url,
-        modificado_em
-      })
-      return res.status(200).redirect('./')
-    } catch (e) {
-      console.log(e)
-    }
+    console.log(title)
+    // try {
+    //   let update = await updateLink(link_id, {
+    //     nome: title,
+    //     url,
+    //     modificado_em
+    //   })
+    //   return res.status(200).redirect('./')
+    // } catch (e) {
+    //   console.log(e)
+    // }
 
-    res.status(200).redirect('./')
+    // res.status(200).redirect('./')
   },
 
   deleteLink: async (req, res, next) => {

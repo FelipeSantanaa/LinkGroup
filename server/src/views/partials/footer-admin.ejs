@@ -177,10 +177,10 @@
 
     // adicionando button 'Save'
     const form = document.querySelector(`#form${id} .form__buttons`)
-    newButton = `<form class="form__button--update" action="/admin/update" method="POST"><input type="hidden" name="link_id" value="${id}" /><input id="new-title-link-${id}" type="hidden" name="title"/><input id="new-title-url-${id}" type="hidden" name="url" /><button id="btn-update-link-${id}" class="btn btn__add" type="submit" disabled>Save</button></form>`
+    newButton = `<form class="form__button--update" action="/admin/update" method="POST"><input type="hidden" name="link_id" value="${id}" /><input id="new-title-link-${id}" type="hidden" name="title" value="${id}"/><input id="new-title-url-${id}" type="hidden" name="url" value="${id}"/><button id="btn-update-link-${id}" class="btn btn__add" type="submit" disabled onclick="sendUpdate(${id})">Save</button></form>`
     form.innerHTML += newButton
 
-    // validateEdition()
+    validatioEditionForm(id)
   }
   
   function cancelEditLink(id){
@@ -224,10 +224,12 @@
 
   }
 
-  function editFormLink(){
+  // Função criada para habilitar o botão "Add" somente se o usuário preencher o Title e URL
+  function editFormLinkTemp(){
     const formsTemps = document.querySelectorAll("div[id^='formTemp']")
 
-    formsTemps.forEach((form, index, ) => {
+    formsTemps.forEach((form) => {
+      // console.log(form.childNodes[1])
       titleTemp = form.childNodes[1].childNodes[0]
       urlTemp = form.childNodes[1].childNodes[1]
       btnTemp = form.childNodes[1].childNodes[2]
@@ -237,7 +239,7 @@
       if(titleTemp.value) count++
       if(urlTemp.value) count++
 
-      console.log(2)
+      // console.log(count)
 
       if(count == 2) {
         btnTemp.disabled = false
@@ -245,11 +247,41 @@
       }
     })
   }
+  setInterval((editFormLinkTemp), 1000)
 
-  
-  setInterval((editFormLink), 1000)
-  
+  function validatioEditionForm(id){
+    const title = document.getElementById(`title-link-${id}`),
+     url = document.getElementById(`url-link-${id}`),
+     btnSave = document.getElementById(`btn-update-link-${id}`)
 
+    const storeTitle = title.value
+    const storeURL = url.value
+    let update = 0 
+
+    setInterval(() => {
+      if((title.value != storeTitle) || (url.value != storeURL)) update = 1
+      else update = 0
+
+      // console.log(update)
+
+      if(update == 1 && title.value != '' && url.value != ''){
+        btnSave.disabled = false
+        btnSave.style.backgroundColor = "#7c41ff"
+      } else{
+        btnSave.disabled = true
+        btnSave.style.backgroundColor = "#d7dce1"
+      }
+    }, 1000);
+    
+  }
+
+  function sendUpdate(id){
+    const title = document.getElementById(`title-link-${id}`),
+     url = document.getElementById(`url-link-${id}`)
+
+     console.log(title)
+     console.log(url)
+  }
 
 </script>
 </body>
