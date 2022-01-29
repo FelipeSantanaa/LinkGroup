@@ -34,7 +34,7 @@
             <form action="/admin" method="POST">
               <input
                 type="text"
-                id="title-l<%= link.id %>"
+                id="title-link-<%= link.id %>"
                 name="title"
                 placeholder="Title"
                 value="<%= link.nome %>"
@@ -42,7 +42,7 @@
                 disabled
               /><input
                 type="text"
-                id="url-l<%= link.id %>"
+                id="url-link-<%= link.id %>"
                 name="url"
                 placeholder="URL"
                 value="<%= link.url %>"
@@ -57,27 +57,17 @@
           </div>
 
           <div class="form__buttons">
-            <form action="" method="POST">
+            <form action="" method="">
               <input type="hidden" name="link_id" value="<%= link.id %>" />
-              <button type="submit">
-                <img
-                  class="btn"
-                  id=""
-                  onclick="editLink('<%= link.id %>')"
-                  src="/svg/edit.svg"
-                />
+              <button type="submit" onclick="editLink('<%= link.id %>')">
+                <img class="btn" src="/svg/edit.svg" />
               </button>
             </form>
 
             <form action="/admin/delete" method="POST">
               <input type="hidden" name="link_id" value="<%= link.id %>" />
-              <button type="submit">
-                <img
-                  class="btn"
-                  id=""
-                  onclick="removeLink('<%= link.id %>')"
-                  src="/svg/trash.svg"
-                />
+              <button type="submit" onclick="removeLink('<%= link.id %>')">
+                <img class="btn" src="/svg/trash.svg" />
               </button>
             </form>
           </div>

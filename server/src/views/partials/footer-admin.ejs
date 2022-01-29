@@ -109,7 +109,7 @@
   btnHeadway.addEventListener('touchstart', toggleMenu);
   btnSupport.addEventListener('touchstart', toggleMenu);
 
-  //Script Modal
+  // Script Modal
   function initModal(modalID) {
     const modal = document.getElementById(modalID);
     if (modal) {
@@ -125,7 +125,7 @@
   const share = document.getElementById('button-share');
   share.addEventListener('click', () => initModal('modal-share'))
   
-  //Script copiar conta
+  // Script copiar conta
   function myAccount() {
     const linkAccount = document.getElementById('my-account'),
       copy = document.getElementById('copy')
@@ -136,7 +136,7 @@
     }, 1500);
   }
   
-  //Script para adicionar novos links
+  // Script para adicionar novos links
   let countClick = 0
   function showFormLink() {
 
@@ -153,10 +153,20 @@
     countClick++
   }
   
-  //Script para remover links (ocultar, a princípio)
-  function removeLink(counter) {
-    const divLink = document.getElementById(`formTemp${counter}`)
-    divLink.remove()
+  // Script para remover links
+  function removeLink(id) {
+    const formLink = document.getElementById(`formTemp${id}`)
+    formLink.remove()
+  }
+
+  // Script para habilitar edição dos inputs
+  function editLink(id){
+    const inputTitle = document.getElementById(`title-link-${id}`),
+    inputURL = document.getElementById(`url-link-${id}`)
+
+    inputTitle.disabled = false
+    inputURL.disabled = false
+
   }
   
 </script>
