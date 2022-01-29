@@ -324,6 +324,7 @@ ul {
   flex-flow: row nowrap;
   margin-bottom: 1rem;
   width: auto;
+  position: relative;
 }
 
 #section__links--new-links img {
@@ -339,7 +340,6 @@ ul {
 
 #section__links--new-links div {
   display: flex;
-  position: relative;
 }
 
 .form__link input {

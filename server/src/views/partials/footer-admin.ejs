@@ -176,11 +176,11 @@
     btnCancel.classList.toggle('disable')
 
     // adicionando button 'Save'
-    const form = document.querySelector(`#form${id} .form__buttons`)
-    newButton = `<form class="form__button--update" action="/admin/update" method="POST"><input type="hidden" name="link_id" value="${id}" /><input id="new-title-link-${id}" type="hidden" name="title" value="${id}"/><input id="new-title-url-${id}" type="hidden" name="url" value="${id}"/><button id="btn-update-link-${id}" class="btn btn__add" type="submit" disabled onclick="sendUpdate(${id})">Save</button></form>`
+    const form = document.querySelector(`#form${id} .form__link form`)
+    newButton = `<button id="btn-update-link-${id}" class="btn btn__add form__button--update" type="submit" disabled>Save</button>`
     form.innerHTML += newButton
 
-    validatioEditionForm(id)
+    validationEditionForm(id)
   }
   
   function cancelEditLink(id){
@@ -200,7 +200,7 @@
     btnEdit.classList.toggle('disable')
 
     // removendo button 'Save'
-    let button = document.querySelector(`#form${id} div.form__buttons form.form__button--update`)
+    let button = document.querySelector(`#form${id} div.form__link button.form__button--update`)
     button.remove()
 
   }
@@ -230,7 +230,7 @@
   }
   setInterval((editFormLinkTemp), 1000)
 
-  function validatioEditionForm(id){
+  function validationEditionForm(id){
     const title = document.getElementById(`title-link-${id}`),
      url = document.getElementById(`url-link-${id}`),
      btnSave = document.getElementById(`btn-update-link-${id}`)
@@ -243,9 +243,7 @@
       if((title.value != storeTitle) || (url.value != storeURL)) update = 1
       else update = 0
 
-      // console.log(update)
-
-      if(update == 1 && title.value != '' && url.value != ''){
+      if(update == 1 && title.value.length > 0 && url.value.length > 0){
         btnSave.disabled = false
         btnSave.style.backgroundColor = "#7c41ff"
       } else{
@@ -258,10 +256,16 @@
 
   function sendUpdate(id){
     const title = document.getElementById(`title-link-${id}`),
-     url = document.getElementById(`url-link-${id}`)
+     url = document.getElementById(`url-link-${id}`),
+     newTitle = document.getElementById(`new-title-link--${id}`),
+     newURL = document.getElementById(`new-url-link${id}`)
 
-     console.log(title)
-     console.log(url)
+     newTitle.value = title.value
+     newURL.value = url.value
+
+     console.log(newTitle.value);
+     console.log(newURL.value)
+
   }
 
 </script>

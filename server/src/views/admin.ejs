@@ -32,11 +32,11 @@
           <img class="form__svg" src="/svg/ellipsis.svg" />
 
           <div class="form__link">
-            <form action="" method="POST">
+            <form action="/admin/update" method="POST">
               <input
                 type="text"
                 id="title-link-<%= link.id %>"
-                name="name"
+                name="title"
                 placeholder="Title"
                 value="<%= link.nome %>"
                 class="title"
@@ -49,6 +49,7 @@
                 value="<%= link.url %>"
                 disabled
               />
+              <input type="hidden" name="link_id" value="<%= link.id %>" />
             </form>
           </div>
 
