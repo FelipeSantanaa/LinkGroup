@@ -205,25 +205,6 @@
 
   }
 
-  function transferirDados(id){
-
-    const inputTitle = document.getElementById(`title-link-${id}`)
-    const inputURL = document.getElementById(`url-link-${id}`)
-    const newInputTitle = document.getElementById(`new-title-link-${id}`)
-    const newInputURL = document.getElementById(`new-url-link-${id}`)
-
-    inputTitle.addEventListener('input', function(){
-      newInputTitle.value = inputTitle.value
-    })
-
-    inputURL.addEventListener('input', function(){
-      newInputURL.value = inputURL.value
-    })
-
-    
-
-  }
-
   // Função criada para habilitar o botão "Add" somente se o usuário preencher o Title e URL
   function editFormLinkTemp(){
     const formsTemps = document.querySelectorAll("div[id^='formTemp']")

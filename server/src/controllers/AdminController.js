@@ -64,6 +64,8 @@ const AdminController = {
     let modificado_em = new Date()
 
     console.log(title)
+    console.log(url)
+    console.log(link_id)
     // try {
     //   let update = await updateLink(link_id, {
     //     nome: title,
