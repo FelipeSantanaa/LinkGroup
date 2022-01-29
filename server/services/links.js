@@ -1,4 +1,5 @@
 const { Link } = require('../database/models')
+const { getUserByUsername } = require('../services/usuario')
 
 const linkInterface = {
   addLink: async link => {
@@ -12,6 +13,17 @@ const linkInterface = {
       }
     })
     console.log(links)
+    return links
+  },
+
+  getLinksByUsername: async username => {
+    let user = await getUserByUsername(username)
+    let links = await Link.findAll({
+      where: {
+        usuario_id: user.id
+      }
+    })
+
     return links
   },
 

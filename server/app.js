@@ -16,7 +16,6 @@ const signupRouter = require('./src/routes/signup')
 const yourInformationRouter = require('./src/routes/your-information')
 const logoutRouter = require('./src/routes/logout')
 const errorRouter = require('./src/routes/error')
-const linksRouter = require('./src/routes/links')
 
 const app = express()
 
@@ -40,16 +39,16 @@ app.use(
 )
 
 /* Routes */
-app.use('/', indexRouter)
 app.use('/login', loginRouter)
 app.use('/register', signupRouter)
-app.use('/links', linksRouter)
 app.use('/error', errorRouter)
 
 // Rotas que só podem ser acessadas se autenticadas
 app.use('/admin', authLogin, adminRouter)
 app.use('/your-information', authLogin, yourInformationRouter)
 app.use('/logout', authLogin, logoutRouter)
+
+app.use('/', indexRouter)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
@@ -64,7 +63,7 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500)
-  res.render('error')
+  // res.render('error')
 })
 
 module.exports = app
