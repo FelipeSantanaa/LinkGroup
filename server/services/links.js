@@ -15,6 +15,14 @@ const linkInterface = {
     return links
   },
 
+  updateLink: async (id, values) => {
+    return await Link.update(values, {
+      where: {
+        id
+      }
+    })
+  },
+
   deleteLink: async id => {
     return await Link.destroy({
       where: {

@@ -24,6 +24,7 @@
         <p>Click the button above to add one.</p>
       </div>
       <% } %>
+
       <div id="section__links--new-links">
         <!-- renderizando links do usuário cadastrados -->
         <% for (link of links) { %>
@@ -31,11 +32,11 @@
           <img class="form__svg" src="/svg/ellipsis.svg" />
 
           <div class="form__link">
-            <form action="/admin" method="POST">
+            <form action="" method="POST">
               <input
                 type="text"
                 id="title-link-<%= link.id %>"
-                name="title"
+                name="name"
                 placeholder="Title"
                 value="<%= link.nome %>"
                 class="title"
@@ -48,21 +49,27 @@
                 value="<%= link.url %>"
                 disabled
               />
-
-              <!-- REMOVIDO SE O LINK ESTÁ CADASTRADO NO BD -->
-              <% if (!link) { %>
-              <button class="btn btn__add" type="submit">Add</button>
-              <% } %>
             </form>
           </div>
 
           <div class="form__buttons">
-            <form action="" method="">
-              <input type="hidden" name="link_id" value="<%= link.id %>" />
-              <button type="submit" onclick="editLink('<%= link.id %>')">
-                <img class="btn" src="/svg/edit.svg" />
-              </button>
-            </form>
+            <button
+              class="disable"
+              id="btn-cancel-link-<%= link.id %>"
+              type="submit"
+              onclick="cancelEditLink('<%= link.id %>')"
+            >
+              <img class="btn" src="/svg/cancel.svg" />
+            </button>
+
+            <button
+              class=""
+              id="btn-edit-link-<%= link.id %>"
+              type="submit"
+              onclick="editLink('<%= link.id %>')"
+            >
+              <img class="btn" src="/svg/edit.svg" />
+            </button>
 
             <form action="/admin/delete" method="POST">
               <input type="hidden" name="link_id" value="<%= link.id %>" />

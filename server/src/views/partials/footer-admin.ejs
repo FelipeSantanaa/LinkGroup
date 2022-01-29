@@ -100,14 +100,14 @@
     }
   }
 
-  btnMobile.addEventListener('click', toggleMenu);
-  btnDesktop.addEventListener('click', toggleMenu);
-  btnHeadway.addEventListener('click', toggleMenu);
-  btnSupport.addEventListener('click', toggleMenu);
-  btnMobile.addEventListener('touchstart', toggleMenu);
-  btnDesktop.addEventListener('touchstart', toggleMenu);
-  btnHeadway.addEventListener('touchstart', toggleMenu);
-  btnSupport.addEventListener('touchstart', toggleMenu);
+  btnMobile.addEventListener('click', toggleMenu, { passive: true});
+  btnDesktop.addEventListener('click', toggleMenu, { passive: true});
+  btnHeadway.addEventListener('click', toggleMenu, { passive: true});
+  btnSupport.addEventListener('click', toggleMenu, { passive: true});
+  btnMobile.addEventListener('touchstart', toggleMenu, { passive: true});
+  btnDesktop.addEventListener('touchstart', toggleMenu, { passive: true});
+  btnHeadway.addEventListener('touchstart', toggleMenu, { passive: true});
+  btnSupport.addEventListener('touchstart', toggleMenu, { passive: true});
 
   // Script Modal
   function initModal(modalID) {
@@ -144,7 +144,7 @@
       divNoLinks = document.getElementById('nolinks'),
       sectionNewLinks = document.getElementById('section__links--new-links'),
 
-      newForm = `<div class="form__container" id="formTemp${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><form class='form__link' action='' method='post'><input type='text' id="title-l${countClick}" name="title" class="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form><img class="form__svg btn trash" id="" onclick="removeLink('${countClick}')" src="/svg/trash.svg"/></div>`
+      newForm = `<div class="form__container" id="formTemp${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><form class='form__link' action='/admin' method='post'><input type='text' id="titleTemp${countClick}" name="title" class="title" placeholder='Title'><input type='text' id="urlTemp${countClick}" name="url" placeholder='URL'><button id="btnAddTemp${countClick}" class='btn btn__add' type='submit' disabled >Add</button></form><img class="form__svg btn trash" onclick="removeLink('${countClick}')" src="/svg/trash.svg"/></div>`
       
     // adiciona a class '.disable' somente se o elemento existir na página  
     if (divNoLinks) divNoLinks.classList.add('disable')
@@ -161,14 +161,96 @@
 
   // Script para habilitar edição dos inputs
   function editLink(id){
+    // elementos
     const inputTitle = document.getElementById(`title-link-${id}`),
-    inputURL = document.getElementById(`url-link-${id}`)
+    inputURL = document.getElementById(`url-link-${id}`),
+    btnEdit = document.getElementById(`btn-edit-link-${id}`),
+    btnCancel = document.getElementById(`btn-cancel-link-${id}`)
 
+    // habilitando inputs
     inputTitle.disabled = false
     inputURL.disabled = false
 
+    // ocultar botão EDIT do forms e exibir botão CANCEL
+    btnEdit.classList.toggle('disable')
+    btnCancel.classList.toggle('disable')
+
+    // adicionando button 'Save'
+    const form = document.querySelector(`#form${id} .form__buttons`)
+    newButton = `<form class="form__button--update" action="/admin/update" method="POST"><input type="hidden" name="link_id" value="${id}" /><input id="new-title-link-${id}" type="hidden" name="title"/><input id="new-title-url-${id}" type="hidden" name="url" /><button id="btn-update-link-${id}" class="btn btn__add" type="submit" disabled>Save</button></form>`
+    form.innerHTML += newButton
+
+    // validateEdition()
   }
   
+  function cancelEditLink(id){
+    // elementos
+    const inputTitle = document.getElementById(`title-link-${id}`),
+    inputURL = document.getElementById(`url-link-${id}`),
+    btnEdit = document.getElementById(`btn-edit-link-${id}`)
+    btnCancel = document.getElementById(`btn-cancel-link-${id}`),
+    form = document.querySelector(`#form${id} .form__link form`)
+
+    // desabilitando inputs
+    inputTitle.disabled = true
+    inputURL.disabled = true
+
+    // ocultar botão CANCEL do forms
+    btnCancel.classList.toggle('disable')
+    btnEdit.classList.toggle('disable')
+
+    // removendo button 'Save'
+    let button = document.querySelector(`#form${id} div.form__buttons form.form__button--update`)
+    button.remove()
+
+  }
+
+  function transferirDados(id){
+
+    const inputTitle = document.getElementById(`title-link-${id}`)
+    const inputURL = document.getElementById(`url-link-${id}`)
+    const newInputTitle = document.getElementById(`new-title-link-${id}`)
+    const newInputURL = document.getElementById(`new-url-link-${id}`)
+
+    inputTitle.addEventListener('input', function(){
+      newInputTitle.value = inputTitle.value
+    })
+
+    inputURL.addEventListener('input', function(){
+      newInputURL.value = inputURL.value
+    })
+
+    
+
+  }
+
+  function editFormLink(){
+    const formsTemps = document.querySelectorAll("div[id^='formTemp']")
+
+    formsTemps.forEach((form, index, ) => {
+      titleTemp = form.childNodes[1].childNodes[0]
+      urlTemp = form.childNodes[1].childNodes[1]
+      btnTemp = form.childNodes[1].childNodes[2]
+
+      let count = 0
+
+      if(titleTemp.value) count++
+      if(urlTemp.value) count++
+
+      console.log(2)
+
+      if(count == 2) {
+        btnTemp.disabled = false
+        btnTemp.style.backgroundColor = "#7c41ff"
+      }
+    })
+  }
+
+  
+  setInterval((editFormLink), 1000)
+  
+
+
 </script>
 </body>
 </html>

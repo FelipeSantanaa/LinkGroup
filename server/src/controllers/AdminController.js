@@ -1,7 +1,8 @@
 const {
   addLink,
   getLinksByUserId,
-  deleteLink
+  deleteLink,
+  updateLink
 } = require('../../services/links')
 
 const { updateUser } = require('../../services/usuario')
@@ -18,6 +19,7 @@ const AdminController = {
       usuarioAdmin: req.cookies.admin
     })
   },
+
   appearance: async (req, res, next) => {
     let { usuario } = req.cookies
     let links = await getLinksByUserId(usuario.id)
@@ -57,9 +59,27 @@ const AdminController = {
     }
   },
 
+  updateLink: async (req, res, next) => {
+    let { link_id, title, url } = await req.body
+    let modificado_em = new Date()
+
+    try {
+      let update = await updateLink(link_id, {
+        nome: title,
+        url,
+        modificado_em
+      })
+      return res.status(200).redirect('./')
+    } catch (e) {
+      console.log(e)
+    }
+
+    res.status(200).redirect('./')
+  },
+
   deleteLink: async (req, res, next) => {
     let { link_id } = req.body
-    console.log(link_id)
+    // console.log(title)
 
     try {
       let deletion = await deleteLink(link_id)
@@ -73,8 +93,9 @@ const AdminController = {
   updateDataUser: async (req, res, next) => {
     let { id } = await req.cookies.usuario
     let { name, email } = await req.body
+    let modificado_em = new Date()
 
-    let dados = { nome: name, email }
+    let dados = { nome: name, email, modificado_em }
 
     try {
       let update = await updateUser(id, dados)
