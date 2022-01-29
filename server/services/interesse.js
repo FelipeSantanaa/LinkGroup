@@ -7,3 +7,5 @@ interessesServices.getAllInteresses = async () => {
 
     return interesses
 }
+
+module.exports = interessesServices

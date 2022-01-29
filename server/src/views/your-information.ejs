@@ -18,11 +18,7 @@
   <body>
     <main>
       <a href="/">
-        <img
-          class="logo"
-          src="svg/linktree-logo.svg"
-          alt="Logo do Linktree"
-        />
+        <img class="logo" src="svg/linktree-logo.svg" alt="Logo do Linktree" />
       </a>
       <div class="container">
         <div class="container__title">
@@ -48,22 +44,24 @@
             select</span
           >
           <div class="preferences__group">
-            
+            <% for (interesse of interesses) { %>
+            <div class="preference__container" onclick="verificarChecks()">
+              <input
+                type="checkbox"
+                id="<%= interesse.id %>"
+                name="interesses"
+                class="trigger-input"
+                value="<%= interesse.id %>"
+              />
+              <label
+                class="preferences buttons__preferences"
+                for="<%= interesse.id %>"
+                ><%= interesse.interesse %></label
+              >
+            </div>
+            <% } %>
           </div>
-          <div class="recaptcha">
-            <iframe
-              title="reCAPTCHA"
-              src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeJu0oUAAAAAEVBWhDi3s2khLOWV2vXinRXGnOV&amp;co=aHR0cHM6Ly9saW5rdHIuZWU6NDQz&amp;hl=pt-BR&amp;type=image&amp;v=YhkYx1k-yvvb8OonJPmOpoJY&amp;theme=light&amp;size=normal&amp;badge=bottomright&amp;cb=ke9purpiazzi"
-              width="304"
-              height="78"
-              role="presentation"
-              name="a-wusrvckq75w9"
-              frameborder="0"
-              scrolling="no"
-              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"
-            ></iframe>
-          </div>
-          <button type="submit" class="button__submit">Continue</button>
+          <button disabled type="submit" id="submit" class="button__submit">Continue</button>
         </form>
       </div>
     </main>
@@ -74,5 +72,25 @@
         class="banner"
       />
     </aside>
+
+    <script>
+      function verificarChecks() {
+        const elementos = document.querySelectorAll('.trigger-input');
+        const div = document.querySelectorAll('.buttons__preferences');
+        const submit = document.getElementById('submit');
+        let selecionados = 0;
+        let e_sel = [];
+        for (i = 0; i < elementos.length; i++) {
+          if (elementos[i].checked) {
+            div[i].classList.toggle("checked");
+            e_sel.push(elementos[i])
+            selecionados++
+          }
+          if (selecionados == 3){
+            submit.disabled = false
+          }
+        }
+      }
+    </script>
   </body>
 </html>

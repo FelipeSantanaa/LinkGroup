@@ -78,19 +78,28 @@ button {
 }
 
 .preferences__group {
+    display: flex;
+    flex-flow: row wrap;
     padding-top: 24px;
     padding-bottom: 24px;
 }
 
 .buttons__preferences {
     padding: 0px 8px;
-    margin-right: 8px;
-    margin-bottom: 12px;
     border-radius: 16px;
     color: rgb(38, 50, 56);
     background-color: rgb(218, 222, 224);
-    cursor: pointer;
+    padding: 0.5rem;
     transition: padding-right 0.1s linear 0s;
+}
+
+.preference__container {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+.checked {
+    background-color: greenyellow;
 }
 
 .preferences {
@@ -98,6 +107,11 @@ button {
     font-weight: bold;
     line-height: 2;
     text-transform: uppercase;
+    cursor: pointer;
+}
+
+.trigger-input {
+    display: none;
 }
 
 .input,
@@ -131,6 +145,10 @@ button {
     font-weight: 400;
     text-align: center;
     cursor: pointer;
+}
+
+.button__submit:disabled {
+    background-color: #ddd;
 }
 
 @media (min-width: 600px) {
