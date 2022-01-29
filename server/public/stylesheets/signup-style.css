@@ -38,6 +38,7 @@ button {
     font-weight: 400;
     text-align: center;
     cursor: pointer;
+
 }
 
 .logo {
@@ -95,6 +96,7 @@ button {
 }
 
 .checkbox {
+    margin-right: 6px;
     cursor: pointer;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;
