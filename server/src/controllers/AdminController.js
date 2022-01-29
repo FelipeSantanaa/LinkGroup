@@ -1,5 +1,5 @@
 const {
-  addLink,
+  setLink,
   getLinksByUserId,
   deleteLink,
   updateLink
@@ -52,7 +52,7 @@ const AdminController = {
     }
 
     try {
-      let add = await addLink(link)
+      let add = await setLink(link)
       res.redirect('../admin')
     } catch (e) {
       return console.log(e)

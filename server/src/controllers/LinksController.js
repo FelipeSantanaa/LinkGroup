@@ -6,7 +6,10 @@ const LinksController = {
 
     try {
       const links = await getLinksByUsername(username)
-      res.render('links', links)
+      res.render('links', {
+        username,
+        links
+      })
     } catch (e) {
       console.log(e)
       res.status(500).redirect('./error')

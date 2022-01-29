@@ -47,6 +47,7 @@ app.use('/error', errorRouter)
 app.use('/admin', authLogin, adminRouter)
 app.use('/your-information', authLogin, yourInformationRouter)
 app.use('/logout', authLogin, logoutRouter)
+//
 
 app.use('/', indexRouter)
 

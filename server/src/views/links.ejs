@@ -29,16 +29,16 @@
         <img src="/img/default-profile.png" alt="Imagem do usuário" />
       </div>
       <div class="user-name">
-        <p>@username</p>
+        <p>@<%= username %>></p>
       </div>
 
-      <!-- <% for (link of links ) { %> -->
+      <% for (link of links ) { %>
       <section class="user-links">
-        <a class="links" href="">
-          <p>Teste 1></p>
+        <a class="links" href="<%= link.url %>">
+          <p><%= link.nome %></p>
         </a>
       </section>
-      <!-- <% } %> -->
+      <% } %>
     </main>
   </body>
   <footer>
