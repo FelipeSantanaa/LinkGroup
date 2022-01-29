@@ -18,10 +18,12 @@ const AdminController = {
       usuarioAdmin: req.cookies.admin
     })
   },
-  appearance: (req, res, next) => {
+  appearance: async (req, res, next) => {
     let { usuario } = req.cookies
+    let links = await getLinksByUserId(usuario.id)
 
     res.render('appearance', {
+      links,
       usuario
     })
   },

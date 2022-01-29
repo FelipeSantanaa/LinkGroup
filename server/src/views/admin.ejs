@@ -25,23 +25,28 @@
       </div>
       <% } %>
       <div id="section__links--new-links">
+        <!-- renderizando links do usuário cadastrados -->
         <% for (link of links) { %>
         <div class="form__container" id="form<%= link.id %>">
           <img class="form__svg" src="/svg/ellipsis.svg" />
-          <div>
-            <form class="form__link" action="/admin" method="POST">
+
+          <div class="form__link">
+            <form action="/admin" method="POST">
               <input
                 type="text"
-                id="title"
+                id="title-l<%= link.id %>"
                 name="title"
                 placeholder="Title"
                 value="<%= link.nome %>"
+                class="title"
+                disabled
               /><input
                 type="text"
-                id="url"
+                id="url-l<%= link.id %>"
                 name="url"
                 placeholder="URL"
                 value="<%= link.url %>"
+                disabled
               />
 
               <!-- REMOVIDO SE O LINK ESTÁ CADASTRADO NO BD -->
@@ -49,21 +54,32 @@
               <button class="btn btn__add" type="submit">Add</button>
               <% } %>
             </form>
+          </div>
 
-            <!-- SETADO SOMENTE SE EXISTIR UM LINK CADASTRADO PARA O USUÁRIO -->
-            <% if (link) { %>
+          <div class="form__buttons">
+            <form action="" method="POST">
+              <input type="hidden" name="link_id" value="<%= link.id %>" />
+              <button type="submit">
+                <img
+                  class="btn"
+                  id=""
+                  onclick="editLink('<%= link.id %>')"
+                  src="/svg/edit.svg"
+                />
+              </button>
+            </form>
+
             <form action="/admin/delete" method="POST">
               <input type="hidden" name="link_id" value="<%= link.id %>" />
               <button type="submit">
                 <img
-                  class="form__svg btn trash"
+                  class="btn"
                   id=""
                   onclick="removeLink('<%= link.id %>')"
                   src="/svg/trash.svg"
                 />
               </button>
             </form>
-            <% } %>
           </div>
         </div>
 

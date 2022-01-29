@@ -22,8 +22,7 @@
               <a href="<%= link.url %>" target="_blank">
                 <%= link.nome %>
               </a>
-            </div>
-                         
+            </div>                         
             
           <% } %>
         </span>
@@ -138,26 +137,26 @@
   }
   
   //Script para adicionar novos links
-  // let countClick = 0
+  let countClick = 0
   function showFormLink() {
 
     const btnNewLink = document.getElementById('btn-newLink'),
       divNoLinks = document.getElementById('nolinks'),
       sectionNewLinks = document.getElementById('section__links--new-links'),
 
-      newForm = `<div class="form__container" id=""><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form></div></div>`
+      newForm = `<div class="form__container" id="formTemp${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><form class='form__link' action='' method='post'><input type='text' id="title-l${countClick}" name="title" class="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form><img class="form__svg btn trash" id="" onclick="removeLink('${countClick}')" src="/svg/trash.svg"/></div>`
       
     // adiciona a class '.disable' somente se o elemento existir na página  
     if (divNoLinks) divNoLinks.classList.add('disable')
 
     sectionNewLinks.insertAdjacentHTML('afterbegin', newForm)
-    // countClick++
+    countClick++
   }
   
   //Script para remover links (ocultar, a princípio)
   function removeLink(counter) {
-    const divLink = document.getElementById(`form${counter}`)
-    if (divLink) divLink.classList.add('disable')
+    const divLink = document.getElementById(`formTemp${counter}`)
+    divLink.remove()
   }
   
 </script>
