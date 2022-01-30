@@ -13,7 +13,7 @@ const LoginController = {
     }
   },
 
-  authAdmin: async (req, res, next) => {
+  auth: async (req, res, next) => {
     return res.redirect('./admin')
   }
 }

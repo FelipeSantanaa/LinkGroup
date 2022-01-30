@@ -1,4 +1,4 @@
-const { createUser } = require('../../services/usuario')
+const { createUser, getUserByUsername } = require('../../services/usuario')
 const bcrypt = require('bcryptjs')
 
 const SignUpController = {
@@ -17,13 +17,26 @@ const SignUpController = {
     user.criado_em = new Date()
     user.modificado_em = new Date()
 
-    let creation = await createUser(user)
+    try {
+      let creation = await createUser(user)
+      if (creation) {
+        // limpa os cookies
+        res.clearCookie('usuario')
+        res.clearCookie('admin')
 
-    if (creation) {
-      return res.render('./login', {
-        user
-      })
-    } else {
+        const usuario = await getUserByUsername(user.nome_usuario)
+
+        if (usuario) {
+          // definição de cookies
+          res.cookie('usuario', usuario)
+          res.cookie('admin', usuario.admin)
+        }
+
+        return res.render('./your-information', {
+          usuario
+        })
+      }
+    } catch (e) {
       return res.status(500).send('Ops... Algo deu errado!')
     }
   }

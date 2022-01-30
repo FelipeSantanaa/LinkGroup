@@ -4,6 +4,6 @@ const loginController = require('../controllers/LoginController'),
   authMiddleware = require('../../middlewares/auth')
 
 router.get('/', loginController.index)
-router.post('/', authMiddleware, loginController.authAdmin)
+router.post('/', authMiddleware, loginController.auth)
 
 module.exports = router
