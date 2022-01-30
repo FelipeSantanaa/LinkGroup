@@ -6,7 +6,6 @@ const SignUpController = {
     return res.render('signup')
   },
 
-
   addUser: async (req, res, next) => {
     let user = {}
 
@@ -31,11 +30,9 @@ const SignUpController = {
           // definição de cookies
           res.cookie('usuario', usuario)
           res.cookie('admin', usuario.admin)
-        }
 
-        return res.render('./your-information', {
-          usuario
-        })
+          res.redirect('./your-information')
+        }
       }
     } catch (e) {
       return res.status(500).send('Ops... Algo deu errado!')
