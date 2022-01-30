@@ -37,9 +37,9 @@ const AdminController = {
     }
   },
 
-  account: (req, res, next) => {
-    let { usuario } = req.cookies
-    console.log(usuario.nome)
+  account: async (req, res, next) => {
+    const { id } = req.cookies.usuario
+    const usuario = await getUserById(id)
 
     res.render('account', {
       usuario
