@@ -50,6 +50,7 @@ footer {
 }
 
 .icons {
+  cursor: pointer;
   width: 1rem;
 }
 
