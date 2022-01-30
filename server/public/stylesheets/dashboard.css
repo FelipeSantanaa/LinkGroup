@@ -144,12 +144,12 @@ footer {
 .records th {
   height: 50px;
   background-color: rgb(57, 224, 155);
-  padding-left: 20px;
+  padding: 0 20px;
   font-size: 1.2rem;
 }
 .records td {
   height: 50px;
-  padding-left: 20px;
+  padding: 0 20px;
 }
 
 .records th:last-child,
@@ -162,4 +162,16 @@ footer {
 img[src='/svg/linktree-logo.svg'] {
   height: 20px;
   width: 85px;
+}
+
+td[id^='id-user'],
+td[id^='admin-user'] {
+  text-align: center;
+  padding: 0;
+}
+
+#id,
+#admin {
+  text-align: center;
+  padding: 0 auto;
 }

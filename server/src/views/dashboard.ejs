@@ -33,21 +33,41 @@
       <table class="records">
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Action</th>
+            <th id="id">ID</th>
+            <th id="name">Name</th>
+            <th id="email">Email</th>
+            <th id="admin">Admin</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           <% for (usuario of usuarios) { %>
           <tr>
-            <td><%= usuario.id %></td>
-            <td><%= usuario.nome %></td>
-            <td><%= usuario.email %></td>
+            <td id="id-user<%= usuario.id %>"><%= usuario.id %></td>
+            <td id="name-user<%= usuario.id %>"><%= usuario.nome %></td>
+            <td id="email-user<%= usuario.id %>"><%= usuario.email %></td>
+            <td id="admin-user<%= usuario.id %>">
+              <input type="hidden" name="" value="<%= usuario.admin %>" />
+              <input type="checkbox" name="" id="" disabled />
+            </td>
+
             <td>
-              <button type="button" id="edit" class="btn green">edit</button>
-              <button type="button" id="delete" class="btn red">delete</button>
+              <button
+                id="btn-edit-user<%= usuario.id %>"
+                type="button"
+                id="edit"
+                class="btn green"
+              >
+                edit
+              </button>
+              <button
+                id="btn-delete-user<%= usuario.id %>"
+                type="button"
+                id="delete"
+                class="btn red"
+              >
+                delete
+              </button>
             </td>
           </tr>
           <% } %>
