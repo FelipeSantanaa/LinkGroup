@@ -8,4 +8,8 @@ interessesServices.getAllInteresses = async () => {
     return interesses
 }
 
+interessesServices.setUsuarioInteresse = async(data) => {
+    return await Interesse.create([{...data}])
+}
+
 module.exports = interessesServices

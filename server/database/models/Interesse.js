@@ -16,7 +16,7 @@ module.exports = (sequelize, DataType) => {
   )
 
   // Interesse.associate(models){
-  //   Interesse.belongsTo(models.Usuario, {
+  //   Interesse.belongsToMany(models.Usuario, {
   //     foreignKey: "usuario_id",
   //     through: models.UsuarioInteresse
   //   })

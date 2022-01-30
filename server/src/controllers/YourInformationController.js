@@ -1,9 +1,11 @@
 const { getAllInteresses } = require("../../services/interesse")
 const YourInformationController = {
     index: async (req, res) => {
+        const { usuario } = await req.cookies
         const interesses = await getAllInteresses()
         res.render('your-information', {
-            interesses
+            interesses,
+            usuario_nome: usuario.nome
         })
     },
     create: async (req, res) => {

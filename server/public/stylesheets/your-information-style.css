@@ -114,8 +114,7 @@ button {
     display: none;
 }
 
-.input,
-.input:hover {
+.input {
     width: 100%;
     height: 44px;
     margin-top: 8px;
@@ -123,8 +122,9 @@ button {
     padding: 16px 12px 24px 12px;
     border: none;
     border-radius: 8px;
-    background-color: rgb(248, 248, 248);
-    color: var(--primary-color);
+    background-color: rgb(218, 222, 224);
+    font-weight: bold;
+    color: rgb(174, 176, 177);
 }
 
 .recaptcha {
