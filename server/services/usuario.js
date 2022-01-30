@@ -6,6 +6,10 @@ usuarioInterface.createUser = async user => {
   return await Usuario.create({ ...user })
 }
 
+usuarioInterface.getUsers = async () => {
+  return await Usuario.findAll()
+}
+
 usuarioInterface.getUserByEmail = async email => {
   const user = await Usuario.findOne({
     where: email

@@ -1,15 +1,16 @@
-const { Interesse } = require("../database/models");
+const { Interesse } = require('../database/models')
+const { UsuarioInteresse } = require('../database/models')
 
 const interessesServices = {}
 
 interessesServices.getAllInteresses = async () => {
-    const interesses = await Interesse.findAll()
+  const interesses = await Interesse.findAll()
 
-    return interesses
+  return interesses
 }
 
-interessesServices.setUsuarioInteresse = async(data) => {
-    return await Interesse.create([{...data}])
+interessesServices.setUsuarioInteresse = async data => {
+  return await UsuarioInteresse.create({ ...data })
 }
 
 module.exports = interessesServices
