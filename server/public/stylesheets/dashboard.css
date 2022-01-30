@@ -39,6 +39,16 @@ footer {
   padding-bottom: 1.5rem;
 }
 
+.icons {
+  width: 1rem;
+}
+
+.action{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .btn {
   border-style: none;
   height: 40px;
@@ -155,7 +165,7 @@ footer {
 .records th:last-child,
 .records td:last-child {
   padding: 0;
-  min-width: 140px;
+  /* min-width: 140px; */
   text-align: center;
 }
 
@@ -174,4 +184,20 @@ td[id^='admin-user'] {
 #admin {
   text-align: center;
   padding: 0 auto;
+}
+
+@media (max-width: 767px){
+  main {
+    padding: 2rem 0.5rem;
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 0 0;
+
+  }
+  .records th,
+  .records td {
+    padding: 0.25rem;
+    font-size: 0.75rem;
+    height: 2rem;
+  }
 }
