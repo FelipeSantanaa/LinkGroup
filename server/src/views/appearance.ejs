@@ -4,7 +4,9 @@
     <nav class="nav__header">
       <a href="/admin">Links</a>
       <a class="active" href="/admin/appearance">Appearance</a>
-      <a href="#">Settings</a>
+      <% if (usuario.admin == 1) { %>
+      <a href="../dashboard" target="_blank">Settings</a>
+      <% } %>
       <a href="#">PRO</a>
     </nav>
     <section class="appearance">

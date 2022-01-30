@@ -13,10 +13,11 @@ body {
   flex-direction: column;
   position: relative;
   overflow-x: hidden;
-  width: 100%;
+  height: 100vh;
 }
 
 .container {
+  align-items: center;
   display: flex;
   flex: 1 1 0;
   height: 100%;
@@ -32,7 +33,21 @@ html {
 }
 
 main {
-  text-align: center;
+  margin: 0 auto;
+  max-width: 680px;
+  padding-bottom: 80px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > div,
+main > section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .user-image img {
@@ -44,6 +59,8 @@ main {
 
 .user-name {
   padding-top: 15px;
+  flex-direction: column;
+  text-align: center;
 }
 
 .user-name span {
@@ -53,35 +70,26 @@ main {
 }
 
 .user-links {
-  margin-top: 2rem;
+  margin-top: 1rem;
   text-align: -webkit-center;
 }
 
 .links {
-  display: flex;
-  position: relative;
-  max-width: 50%;
-  min-width: 35%;
-  height: 3rem;
+  align-items: center;
   background-color: rgb(57, 224, 155);
   border: 2px solid rgb(57, 224, 155);
-  margin-bottom: 20px;
-  align-items: center;
-  justify-content: center;
   color: white;
+  display: flex;
+  font-weight: bold;
+  height: 4rem;
+  justify-content: center;
   transition: cubic-bezier(0.08, 0.59, 0.29, 0.99) 0.25s;
+  width: 100%;
 }
 
 .links:hover {
   background-color: white;
   color: rgb(57, 224, 155);
-}
-
-footer {
-  text-align: center;
-  position: absolute;
-  bottom: 1rem;
-  width: 100%;
 }
 
 .linktree-logo {

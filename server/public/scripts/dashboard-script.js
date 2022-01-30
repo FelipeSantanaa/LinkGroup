@@ -1,5 +1,44 @@
 // Abre modal
-const openModal = () => document.getElementById('modal').classList.add('active')
+
+const openModal = id => {
+  const table = document.querySelector('table')
+  const modal = `<div class="modal active" id="modal">
+  <div class="modal__content">
+    <header class="modal__header">
+      <h2>User</h2>
+      <span class="modal__close" id="modalClose" onclick="closeModal()"
+        >&#10006;</span
+      >
+    </header>
+    <form id="form" class="modal__form">
+      <input
+        type="text"
+        id="nome"
+        class="modal__field"
+        placeholder="Name"
+        required
+      />
+      <input
+        type="email"
+        id="email"
+        class="modal__field"
+        placeholder="Email"
+        required
+      />
+      <input type="hidden" name="id" value="${id}">
+      <div class="modal__buttons-container">
+        <button id="save" class="btn green" onclick="saveUser()">
+          Save
+        </button>
+        <button id="cancel" class="btn red" onclick="closeModal()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>`
+  table.insertAdjacentHTML('afterend', modal)
+}
 
 // Fecha modal
 const closeModal = () => {
@@ -49,3 +88,8 @@ window.addEventListener('load', function () {
     if (colum.childNodes[1].value == 1) colum.childNodes[3].checked = true
   })
 })
+
+// Excluir linha do usuário selecionado
+const deleteUser = id => {
+  document.getElementById(`line-user-${id}`).remove()
+}

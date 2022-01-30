@@ -59,6 +59,10 @@ footer {
   justify-content: space-evenly;
 }
 
+form {
+  display: inline-block;
+}
+
 .btn {
   border-style: none;
   height: 40px;
@@ -101,11 +105,12 @@ footer {
 }
 
 .modal__content {
+  border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 50vw;
-  margin: 15vh auto;
+  margin: 40vh auto;
   padding-bottom: 20px;
   background-color: white;
   box-shadow: 1px 1px 10px black;
@@ -149,6 +154,17 @@ footer {
   font-size: 1rem;
 }
 
+.modal__buttons-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal__buttons-container button {
+  width: 50%;
+  margin: 0 1rem;
+}
+
 .modal__footer {
   background-color: inherit;
   text-align: right;
@@ -176,6 +192,11 @@ td[id^="admin-user"] {
 #admin {
   text-align: center;
   padding: 0 auto;
+}
+
+button[id^='btn-delete-user']:disabled {
+  cursor: auto;
+  background: #d7dce1;
 }
 
 @media (min-width: 768px) {

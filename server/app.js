@@ -43,12 +43,12 @@ app.use(
 app.use('/login', loginRouter)
 app.use('/register', signupRouter)
 app.use('/error', errorRouter)
-app.use('/dashboard', dashboardRouter)
 
 // Rotas que só podem ser acessadas se autenticadas
 app.use('/admin', authLogin, adminRouter)
 app.use('/your-information', authLogin, yourInformationRouter)
 app.use('/logout', authLogin, logoutRouter)
+app.use('/dashboard', authLogin, dashboardRouter)
 //
 
 app.use('/', indexRouter)
