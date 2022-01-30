@@ -13,4 +13,12 @@ interessesServices.setUsuarioInteresse = async data => {
   return await UsuarioInteresse.create({ ...data })
 }
 
+interessesServices.destroyByUserId = async id => {
+  return await UsuarioInteresse.destroy({
+    where: {
+      usuario_id: id
+    }
+  })
+}
+
 module.exports = interessesServices

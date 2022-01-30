@@ -49,3 +49,8 @@ window.addEventListener('load', function () {
     if (colum.childNodes[1].value == 1) colum.childNodes[3].checked = true
   })
 })
+
+// Excluir linha do usuário selecionado
+const deleteUser = id => {
+  document.getElementById(`line-user-${id}`).remove()
+}

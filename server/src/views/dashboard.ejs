@@ -42,7 +42,7 @@
         </thead>
         <tbody>
           <% for (usuario of usuarios) { %>
-          <tr>
+          <tr id="line-user-<%= usuario.id %>">
             <td id="id-user<%= usuario.id %>"><%= usuario.id %></td>
             <td id="name-user<%= usuario.id %>"><%= usuario.nome %></td>
             <td id="email-user<%= usuario.id %>"><%= usuario.email %></td>
@@ -60,14 +60,24 @@
               >
                 edit
               </button>
-              <button
-                id="btn-delete-user<%= usuario.id %>"
-                type="button"
-                id="delete"
-                class="btn red"
-              >
-                delete
-              </button>
+              <form action="/dashboard/delete/<%= usuario.id %>" method="POST">
+                <input
+                  type="hidden"
+                  name="delete-user-<%= usuario.id%>"
+                  value="<%= usuario.id%>"
+                />
+                <button
+                  id="btn-delete-user<%= usuario.id %>"
+                  type="submit"
+                  id="delete"
+                  class="btn red"
+                  <% if(usuario.admin == 1){ %>
+                    disabled
+                  <%}%>  
+                >
+                  delete
+                </button>
+              </form>
             </td>
           </tr>
           <% } %>

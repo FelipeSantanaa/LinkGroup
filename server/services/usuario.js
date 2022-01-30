@@ -44,10 +44,10 @@ usuarioInterface.updateUser = async (id, values) => {
   })
 }
 
-usuarioInterface.destroyUser = async user => {
+usuarioInterface.destroyUser = async id => {
   return await Usuario.destroy({
     where: {
-      id: user.id
+      id
     }
   })
 }

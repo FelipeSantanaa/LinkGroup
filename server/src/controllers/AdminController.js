@@ -1,7 +1,7 @@
 const {
   setLink,
   getLinksByUserId,
-  deleteLink,
+  destroyLink,
   updateLink
 } = require('../../services/links')
 
@@ -92,7 +92,7 @@ const AdminController = {
     let { link_id } = await req.body
 
     try {
-      let deletion = await deleteLink(link_id)
+      let deletion = await destroyLink(link_id)
       console.log(deletion)
       res.redirect('./')
     } catch (e) {

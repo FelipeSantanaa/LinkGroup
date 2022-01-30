@@ -39,6 +39,10 @@ footer {
   padding-bottom: 1.5rem;
 }
 
+form {
+  display: inline-block;
+}
+
 .btn {
   border-style: none;
   height: 40px;
@@ -174,4 +178,9 @@ td[id^='admin-user'] {
 #admin {
   text-align: center;
   padding: 0 auto;
+}
+
+button[id^='btn-delete-user']:disabled {
+  cursor: auto;
+  background: #d7dce1;
 }

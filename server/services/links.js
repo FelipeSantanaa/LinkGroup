@@ -31,10 +31,18 @@ const linkInterface = {
     })
   },
 
-  deleteLink: async id => {
+  destroyLink: async id => {
     return await Link.destroy({
       where: {
         id
+      }
+    })
+  },
+
+  destroyLinkByUserId: async id => {
+    return await Link.destroy({
+      where: {
+        usuario_id: id
       }
     })
   }
