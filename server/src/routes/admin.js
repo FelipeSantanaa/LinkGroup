@@ -10,5 +10,6 @@ router.post('/update', AdminController.updateLink)
 router.get('/appearance', AdminController.appearance)
 router.get('/account', AdminController.account)
 router.post('/account/update', AdminController.updateDataUser)
+router.post('/appearance/update', AdminController.updateHeader)
 
 module.exports = router

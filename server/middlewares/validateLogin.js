@@ -4,7 +4,12 @@ const login = async (req, res, next) => {
     next()
   } catch (e) {
     console.log(e)
-    res.redirect('../login')
+    res.render('error', {
+      message:
+        'Parece que você não está logado. Para acessar essa página, faça o',
+      markup: 'login',
+      redirect: 'login'
+    })
   }
   return
 }

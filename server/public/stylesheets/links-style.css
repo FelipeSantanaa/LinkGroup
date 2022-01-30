@@ -8,60 +8,83 @@
   text-decoration: none;
 }
 
-html{
-    font-family: 'Karla', 'Roboto', sans-serif;
-    font-size: 16px;
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-main{
-    text-align: center;
+.container {
+  display: flex;
+  flex: 1 1 0;
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1.5rem 0.75rem;
+  width: 100%;
+}
+
+html {
+  font-family: 'Karla', 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+main {
+  text-align: center;
 }
 
 .user-image img {
-    border-radius: 50%;
-    height: 96px;
-    width: auto;
-    margin-top: 3rem;
+  border-radius: 50%;
+  height: 96px;
+  width: auto;
+  margin-top: 3rem;
 }
 
-.user-name{
-    padding-top: 15px;
+.user-name {
+  padding-top: 15px;
 }
 
-.user-links{
-    margin-top: 2rem;
-    text-align: -webkit-center;
+.user-name span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.user-links {
+  margin-top: 2rem;
+  text-align: -webkit-center;
 }
 
 .links {
-    display: flex;
-    position: relative;
-    width: 40%;
-    max-width: 100%;
-    min-width: 35%;
-    height: 3rem;
-    background-color: rgb(57, 224, 155);
-    border: 2px solid rgb(57, 224, 155);
-    margin-bottom: 20px;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    transition: cubic-bezier(0.08, 0.59, 0.29, 0.99) 0.25s;
+  display: flex;
+  position: relative;
+  max-width: 50%;
+  min-width: 35%;
+  height: 3rem;
+  background-color: rgb(57, 224, 155);
+  border: 2px solid rgb(57, 224, 155);
+  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: cubic-bezier(0.08, 0.59, 0.29, 0.99) 0.25s;
 }
 
-.links:hover{
-    background-color: white;
-    color: rgb(57, 224, 155);
+.links:hover {
+  background-color: white;
+  color: rgb(57, 224, 155);
 }
 
-footer{
-    text-align: center;
-    position:absolute;
-	bottom:0;
-	width:100%;
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  width: 100%;
 }
 
-.linktree-logo{
-    width: 100px;
-    height: auto;
+.linktree-logo {
+  width: 100px;
+  height: auto;
 }

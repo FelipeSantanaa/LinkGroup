@@ -295,6 +295,7 @@ ul {
   font-size: 1rem;
   font-weight: bold;
   height: 3rem;
+  width: 100%;
 }
 
 .button--newLink {
@@ -463,12 +464,28 @@ input[id^='url-link-']:disabled {
   background-color: var(--color-gray-light);
 }
 
+form[action='/admin/appearance/update'] {
+  position: relative;
+}
+
+#countLength {
+  position: absolute;
+  right: 0;
+  bottom: -0.8rem;
+  font-size: 0.7rem;
+}
+
 .input__profile {
   border: none;
   border-bottom: 1px solid var(--color-gray-light);
   margin-bottom: 1rem;
-  padding: 1rem 0;
+  padding: 0.5rem 0;
   width: 100%;
+}
+
+form[action='/admin/appearance/update'] input:focus,
+form[action='/admin/appearance/update'] textarea:focus {
+  outline: none;
 }
 
 .textarea__profile {

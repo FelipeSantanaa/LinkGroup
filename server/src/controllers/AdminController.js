@@ -5,11 +5,12 @@ const {
   updateLink
 } = require('../../services/links')
 
-const { updateUser } = require('../../services/usuario')
+const { updateUser, getUserById } = require('../../services/usuario')
 
 const AdminController = {
   index: async (req, res, next) => {
     let { usuario } = await req.cookies
+
     let links = await getLinksByUserId(usuario.id)
 
     res.render('admin', {
@@ -21,13 +22,19 @@ const AdminController = {
   },
 
   appearance: async (req, res, next) => {
-    let { usuario } = req.cookies
-    let links = await getLinksByUserId(usuario.id)
+    let { id } = await req.cookies.usuario
 
-    res.render('appearance', {
-      links,
-      usuario
-    })
+    try {
+      let links = await getLinksByUserId(id)
+      let usuario = await getUserById(id)
+
+      res.render('appearance', {
+        links,
+        usuario
+      })
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   account: (req, res, next) => {
@@ -99,8 +106,26 @@ const AdminController = {
 
     try {
       let update = await updateUser(id, dados)
-      console.log(update)
       res.redirect('../account')
+    } catch (e) {
+      console.log(e)
+    }
+  },
+
+  updateHeader: async (req, res, next) => {
+    let { title_profile, bio } = await req.body
+    let { id } = await req.cookies.usuario
+    let modificado_em = new Date()
+
+    let dados = {
+      titulo_perfil: title_profile,
+      bio,
+      modificado_em
+    }
+
+    try {
+      let update = await updateUser(id, dados)
+      res.redirect('../appearance')
     } catch (e) {
       console.log(e)
     }

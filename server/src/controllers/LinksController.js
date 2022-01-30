@@ -1,4 +1,5 @@
 const { getLinksByUsername } = require('../../services/links')
+const { getUserByUsername } = require('../../services/usuario')
 
 const LinksController = {
   index: async (req, res) => {
@@ -6,8 +7,9 @@ const LinksController = {
 
     try {
       const links = await getLinksByUsername(username)
+      const usuario = await getUserByUsername(username)
       res.render('links', {
-        username,
+        usuario,
         links
       })
     } catch (e) {

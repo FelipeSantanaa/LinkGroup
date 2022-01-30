@@ -2,7 +2,7 @@
 <aside class="aside">
   <section class="aside__profile">
     <span>My Linktree:</span>
-    <a class="a a--myLink" href="/<%= usuario.nome_usuario%>"
+    <a class="a a--myLink" href="/<%= usuario.nome_usuario%>" target="_blank"
       >https://linktr.ee/<%= usuario.nome_usuario%></a
     >
     <button id="button-share">Share</button>
@@ -13,7 +13,14 @@
         <span>
           <div class="device-header">
             <img src="/img/default-profile.png" alt="Foto de Perfil">
-            <span>@<%= usuario.nome_usuario%></span>
+            <span> 
+              <% if(usuario.titulo_perfil) { %> 
+              <%= usuario.titulo_perfil %> 
+              <% } else { %>
+              @<%= usuario.nome_usuario %>
+              <% } %>  
+          </span>
+            <p><%= usuario.bio %></p>
           </div>
         </span>
         <span>
@@ -179,6 +186,7 @@
     const form = document.querySelector(`#form${id} .form__link form`)
     form.innerHTML += `<button id="btn-update-link-${id}" class="btn btn__add form__button--update" type="submit" disabled>Save</button>`
 
+    // valida preenchimento das informações para habilitar botão Save
     validationEditionForm(id)
   }
   
@@ -187,8 +195,7 @@
     const inputTitle = document.getElementById(`title-link-${id}`),
     inputURL = document.getElementById(`url-link-${id}`),
     btnEdit = document.getElementById(`btn-edit-link-${id}`)
-    btnCancel = document.getElementById(`btn-cancel-link-${id}`),
-    form = document.querySelector(`#form${id} .form__link form`)
+    btnCancel = document.getElementById(`btn-cancel-link-${id}`)
 
     // desabilitando inputs
     inputTitle.disabled = true
@@ -251,19 +258,18 @@
     }, 1000);
   }
 
-  function sendUpdate(id){
-    const title = document.getElementById(`title-link-${id}`),
-     url = document.getElementById(`url-link-${id}`),
-     newTitle = document.getElementById(`new-title-link--${id}`),
-     newURL = document.getElementById(`new-url-link${id}`)
+  // Script para atualizar quantidade de caracteres do textArea - Route admin/appearance
+  function countLengthBio(){
+    const txtBio = document.getElementById('bio'),
+    small = document.getElementById('countLength')
 
-     newTitle.value = title.value
-     newURL.value = url.value
+    small.innerText = txtBio.value.length + '/80'
 
-     console.log(newTitle.value);
-     console.log(newURL.value)
-
+    txtBio.addEventListener('input', function(){
+      small.innerText = txtBio.value.length + '/80'
+    })
   }
+  countLengthBio()
 
 </script>
 </body>

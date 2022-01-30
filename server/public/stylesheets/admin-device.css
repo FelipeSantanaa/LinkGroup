@@ -45,19 +45,24 @@
   display: flex;
   flex-flow: column wrap;
   opacity: 1;
-  margin: 0.5rem auto;
+  margin: 0.75rem auto 1rem;
 }
 
 .device-header img {
   border-radius: 50%;
   display: block;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   width: 4rem;
 }
 
 .device-header span {
   font-size: 0.75rem;
   font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.device-header p {
+  font-size: 0.75rem;
 }
 
 /* CONTEÚDO */

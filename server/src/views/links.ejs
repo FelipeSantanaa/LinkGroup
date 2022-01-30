@@ -17,37 +17,44 @@
       href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,400&display=swap"
       rel="stylesheet"
     />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <div class="user-image">
+          <img src="/img/default-profile.png" alt="Imagem do usuário" />
+        </div>
+        <div class="user-name">
+          <span>
+            <% if (usuario.titulo_perfil) { %> <%= usuario.titulo_perfil %> <% }
+            else { %> @<%= username %> <% } %>
+          </span>
+          <p><%= usuario.bio %></p>
+        </div>
+
+        <% for (link of links ) { %>
+        <section class="user-links">
+          <a class="links" href="<%= link.url %>">
+            <p><%= link.nome %></p>
+          </a>
+        </section>
+        <% } %>
+      </main>
+
+      <footer>
+        <a href="/">
+          <img
+            class="linktree-logo"
+            src="svg/linktree-logo.svg"
+            alt="Logo Linktree"
+          />
+        </a>
+      </footer>
+    </div>
 
     <script
       type="text/javascript"
       src="https://code.jquery.com/jquery-1.4.3.min.js"
     ></script>
-  </head>
-  <body>
-    <main>
-      <div class="user-image">
-        <img src="/img/default-profile.png" alt="Imagem do usuário" />
-      </div>
-      <div class="user-name">
-        <p>@<%= username %></p>
-      </div>
-
-      <% for (link of links ) { %>
-      <section class="user-links">
-        <a class="links" href="<%= link.url %>">
-          <p><%= link.nome %></p>
-        </a>
-      </section>
-      <% } %>
-    </main>
   </body>
-  <footer>
-    <a href="/">
-      <img
-        class="linktree-logo"
-        src="svg/linktree-logo.svg"
-        alt="Logo Linktree"
-      />
-    </a>
-  </footer>
 </html>

@@ -15,7 +15,7 @@ usuarioInterface.getUserByEmail = async email => {
 }
 
 usuarioInterface.getUserById = async id => {
-  const user = await Usuario.findByPk({
+  const user = await Usuario.findOne({
     where: id
   })
 
