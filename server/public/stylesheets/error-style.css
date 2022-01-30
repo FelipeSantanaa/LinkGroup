@@ -19,10 +19,15 @@ header{
 }
 
 main {
-height: 100vh;
+height: 80vh;
 display: flex;
 justify-content: center;
 align-items: center;
+}
+
+a{
+    color:black;
+    font-weight: bold;   
 }
 
 .logo-linktree{
@@ -39,14 +44,6 @@ height: 300px;
 background: #fff;
 }
 
-
-/* .eyes-sadness{
-    opacity: 0.1;
-    position: relative;
-    margin-right: 22rem;
-    width: 300px;
-
-} */
 
 .content img{
     margin-right: 40px;
@@ -70,26 +67,4 @@ footer{
 
 footer img{
     margin-top: 10px;
-}
-
-@media screen and (max-width: 576px){
-    .sadness{
-        display: none;
-    }
-}
-
-@media screen and (min-width: 760px){
-
-}
-.sadness{
-    position: relative;
-    margin-left: 70rem;
-    width: 400px;
-    height: auto;
-    opacity: 0.1;
-    transition: cubic-bezier(0.08, 0.59, 0.29, 0.99) 1s;
-}
-
-.sadness:hover{
-    opacity: 0.5;
 }
