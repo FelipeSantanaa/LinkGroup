@@ -43,6 +43,9 @@ module.exports = (sequelize, DataTypes) => {
     Usuario.hasMany(models.Link, {
       foreignKey: "usuario_id"
     }),
+    Usuario.belongsTo(models.Plano, {
+      foreignKey: "plano_id"
+    }),
     Usuario.belongsToMany(models.Interesse, {
       through: models.UsuarioInteresse,
       foreignKey: "usuario_id"
