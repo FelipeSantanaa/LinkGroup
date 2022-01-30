@@ -9,16 +9,19 @@ const { updateUser, getUserById } = require('../../services/usuario')
 
 const AdminController = {
   index: async (req, res, next) => {
-    let { usuario } = await req.cookies
+    let { id } = await req.cookies.usuario
 
-    let links = await getLinksByUserId(usuario.id)
+    try {
+      let links = await getLinksByUserId(id)
+      let usuario = await getUserById(id)
 
-    res.render('admin', {
-      links,
-      usuario,
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin
-    })
+      res.render('admin', {
+        links,
+        usuario
+      })
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   appearance: async (req, res, next) => {
