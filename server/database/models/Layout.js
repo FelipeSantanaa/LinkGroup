@@ -23,5 +23,11 @@ module.exports = (sequelize, DataType) => {
     }
   )
 
+  Layout.associate = function(models){
+    Layout.hasMany(models.Usuario, {
+      foreignKey: "layout_id"
+    })
+  }
+
   return Layout
 }

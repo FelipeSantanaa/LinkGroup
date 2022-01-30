@@ -15,12 +15,12 @@ module.exports = (sequelize, DataType) => {
     }
   )
 
-  // Interesse.associate(models){
-  //   Interesse.belongsToMany(models.Usuario, {
-  //     foreignKey: "usuario_id",
-  //     through: models.UsuarioInteresse
-  //   })
-  // }
+  Interesse.associate = function(models) {
+    Interesse.belongsToMany(models.Usuarios, {
+      through: models.UsuarioInteresse,
+      foreignKey: "interesse_id"
+    })
+  }
 
   return Interesse
 }
