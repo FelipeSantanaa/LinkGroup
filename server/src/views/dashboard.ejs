@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <link rel="icon" href="https://d1nnwinjc04txl.cloudfront.net/favicon-32x32.png?v=530918d2c86b9dd11c4fde40fa99d1b4"
+    type="image/png">
+  <link rel="stylesheet" href="/stylesheets/dashboard.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <button type="button" class="btn blue mobile" id="cadastrarCliente" onclick="openModal()">New User</button>
+        <table class="records">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td>
+                    <td>Altair</td>
+                    <td>altair@gmail.com</td>
+                    <td>
+                        <button type="button" id="edit" class="btn green">edit</button>
+                        <button type="button" id="delete" class="btn red">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="modal" id="modal">
+            <div class="modal__content">
+                <header class="modal__header">
+                    <h2>New User</h2>
+                    <span class="modal__close" id="modalClose" onclick="closeModal()">&#10006;</span>
+                </header>
+                <form class="modal__form">
+                    <input type="text" class="modal__field" placeholder="Name">
+                    <input type="email" class="modal__field" placeholder="Email">
+                </form>
+                <footer class="modal__footer">
+                    <button id="save" class="btn green">Save</button>
+                    <button id="cancel" class="btn red">Cancel</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="/scripts/dashboard-script.js"></script>
+</body>
+
+</html>

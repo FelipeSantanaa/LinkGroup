@@ -40,6 +40,8 @@ button {
     cursor: pointer;
 }
 
+
+
 .logo {
     position: relative;
     top: 0px;
@@ -81,6 +83,10 @@ button {
     border-radius: 8px;
     background-color: rgb(248, 248, 248);
     color: var(--primary-color);
+}
+
+input:focus {
+    border-color: black;
 }
 
 .terms {

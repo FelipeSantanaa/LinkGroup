@@ -15,6 +15,7 @@ const loginRouter = require('./src/routes/login')
 const signupRouter = require('./src/routes/signup')
 const yourInformationRouter = require('./src/routes/your-information')
 const logoutRouter = require('./src/routes/logout')
+const dashboardRouter = require('./src/routes/dashboard')
 
 const app = express()
 
@@ -41,6 +42,7 @@ app.use(
 app.use('/', indexRouter)
 app.use('/login', loginRouter)
 app.use('/register', signupRouter)
+app.use('/dashboard', dashboardRouter)
 
 // Rotas que só podem ser acessadas se autenticadas
 app.use('/admin', authLogin, adminRouter)
