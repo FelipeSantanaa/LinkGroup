@@ -57,6 +57,7 @@
                 type="button"
                 id="edit"
                 class="btn green"
+                onclick="openModal('<%= usuario.id %>')"
               >
                 edit
               </button>
@@ -64,7 +65,7 @@
                 <input
                   type="hidden"
                   name="delete-user-<%= usuario.id%>"
-                  value="<%= usuario.id%>"
+                  value="<%= usuario.id%>"s
                 />
                 <button
                   id="btn-delete-user<%= usuario.id %>"
@@ -83,40 +84,7 @@
           <% } %>
         </tbody>
       </table>
-      <div class="modal" id="modal">
-        <div class="modal__content">
-          <header class="modal__header">
-            <h2>User</h2>
-            <span class="modal__close" id="modalClose" onclick="closeModal()"
-              >&#10006;</span
-            >
-          </header>
-          <form id="form" class="modal__form">
-            <input
-              type="text"
-              id="nome"
-              class="modal__field"
-              placeholder="Name"
-              required
-            />
-            <input
-              type="email"
-              id="email"
-              class="modal__field"
-              placeholder="Email"
-              required
-            />
-          </form>
-          <footer class="modal__footer">
-            <button id="save" class="btn green" onclick="saveUser()">
-              Save
-            </button>
-            <button id="cancel" class="btn red" onclick="closeModal()">
-              Cancel
-            </button>
-          </footer>
-        </div>
-      </div>
+      
     </main>
     <footer>
       <img src="/svg/linktree-logo.svg" alt="Linktree Logo" />
