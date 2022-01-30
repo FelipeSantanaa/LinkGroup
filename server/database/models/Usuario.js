@@ -39,5 +39,18 @@ module.exports = (sequelize, DataTypes) => {
     { tableName: 'usuarios', timestamps: false }
   )
 
+  Usuario.associate = function(models) {
+    Usuario.hasMany(models.Link, {
+      foreignKey: "usuario_id"
+    }),
+    Usuario.belongsTo(models.Plano, {
+      foreignKey: "plano_id"
+    }),
+    Usuario.belongsToMany(models.Interesse, {
+      through: models.UsuarioInteresse,
+      foreignKey: "usuario_id"
+    })
+  }
+
   return Usuario
 }

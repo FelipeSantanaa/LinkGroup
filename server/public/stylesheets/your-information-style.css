@@ -78,19 +78,28 @@ button {
 }
 
 .preferences__group {
+    display: flex;
+    flex-flow: row wrap;
     padding-top: 24px;
     padding-bottom: 24px;
 }
 
 .buttons__preferences {
     padding: 0px 8px;
-    margin-right: 8px;
-    margin-bottom: 12px;
     border-radius: 16px;
     color: rgb(38, 50, 56);
     background-color: rgb(218, 222, 224);
-    cursor: pointer;
+    padding: 0.5rem;
     transition: padding-right 0.1s linear 0s;
+}
+
+.preference__container {
+    margin-right: 8px;
+    margin-bottom: 12px;
+}
+
+.checked {
+    background-color: greenyellow;
 }
 
 .preferences {
@@ -98,10 +107,14 @@ button {
     font-weight: bold;
     line-height: 2;
     text-transform: uppercase;
+    cursor: pointer;
 }
 
-.input,
-.input:hover {
+.trigger-input {
+    display: none;
+}
+
+.input {
     width: 100%;
     height: 44px;
     margin-top: 8px;
@@ -109,8 +122,9 @@ button {
     padding: 16px 12px 24px 12px;
     border: none;
     border-radius: 8px;
-    background-color: rgb(248, 248, 248);
-    color: var(--primary-color);
+    background-color: rgb(218, 222, 224);
+    font-weight: bold;
+    color: rgb(174, 176, 177);
 }
 
 .recaptcha {
@@ -131,6 +145,10 @@ button {
     font-weight: 400;
     text-align: center;
     cursor: pointer;
+}
+
+.button__submit:disabled {
+    background-color: #ddd;
 }
 
 @media (min-width: 600px) {

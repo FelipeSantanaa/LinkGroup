@@ -11,9 +11,16 @@ module.exports = (sequelize, DataType) => {
     },
     {
       tableName: 'interesses',
-      timestamp: false
+      timestamps: false
     }
   )
+
+  Interesse.associate = function (models) {
+    Interesse.belongsToMany(models.Usuario, {
+      through: models.UsuarioInteresse,
+      foreignKey: 'interesse_id'
+    })
+  }
 
   return Interesse
 }

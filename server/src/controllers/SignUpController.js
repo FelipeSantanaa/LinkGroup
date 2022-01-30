@@ -6,6 +6,7 @@ const SignUpController = {
     return res.render('signup')
   },
 
+
   addUser: async (req, res, next) => {
     let user = {}
 
