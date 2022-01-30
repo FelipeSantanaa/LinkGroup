@@ -40,15 +40,17 @@
           </tr>
         </thead>
         <tbody>
+          <% for (usuario of usuarios) { %>
           <tr>
-            <td>1</td>
-            <td>Altair</td>
-            <td>altair@gmail.com</td>
+            <td><%= usuario.id %></td>
+            <td><%= usuario.nome %></td>
+            <td><%= usuario.email %></td>
             <td>
               <button type="button" id="edit" class="btn green">edit</button>
               <button type="button" id="delete" class="btn red">delete</button>
             </td>
           </tr>
+          <% } %>
         </tbody>
       </table>
       <div class="modal" id="modal">

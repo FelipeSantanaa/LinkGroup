@@ -1,8 +1,17 @@
+const { getUsers } = require('../../services/usuario')
+
 const DashboardController = {
-  index: (req, res) => {
-    return res.render("dashboard");
-  },
-};
+  index: async (req, res) => {
+    const { id } = req.cookies.usuario
+
+    try {
+      const usuarios = await getUsers()
+      return res.render('dashboard', { usuarios })
+    } catch (e) {
+      console.log(e)
+    }
+  }
+}
 
 // const { getAllUsuarios } = require("../../services/usuario");
 // const DashboardController = {
@@ -14,4 +23,4 @@ const DashboardController = {
 //   },
 // };
 
-module.exports = DashboardController;
+module.exports = DashboardController
