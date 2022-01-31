@@ -119,6 +119,7 @@ form {
   font-size: 13px;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .input-field input {
@@ -189,11 +190,9 @@ form .input-field:first-child {
   color: white;
 }
 
-
 .btn-position {
   text-align: -webkit-center;
 }
-
 
 .end-buttons {
   display: block;
@@ -217,7 +216,6 @@ form .input-field:first-child {
   flex-direction: column;
   border-radius: 15px;
 }
-
 
 .footer-information,
 .name-information,
@@ -255,7 +253,7 @@ form .input-field:first-child {
   }
 
   .user-image {
-     border-radius: 50%;
+    border-radius: 50%;
     width: 2.75rem;
     height: auto;
     margin-bottom: 10px;
@@ -292,8 +290,7 @@ form .input-field:first-child {
     display: flex;
     flex-flow: row nowrap;
     max-height: 100%;
-    padding-right: 1rem;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
   }
 
@@ -303,7 +300,7 @@ form .input-field:first-child {
     margin-left: 0.5rem;
   }
 
-  .logo-linktree{
+  .logo-linktree {
     margin: 0;
     margin-top: 10px;
   }
