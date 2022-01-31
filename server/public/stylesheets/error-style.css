@@ -1,0 +1,71 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  font-family: 'Karla', 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+header {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+main {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+
+.logo-linktree {
+  height: 20px;
+  width: 85px;
+}
+
+.content {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: min-content;
+  height: 300px;
+  background: #fff;
+}
+
+.content img {
+  margin-right: 40px;
+}
+
+.content p {
+  padding-top: 70px;
+}
+
+.underline-link {
+  text-decoration: underline black 2px;
+}
+
+footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer img {
+  margin-top: 10px;
+}

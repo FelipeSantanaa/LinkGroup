@@ -1,0 +1,310 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+}
+
+body,
+html {
+  font-family: 'Karla', 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: rgb(248, 248, 248);
+  text-align: left;
+  min-height: 100vh;
+  max-height: 100vw;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+main {
+  max-width: 768px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+header {
+  width: 100%;
+}
+
+/* ATÉ DESK */
+
+@media screen and (max-width: 768px) {
+  .side-header-container {
+    display: none;
+  }
+
+  .header-container {
+    background-color: white;
+    height: 48px;
+    z-index: 1;
+    border-bottom: 1px solid #d7dce1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .items-nav-right {
+    display: flex;
+  }
+
+  .items-nav-right > a {
+    padding-left: 15px;
+  }
+
+  .logo-linktree {
+    margin-left: 10px;
+    display: flex;
+  }
+
+  .right-header {
+    right: auto;
+  }
+
+  .side-header {
+    text-align: right;
+    align-items: flex-end;
+  }
+}
+
+main h1 {
+  margin-top: 64px;
+  margin-bottom: 64px;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* PRIMEIRO FORM */
+
+.container h2 {
+  font-size: 20px;
+  padding-bottom: 1rem;
+}
+
+form {
+  padding: 15px;
+  padding-bottom: 25px;
+}
+
+.form-account {
+  background-color: #fff;
+  margin-bottom: 2rem;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.input-field label {
+  font-size: 13px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.input-field input {
+  font-size: 0.9rem;
+  color: gray;
+  background: none;
+}
+
+.input-field input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+form .input-field:first-child {
+  margin-bottom: 1.5rem;
+}
+
+.input-field .underline::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.input-field .underline::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+  background: green;
+  transition: all 0.3s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.input-field input:focus ~ .underline::after {
+  transform: scaleX(1);
+}
+
+/* BOTOES  */
+
+.btn {
+  font-size: 15px;
+  margin: 2rem 0;
+  padding: 0.4rem;
+  cursor: pointer;
+  border-radius: 10px;
+  max-width: 100%;
+  width: 90%;
+  height: 3rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.btn-white {
+  border: 2px black solid;
+  background-color: white;
+}
+
+.btn-purple {
+  background-color: #7c41ff;
+  color: white;
+}
+
+
+.btn-position {
+  text-align: -webkit-center;
+}
+
+
+.end-buttons {
+  display: block;
+  text-align: -webkit-center;
+}
+
+/* HOVER BOTOES  */
+.btn-white:hover {
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.btn-purple:hover {
+  background-color: #8a58f5;
+}
+
+/* SEGUNDO FORM */
+
+.form-information {
+  background-color: #fff;
+  flex-direction: column;
+  border-radius: 15px;
+}
+
+
+.footer-information,
+.name-information,
+.plan-information,
+.admin-information {
+  border-bottom: 0.5px rgb(206, 206, 206) solid;
+  padding: 1rem;
+}
+
+.image-information {
+  width: 54px;
+  position: absolute;
+  display: none;
+}
+
+.image-information img {
+  border-radius: 50px;
+}
+
+/* TABLET */
+
+@media screen and (min-width: 768px) {
+  main {
+    margin-left: 5rem;
+    margin-right: 2rem;
+    padding: 4rem 0;
+  }
+
+  main h1 {
+    margin-top: 0;
+  }
+
+  .header-container {
+    display: none;
+  }
+
+  .user-image {
+     border-radius: 50%;
+    width: 2.75rem;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .side-header-container {
+    background-color: white;
+    height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+    width: 64px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #d7dce1;
+
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .side-items-nav-down {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  .side-items-nav-down > a {
+    padding-bottom: 15px;
+  }
+
+  .end-buttons {
+    display: flex;
+    flex-flow: row nowrap;
+    max-height: 100%;
+    padding-right: 1rem;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .btn-white,
+  .btn-purple {
+    width: auto;
+    margin-left: 0.5rem;
+  }
+
+  .logo-linktree{
+    margin: 0;
+    margin-top: 10px;
+  }
+}

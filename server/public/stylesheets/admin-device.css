@@ -1,0 +1,119 @@
+:root {
+  --bkg-device-content: rgb(57, 224, 155);
+  --white: rgb(255, 255, 255);
+}
+
+.device-container {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  height: 90vh;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.device-body {
+  height: 432px;
+  position: relative;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.device-body--background {
+  border-radius: 2%;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 96px 96px 0px;
+}
+
+.device-body::after {
+  background-image: url('https://d1nnwinjc04txl.cloudfront.net/static/device-deee8c126310b52fd50ed2fdb21ba2cd.png');
+  background-repeat: round;
+  content: '';
+  inset: -1.8% -5.6%;
+  position: absolute;
+  z-index: -1;
+}
+
+/* HEADER */
+
+.device-header {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: column wrap;
+  opacity: 1;
+  margin: 0.75rem auto 1rem;
+}
+
+.device-header img {
+  border-radius: 50%;
+  display: block;
+  margin-bottom: 0.75rem;
+  width: 4rem;
+}
+
+.device-header span {
+  font-size: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 0.2rem;
+}
+
+.device-header p {
+  font-size: 0.75rem;
+}
+
+/* CONTEÚDO */
+
+.bio {
+  padding: 0.1rem;
+  text-align: center;
+}
+
+.device-content {
+  border: 2px solid var(--bkg-device-content);
+  background: var(--bkg-device-content);
+  display: flex;
+  justify-content: center;
+  height: auto;
+  margin: 0 auto 0.5rem;
+  width: 173px;
+  transition: box-shadow 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
+    color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
+    border-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
+    transform 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s,
+    background-color 0.25s cubic-bezier(0.08, 0.59, 0.29, 0.99) 0s;
+}
+
+.device-content:hover {
+  background: var(--white);
+}
+
+.device-content > a {
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-align: center;
+  width: 100%;
+}
+
+.device-content:hover > a {
+  color: var(--bkg-device-content);
+}
+
+/* FOOTER */
+
+.device-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  bottom: 1rem;
+  position: absolute;
+  width: 100%;
+}
+
+.device-footer img {
+  width: 4rem;
+}

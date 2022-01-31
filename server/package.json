@@ -1,0 +1,25 @@
+{
+  "name": "linkgroup",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.14.1"
+  },
+  "devDependencies": {
+    "bcryptjs": "^2.4.3",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "nodemon": "^2.0.13",
+    "sequelize-cli": "^6.4.1"
+  }
+}

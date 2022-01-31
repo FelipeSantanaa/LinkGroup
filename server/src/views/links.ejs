@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= usuario.nome_usuario %> | Linktree&trade;</title>
+    <link
+      rel="icon"
+      href="https://d1nnwinjc04txl.cloudfront.net/favicon-32x32.png?v=530918d2c86b9dd11c4fde40fa99d1b4"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="/stylesheets/links-style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <main>
+        <div class="user-image">
+          <img src="/img/default-profile.png" alt="Imagem do usuário" />
+        </div>
+        <div class="user-name">
+          <span>
+            <% if (usuario.titulo_perfil) { %> <%= usuario.titulo_perfil %> <% }
+            else { %> @<%= usuario.nome_usuario %> <% } %>
+          </span>
+          <p><%= usuario.bio %></p>
+        </div>
+
+        <% for (link of links ) { %>
+        <section class="user-links">
+          <a class="links" href="<%= link.url %>" target="_blank">
+            <p><%= link.nome %></p>
+          </a>
+        </section>
+        <% } %>
+      </main>
+
+      <footer>
+        <a href="/">
+          <img
+            class="linktree-logo"
+            src="svg/linktree-logo.svg"
+            alt="Logo Linktree"
+          />
+        </a>
+      </footer>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.4.3.min.js"
+    ></script>
+  </body>
+</html>

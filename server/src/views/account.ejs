@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Account</title>
+  <link rel="icon" href="https://d1nnwinjc04txl.cloudfront.net/favicon-32x32.png?v=530918d2c86b9dd11c4fde40fa99d1b4"
+    type="image/png">
+  <link rel="stylesheet" href="/stylesheets/myaccount-style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.4.3.min.js"></script>
+</head>
+
+<header>
+  <div class="header-container">
+
+    <a href=""><img class="logo-linktree" src="/svg/footer-linktree.svg" alt="Linktree"></a>
+
+    <div class="items-nav-right">
+      <a href=""><img class="side-header" src="/svg/menu-interrogation.svg" alt="Suporte"></a>
+      <a href=""><img class="side-header" src="/svg/loudspeaker.svg" alt="Menu"></a>
+    </div>
+  
+  </div>
+
+  <!-- SIDE HEADER -->
+  <div class="side-header-container"> 
+
+    <a href=""><img class="logo-linktree" src="/svg/footer-linktree.svg" id="logo-linktree-color" alt="Linktree"></a>
+
+    <div class="side-items-nav-down">
+      <a href=""><img class="side-side-header" src="/svg/menu-interrogation.svg" alt="Suporte"></a>
+      <a href=""><img class="side-side-header" src="/svg/loudspeaker.svg" alt="Menu"></a>
+
+
+      <div class="side-user-image">
+        <a href="/admin"><img class="user-image" src=
+          "https://assets.production.linktr.ee/e2c242d8d3dfb2784986b905a963c99417eff1e5/images/default_profile_picture.png" 
+           alt="userImage"> </a>
+
+      </div>
+    </div>
+
+  </div>
+
+
+</header>
+
+<body>
+  <main class="container">
+    <h1> My account</h1>
+
+    <h2>My information</h2>
+    <div class="form-account">
+      <form action="account/update" method="POST">
+        <div class="input-field">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name" placeholder="<%= usuario.nome %>" value="<%= usuario.nome %>">
+          <div class="underline"></div>
+        </div>
+        <div class="input-field">
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email" placeholder="<%= usuario.email %>" value="<%= usuario.email %>">
+          <div class="underline"></div>
+        </div>
+        <div class="btn-position">
+          <input id="save-details" class="btn" type="submit" value="Save details" disabled>
+        </div>
+      </form>
+    </div>
+    
+    
+
+    <!-- SEGUNDO FORM -->
+    <h2> Current account</h2>
+
+    <article class="form-information">
+
+      <div class="container-information">
+
+        <div class="image-information">
+          <img
+            src="https://assets.production.linktr.ee/41396133d10fccc5d7373d3e195a49259d3bef62/images/default_profile_picture.png"
+            alt="">
+        </div>
+
+        <div class="name-information">
+          <h4>@<%= usuario.nome_usuario %></h4>
+        </div>
+
+        <div class="plan-information">
+          <h3>Plan</h3>
+          <h4>@plan</h4>
+        </div>
+
+        <div class="admin-information">
+          <h3>Admins <a
+              href="https://linktr.ee/help/linktree-ff524ba1864c/en?_ga=2.167259390.136062125.1635785704-166452941.1628812126"
+              target="_blank"> ? </a></h3>
+        </div>
+
+        <div class="footer-information">
+          <span>Upgrade this account to Linktree PRO to give other users access to manage it</span>
+        </div>
+
+      </div>
+
+      <div class="end-buttons">
+
+        <div>
+          <input class="btn btn-white" type="submit" value="Links">
+        </div>
+
+        <div>
+          <input class="btn btn-white" type="submit" value="Appearence">
+        </div>
+
+        <div>
+          <input class="btn btn-white" type="submit" value="Settings">
+        </div>
+
+        <div>
+          <input class="btn btn-purple" type="submit" value="Upgrade to Linktree PRO">
+        </div>
+
+      </div>
+
+    </article>
+
+    <!-- <article class="actions-account">
+      <h1>Account actions for @<%= usuario.nome_usuario %></h1>
+
+      <div class="btn-position reset-password">
+        <div>
+          <input class="btn btn-reset-password" type="submit" value="Reset password">
+        </div>
+      </div>
+
+    </article> -->
+
+    <!-- <article class="danger-zone">
+      <h1>Danger Zone</h1>
+      <div class="btn-position reset-password">
+        <div>
+          <input onclick="" class="btn btn-danger-zone" type="submit" value="Delete account">
+        </div>
+      </div>
+    </article> -->
+
+    </div>
+  </main>
+
+<script>
+  window.addEventListener('load', function(){
+
+    const name = document.getElementById('name')
+    const email = document.getElementById('email')
+    const btnSaveDetails = document.getElementById('save-details')
+    
+    name.addEventListener('focus', function(){
+      btnSaveDetails.style.background = '#7c41ff'
+      btnSaveDetails.style.color = '#fff'
+      btnSaveDetails.disabled = false
+    })
+
+    email.addEventListener('focus', function(){
+      btnSaveDetails.style.background = '#7c41ff'
+      btnSaveDetails.style.color = '#fff'
+      btnSaveDetails.disabled = false
+    })
+    
+
+  })
+</script>
+
+</body>
+
+</html>

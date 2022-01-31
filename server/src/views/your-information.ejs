@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Linktree</title>
+    <link rel="stylesheet" href="/stylesheets/your-information-style.css" />
+  </head>
+
+  <body>
+    <main>
+      <a href="/">
+        <img class="logo" src="svg/linktree-logo.svg" alt="Logo do Linktree" />
+      </a>
+      <div class="container">
+        <div class="container__title">
+          <span class="container__title--item">Tell us about yourself</span>
+          <p class="subtitle__item">for a personalized Linktree experience</p>
+        </div>
+        <form action="/your-information" method="POST">
+          <span class="subtitle">Tell us your name</span>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="input"
+            disabled
+            value="<%= usuario.nome %>"
+          />
+          <span class="subtitle">Tell us about yourself</span>
+          <span class="subtitle__item"
+            >Select up to 3 categories that best describe your Linktree.</span
+          >
+          <span class="subtitle__item">
+            We'll customize your Linktree experience based on what you
+            select</span
+          >
+          <div class="preferences__group">
+            <% for (interesse of interesses) { %>
+            <div class="preference__container" onclick="verificarChecks()">
+              <input
+                type="checkbox"
+                id="<%= interesse.id %>"
+                name="interesses"
+                class="trigger-input"
+                value="<%= interesse.id %>"
+              />
+              <label
+                class="preferences buttons__preferences"
+                for="<%= interesse.id %>"
+                ><%= interesse.interesse %></label
+              >
+            </div>
+            <% } %>
+          </div>
+          <button disabled type="submit" id="submit" class="button__submit">
+            Continue
+          </button>
+        </form>
+      </div>
+    </main>
+    <aside>
+      <img
+        src="img\your-information-banner.png"
+        alt="Banner demonstrativo de um perfil no Linktree"
+        class="banner"
+      />
+    </aside>
+
+    <script>
+      function verificarChecks() {
+        const elementos = document.querySelectorAll('.trigger-input')
+        const div = document.querySelectorAll('.buttons__preferences')
+        const submit = document.getElementById('submit')
+        let selecionados = 0
+        // let e_sel = []
+        for (i = 0; i < elementos.length; i++) {
+          if (elementos[i].checked) {
+            div[i].classList.toggle('checked')
+            // e_sel.push(elementos[i])
+            selecionados++
+          }
+          if (selecionados == 3) {
+            submit.disabled = false
+          } else {
+            submit.disabled = true
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
