@@ -156,7 +156,6 @@ const enableButtonSave = () => {
       !email.value.length > 0 ||
       !username.value.length > 0
     ) {
-      console.log(name.value.length)
       button.disabled = true
       button.style.backgroundColor = '#d7dce1'
       button.style.cursor = 'default'
