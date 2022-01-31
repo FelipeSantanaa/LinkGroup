@@ -54,6 +54,10 @@ footer {
   width: 1rem;
 }
 
+.excluir {
+  border: none;
+}
+
 .action {
   display: flex;
   align-items: center;
