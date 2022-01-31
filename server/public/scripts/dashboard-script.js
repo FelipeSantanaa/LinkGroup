@@ -19,7 +19,7 @@ const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
             <small>Name</small>
               <input
               type="text"
-              id="name"
+              id="input-name"
               name="name"
               class="input__profile"
               placeholder="Name"
@@ -29,7 +29,7 @@ const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
             <small>Email</small>
             <input
               type="email"
-              id="email"
+              id="input-email"
               name="email"
               class="input__profile"
               placeholder="Email"
@@ -41,7 +41,7 @@ const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
           <small>Username</small>
           <input
             type="text"
-            id="username"
+            id="input-username"
             name="username"
             class="input__profile"
             placeholder="User name"
@@ -53,7 +53,7 @@ const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
               class="input__profile"
               type="text"
               name="title_profile"
-              id="title_profile"
+              id="input-title_profile"
               placeholder="Profile Title"
               value="${titulo_perfil}"
             />
@@ -61,7 +61,7 @@ const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
             <textarea
               class="textarea__profile"
               name="bio"
-              id="bio"
+              id="input-bio"
               cols="30"
               rows="2"
               maxlength="80"
@@ -72,7 +72,7 @@ ${bio}</textarea
             <small id="countLength"></small>
         </div>
       
-      <input type="hidden" name="id" value="${id}">
+      <input type="hidden" id="input-id" name="id" value="${id}">
       <div class="modal__buttons-container">
         <button id="save" class="btn purple">
           Save
@@ -85,7 +85,8 @@ ${bio}</textarea
   </div>
 </div>`
   table.insertAdjacentHTML('afterend', modal)
-  countLengthBio()
+  // countLengthBio()
+  enableButtonSave()
 }
 
 // Fecha modal
@@ -140,6 +141,31 @@ window.addEventListener('load', function () {
 // Excluir linha do usuário selecionado
 const deleteUser = id => {
   document.getElementById(`line-user-${id}`).remove()
+}
+
+// Script para ouvir a mudança dos inputs de preenchimento obrigatório na edição do usuário e habilitar botão save
+const enableButtonSave = () => {
+  const button = document.getElementById('save'),
+    name = document.getElementById('input-name'),
+    email = document.getElementById('input-email'),
+    username = document.getElementById('input-username')
+
+  setInterval(() => {
+    if (
+      !name.value.length > 0 ||
+      !email.value.length > 0 ||
+      !username.value.length > 0
+    ) {
+      console.log(name.value.length)
+      button.disabled = true
+      button.style.backgroundColor = '#d7dce1'
+      button.style.cursor = 'default'
+    } else {
+      button.disabled = false
+      button.style.backgroundColor = '#7c41ff'
+      button.style.cursor = 'pointer'
+    }
+  }, 1000)
 }
 
 function countLengthBio() {
