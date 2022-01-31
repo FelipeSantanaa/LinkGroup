@@ -310,6 +310,16 @@ form[action="/admin/appearance/update"] textarea:focus {
   font-weight: bold;
 }
 
+.admin {
+  align-items: center;
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+label {
+  margin-left: 0.25rem;
+}
+
 .modal__footer {
   background-color: inherit;
   text-align: right;
