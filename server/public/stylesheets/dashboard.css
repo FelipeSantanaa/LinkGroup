@@ -7,14 +7,31 @@
 :root {
   --shadow-color: #ccc;
   --text-color: #fff;
+  --color-blue: #3778ff;
+  --color-gray-light: #d7dce1;
+  --color-gray-light-2: #f3f3f3;
+  --color-gray: #666;
+  --color-gray-dark: #222c36;
+  --color-green: #00d775;
+  --color-purple: #4f29cc;
+  --color-purple-light: #7c41ff;
+  --color-purple-light-2: #a071ff;
+  --color-white: #fff;
 }
 
 body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'karla', sans-serif;
+  font-family: "karla", sans-serif;
   position: relative;
+}
+
+.email {
+  width: 90px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 td {
@@ -34,6 +51,7 @@ main {
 
 .records th {
   background-color: rgb(57, 224, 155);
+  color: var(--color-white)
 }
 
 .records th,
@@ -95,6 +113,10 @@ form {
   background-color: #ff4949;
 }
 
+.purple {
+  background-color: var(--color-purple);
+}
+
 .green-svg {
   fill: rgb(57 224 155);
   stroke: rgb(57 224 155);
@@ -105,6 +127,107 @@ form {
   stroke: #ff4949;
 }
 
+/* Form do Modal */
+
+.appearance {
+  background-color: var(--color-gray-light-2);
+  height: 100%;
+  padding: 3rem 1rem 0 1rem;
+}
+
+.appearance__container {
+  background-color: var(--color-white);
+  color: var(--color-gray);
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.profile__content {
+  display: flex;
+  flex-flow: row nowrap;
+  padding-bottom: 1rem;
+}
+
+.profile__content img {
+  border-radius: 50%;
+  width: 7rem;
+  height: 7rem;
+}
+
+.profile__content div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  margin-left: 1rem;
+  width: 100%;
+}
+
+.button__remove {
+  background-color: var(--color-gray-light-2);
+  color: var(--color-gray-dark);
+}
+
+.button__remove:hover {
+  background-color: var(--color-gray-light);
+}
+
+small {
+  font-weight: bold;
+}
+
+form[action="/admin/appearance/update"] {
+  position: relative;
+}
+
+#countLength {
+  position: absolute;
+  right: 0;
+  bottom: -0.8rem;
+  font-size: 0.7rem;
+}
+
+.input__profile {
+  border: none;
+  border-bottom: 1px solid var(--color-gray-light);
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+form[action="/admin/appearance/update"] input:focus,
+form[action="/admin/appearance/update"] textarea:focus {
+  outline: none;
+}
+
+.textarea__profile {
+  border: 1px solid var(--color-gray-light);
+  border-radius: 0.25rem;
+  margin-top: 0.25rem;
+  padding: 0.5rem 0.725rem;
+  text-align: justify;
+  resize: vertical;
+  width: 100%;
+}
+
+.article {
+  margin-top: 2rem;
+}
+
+.div__theme {
+  padding: 0.5rem;
+}
+
+.div__theme img {
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.div__theme p {
+  text-align: center;
+}
+
+/* Fim do form Modal */
+
 .modal {
   position: fixed;
   top: 0;
@@ -114,6 +237,9 @@ form {
   background: #00000090;
   opacity: 0;
   z-index: -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal.active {
@@ -125,9 +251,6 @@ form {
   border-radius: 0.3rem;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  width: 90vw;
-  margin: 40vh auto;
   padding-bottom: 20px;
   background-color: white;
   box-shadow: 1px 1px 10px black;
@@ -141,6 +264,10 @@ form {
   background-color: rgb(57 224 155);
   line-height: 40px;
   font-size: 1rem;
+}
+
+.modal__header h2 {
+  color: var(--color-white)
 }
 
 .modal__close {
@@ -194,13 +321,13 @@ form {
   text-align: left;
 }
 
-img[src='/svg/linktree-logo.svg'] {
+img[src="/svg/linktree-logo.svg"] {
   height: 20px;
   width: 85px;
 }
 
-td[id^='id-user'],
-td[id^='admin-user'] {
+td[id^="id-user"],
+td[id^="admin-user"] {
   text-align: center;
   padding: 0;
 }
@@ -211,19 +338,24 @@ td[id^='admin-user'] {
   padding: 0 auto;
 }
 
-button[id^='btn-delete-user']:disabled svg {
+button[id^="btn-delete-user"]:disabled svg {
   cursor: default;
 }
 
-button[id^='btn-delete-user']:disabled svg path {
+button[id^="btn-delete-user"]:disabled svg path {
   fill: #d7dce1;
   stroke: #d7dce1;
 }
 
+@media (min-width: 600px){
+  .modal__content {
+    width: 80vw;
+    gap: 20px;
+  }
+}
+
 @media (min-width: 768px) {
   main {
-    box-shadow: 2px 2px 10px #ccc;
-    margin: 5vh auto;
     padding: 50px;
     width: 90%;
   }
@@ -246,8 +378,18 @@ button[id^='btn-delete-user']:disabled svg path {
     text-align: center;
   }
 
+  .email {
+    width: unset;
+    overflow: inherit;
+  }
+
   .modal__content {
     width: 50vw;
-    margin: 40vh auto;
+  }
+}
+
+@media (min-width: 850px) {
+  main {
+    box-shadow: 2px 2px 10px #ccc;
   }
 }
