@@ -71,6 +71,7 @@ header {
   }
 
   .logo-linktree {
+    margin-left: 10px;
     display: flex;
   }
 
@@ -188,10 +189,6 @@ form .input-field:first-child {
   color: white;
 }
 
-.btn-reset-password {
-  background-color: #3d444b;
-  color: white;
-}
 
 .btn-position {
   text-align: -webkit-center;
@@ -204,7 +201,6 @@ form .input-field:first-child {
 }
 
 /* HOVER BOTOES  */
-.btn-reset-password:hover,
 .btn-white:hover {
   background-color: rgb(37, 37, 37);
   color: white;
@@ -216,26 +212,12 @@ form .input-field:first-child {
 
 /* SEGUNDO FORM */
 
-.reset-password,
 .form-information {
   background-color: #fff;
   flex-direction: column;
   border-radius: 15px;
 }
 
-.actions-account {
-  display: flex;
-  flex-direction: column;
-}
-
-.actions-account > div {
-  margin-top: 0px;
-}
-
-.actions-account h1 {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
 
 .footer-information,
 .name-information,
@@ -317,5 +299,10 @@ form .input-field:first-child {
   .btn-purple {
     width: auto;
     margin-left: 0.5rem;
+  }
+
+  .logo-linktree{
+    margin: 0;
+    margin-top: 10px;
   }
 }
