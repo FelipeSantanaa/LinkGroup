@@ -64,7 +64,8 @@ const AdminController = {
       url,
       usuario_id,
       criado_em: new Date(),
-      modificado_em: new Date()
+      modificado_em: new Date(),
+      plano_id: 1
     }
 
     try {
