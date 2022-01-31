@@ -44,7 +44,7 @@ const openModal = (nome, email) => {
 
 // Fecha modal
 const closeModal = () => {
-  document.getElementById('modal').classList.remove('active')
+  document.querySelector('.modal.active').remove()
   clearFields()
 }
 
