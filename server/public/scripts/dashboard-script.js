@@ -1,6 +1,14 @@
 // Abre modal
 
-const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
+const openModal = (
+  nome,
+  email,
+  titulo_perfil,
+  bio,
+  nome_usuario,
+  id,
+  user_admin
+) => {
   const table = document.querySelector('table')
   const modal = `<div class="modal active" id="modal">
   <div class="modal__content">
@@ -37,6 +45,16 @@ const openModal = (nome, email, titulo_perfil, bio, nome_usuario, id) => {
               required
             />
             </div>
+          </div>
+          <div class="admin">
+            <input
+              type="checkbox"
+              id="is_admin"
+              name="admin"
+              value="${admin}"
+              onChange="tornarAdmin()"
+            />
+            <label for="is_admin"><small>Administrador</small></label>
           </div>
           <small>Username</small>
           <input
@@ -85,8 +103,22 @@ ${bio}</textarea
   </div>
 </div>`
   table.insertAdjacentHTML('afterend', modal)
-  // countLengthBio()
+  // countLengthBio();
   enableButtonSave()
+
+  const is_admin = document.querySelector('#is_admin')
+  if (user_admin == 1) {
+    is_admin.checked = true
+  }
+}
+
+// Monitora checkbox Administrador e altera seu value
+const tornarAdmin = () => {
+  if (is_admin.checked) {
+    is_admin.value = 1
+  } else {
+    is_admin.value = 0
+  }
 }
 
 // Fecha modal
@@ -104,6 +136,23 @@ const isValid = () => {
 const clearFields = () => {
   const fields = document.querySelectorAll('.modal__field')
   fields.forEach(fields => (fields.value = ''))
+}
+
+// // Capturando e enviando inputs
+// const saveUser = () => {
+//   if (isValid) {
+//     const user = {
+//       nome: document.getElementById('name').value,
+//       email: document.getElementById('email').value
+//     }
+//     console.log(user)
+//     closeModal()
+//   }
+// }
+
+// Função para abrir o modal já com os campos preenchidos
+const fillFields = user => {
+  document.getElementById('name').value, document.getElementById('email').value
 }
 
 // Edição o usuário, onde a função fillFields será passada

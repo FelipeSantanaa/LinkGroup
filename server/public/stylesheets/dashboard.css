@@ -66,7 +66,7 @@ main {
 footer {
   display: flex;
   justify-content: center;
-  padding-bottom: 1.5rem;
+  padding: 1.5rem;
 }
 
 .icons {
@@ -317,6 +317,16 @@ form[action='/admin/appearance/update'] textarea:focus {
   font-weight: bold;
 }
 
+.admin {
+  align-items: center;
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+label {
+  margin-left: 0.25rem;
+}
+
 .modal__footer {
   background-color: inherit;
   text-align: right;
@@ -404,5 +414,6 @@ div.action button {
 @media (min-width: 850px) {
   main {
     box-shadow: 2px 2px 10px #ccc;
+    margin-top: 1.5rem;
   }
 }
