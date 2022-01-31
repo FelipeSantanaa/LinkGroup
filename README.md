@@ -42,6 +42,11 @@ npx sequelize-cli db:create
 npx sequelize-cli db:migrate
 ~~~~
 
+Após criar o Banco de dados, usaremos o seguinte comando para popular as tabelas:
+~~~sql
+npx sequelize-cli db:seed:all
+~~~
+
 ## ☕ Usando o Linkgroup
 
 Para iniciar o Linkgroup, siga estas etapas:
