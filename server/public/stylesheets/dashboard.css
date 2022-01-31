@@ -307,6 +307,7 @@ form[action="/admin/appearance/update"] textarea:focus {
 .modal__buttons-container button {
   width: 50%;
   margin: 0 1rem;
+  font-weight: bold;
 }
 
 .modal__footer {
