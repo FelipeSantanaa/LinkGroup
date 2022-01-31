@@ -1,8 +1,8 @@
 # Linkgroup
 
-<img id='topo' src="exemplo-image.png" alt="exemplo imagem">
+<img id='topo' src="https://logodownload.org/wp-content/uploads/2019/09/linktree-logo.png" alt="Página admin">
 
-> Seja bem vindo(a) ao nosso projeto! Nós desenvolvemos uma cópia do [Linktree](https://linktr.ee/). Nesse projeto, nós desenvolvemos a maioria das funcionalidades do site e também o front-end por completo! =D
+ Seja bem vindo(a) ao nosso projeto! Nós desenvolvemos uma cópia do [Linktree](https://linktr.ee/). Nesse projeto, nós desenvolvemos a maioria das funcionalidades do site e também o front-end por completo! =D
 
 ### Ajustes e melhorias
 
@@ -16,25 +16,23 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
-<!---Estes são apenas requisitos de exemplo. Adicionar, duplicar ou remover conforme necessário--->
-* Você instalou a versão mais recente de `<NodeJS e a versão mais recente do NPM(Node Package Manager)>`
 * Você tem uma máquina `<Windows / Linux / Mac>`.
+* Você instalou a versão mais recente de `<NodeJS e a versão mais recente do NPM(Node Package Manager)>`
+* Você tem a versão mais recente do `<MySQL Workbench>`.
 * Você clonou o projeto `<utilizando o GIT Clone>`.
 
 ## 🚀 Instalando
 
 Para instalar o Linkgroup, siga estas etapas:
 
-Linux e macOS:
-```
-<comando_de_instalação>
-```
-
-Windows:
+Windows, Linux e macOS:
 ```js
 Clone o repositório em seu VScode;
+git clone https://github.com/FelipeSantanaa/LinkGroup.git
+
 Abra o terminal e digite cd ./server;
-Em seguida, digite npm install.
+
+Em seguida, digite npm install para instalar todas dependências necessárias.
 ```
 
 ## ☕ Usando o Linkgroup
@@ -93,7 +91,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
         <img src="https://br.digitalhouse.com/wp-content/uploads/2018/02/dh-coding-school-logo.jpg" width="100px;" alt="Foto da Digital House"/><br>
         <sub>
           <b>Não podemos deixar de agradecer também a instituição e aos professores<br> Marcelo e Henrique que foram essenciais para o desenvolvimento
-          do projeto</b>
+          do projeto.</b>
         </sub>
       </a>
     </td>
