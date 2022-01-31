@@ -67,6 +67,10 @@
 
 /* CONTEÚDO */
 
+.bio {
+  text-align: center;
+}
+
 .device-content {
   border: 2px solid var(--bkg-device-content);
   background: var(--bkg-device-content);
