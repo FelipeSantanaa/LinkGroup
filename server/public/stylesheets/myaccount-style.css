@@ -197,12 +197,6 @@ form .input-field:first-child {
   text-align: -webkit-center;
 }
 
-.btn-danger-zone {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: red;
-  color: white;
-}
 
 .end-buttons {
   display: block;
@@ -220,10 +214,6 @@ form .input-field:first-child {
   background-color: #8a58f5;
 }
 
-.btn-danger-zone:hover {
-  background-color: rgb(243, 54, 54);
-}
-
 /* SEGUNDO FORM */
 
 .reset-password,
@@ -233,22 +223,15 @@ form .input-field:first-child {
   border-radius: 15px;
 }
 
-.danger-zone,
 .actions-account {
   display: flex;
   flex-direction: column;
 }
 
-.danger-zone {
-  margin-bottom: 4rem;
-}
-
-.danger-zone > div,
 .actions-account > div {
   margin-top: 0px;
 }
 
-.danger-zone h1,
 .actions-account h1 {
   margin-bottom: 2rem;
   margin-top: 2rem;
