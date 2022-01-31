@@ -195,9 +195,9 @@ function countLengthBio() {
   const txtBio = document.getElementById('input-bio'),
     small = document.getElementById('countLength')
 
-  small.innerText = txtBio.value.length + '/80'
+  small.innerText = txtBio.textContent.length + '/80'
 
   txtBio.addEventListener('keypress', function () {
-    small.innerText = txtBio.value.length + '/80'
+    small.innerText = txtBio.textContent.length + '/80'
   })
 }
