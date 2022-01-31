@@ -130,6 +130,9 @@ form {
 .grey-svg {
   fill: #d7dce1;
   stroke: #d7dce1;
+}
+
+div.action button:disabled svg {
   cursor: default;
 }
 

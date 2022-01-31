@@ -15,14 +15,20 @@ const DashboardController = {
 
   update: async (req, res, next) => {
     const { id } = req.params
-    const { name, email, username, title_profile, bio } = await req.body
+    let { name, email, username, title_profile, bio, is_admin } = await req.body
+
+    if (is_admin != 1) is_admin = 0
+
+    console.log(is_admin)
 
     let dados = {
       nome: name,
       email,
       nome_usuario: username,
       titulo_perfil: title_profile,
-      bio
+      bio,
+      admin: is_admin,
+      modificado_em: new Date()
     }
 
     try {

@@ -50,7 +50,7 @@ const openModal = (
             <input
               type="checkbox"
               id="is_admin"
-              name="admin"
+              name="is_admin"
               value="${admin}"
               onChange="tornarAdmin()"
             />
@@ -109,6 +109,10 @@ ${bio}</textarea
   const is_admin = document.querySelector('#is_admin')
   if (user_admin == 1) {
     is_admin.checked = true
+    is_admin.value = 1
+  } else {
+    is_admin.checked = false
+    is_admin.value = 0
   }
 }
 
