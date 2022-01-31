@@ -59,7 +59,7 @@
             required
             autocomplete="list"
           />
-          <label for="termos-e-condicoes" class="terms" onclick='termos()'>
+          <label for="termos-e-condicoes" class="terms" onclick="termos()">
             <input
               type="checkbox"
               name="termos"
@@ -90,7 +90,6 @@
       function termos (){
           const checkbox = document.querySelector('.checkbox');
           const botao = document.querySelector('.botao');
-    
                         
           if(checkbox.checked){
             botao.disabled = false;
