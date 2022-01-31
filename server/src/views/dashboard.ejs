@@ -49,20 +49,27 @@
 
             <td>
               <div class="action">
+                <button 
+                  type="submit"
+                  <% if ((usuarioLogado != usuario.id) && (usuario.nome == 'Administrator')) { %>
+                    disabled
+                  <% } %>
+                    >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   font-style="italic"
                   viewBox="0 0 12 12"
                   enable-background="new 0 0 24 24"
                   class="icons"
-                  id="btn-edit-user<%= usuario.id %>"
+                  id="btn-edit-user<%= usuario.id %>"                  
                   onclick="openModal('<%= usuario.nome %>', '<%= usuario.email %>','<%= usuario.titulo_perfil %>', '<%= usuario.bio %>', '<%= usuario.nome_usuario %>', '<%= usuario.id %>')"
                 >
                   <path
-                    class="green-svg"
+                  class="green-svg"
                     d="M2.5,6.67188,8.46477.70711a1,1,0,0,1,1.41421,0L11.29289,2.121a1,1,0,0,1,0,1.41421L5.32813,9.5ZM4.32813,10.5,0,12,1.5,7.67188Z"
                   ></path>
                 </svg>
+              </button>
 
               <form action="/dashboard/delete/<%= usuario.id %>" method="POST">
                 <input
@@ -73,9 +80,8 @@
                 <button
                   id="btn-delete-user<%= usuario.id %>"
                   type="submit"
-                  id="delete"
                   class="excluir"
-                  <% if(usuario.admin == 1){ %>
+                  <% if((usuario.admin == 1) && ((usuario.nome == 'Administrator') || (usuario.id == usuarioLogado))){ %>
                     disabled
                   <%}%>  
                 >
@@ -92,7 +98,6 @@
                       d="M6 2.5v-2h4v2M1 2.5h14M9.533 13.5l.25-9M6.217 4.5l.25 9M2.661 4.5l.889 11h8.9l.888-11"
                     ></path>
                   </svg>
-                </button>
               </form>
             </td>
           </tr>

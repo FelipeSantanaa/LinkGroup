@@ -127,6 +127,12 @@ form {
   stroke: #ff4949;
 }
 
+.grey-svg {
+  fill: #d7dce1;
+  stroke: #d7dce1;
+  cursor: default;
+}
+
 /* Form do Modal */
 
 .appearance {
@@ -347,6 +353,11 @@ button[id^='btn-delete-user']:disabled svg {
 button[id^='btn-delete-user']:disabled svg path {
   fill: #d7dce1;
   stroke: #d7dce1;
+}
+
+div.action button {
+  border: none;
+  background: none;
 }
 
 @media (min-width: 600px) {
