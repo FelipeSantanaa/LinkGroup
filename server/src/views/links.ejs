@@ -27,7 +27,7 @@
         <div class="user-name">
           <span>
             <% if (usuario.titulo_perfil) { %> <%= usuario.titulo_perfil %> <% }
-            else { %> @<%= username %> <% } %>
+            else { %> @<%= usuario.nome_usuario %> <% } %>
           </span>
           <p><%= usuario.bio %></p>
         </div>
