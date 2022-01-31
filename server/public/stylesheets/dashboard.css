@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
 }
 
 :root {
@@ -23,7 +24,6 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "karla", sans-serif;
   position: relative;
 }
 
@@ -51,7 +51,7 @@ main {
 
 .records th {
   background-color: rgb(57, 224, 155);
-  color: var(--color-white)
+  color: var(--color-white);
 }
 
 .records th,
@@ -175,7 +175,7 @@ small {
   font-weight: bold;
 }
 
-form[action="/admin/appearance/update"] {
+form[action='/admin/appearance/update'] {
   position: relative;
 }
 
@@ -190,12 +190,13 @@ form[action="/admin/appearance/update"] {
   border: none;
   border-bottom: 1px solid var(--color-gray-light);
   margin-bottom: 1rem;
+  outline: none;
   padding: 0.5rem 0;
   width: 100%;
 }
 
-form[action="/admin/appearance/update"] input:focus,
-form[action="/admin/appearance/update"] textarea:focus {
+form[action='/admin/appearance/update'] input:focus,
+form[action='/admin/appearance/update'] textarea:focus {
   outline: none;
 }
 
@@ -267,7 +268,7 @@ form[action="/admin/appearance/update"] textarea:focus {
 }
 
 .modal__header h2 {
-  color: var(--color-white)
+  color: var(--color-white);
 }
 
 .modal__close {
@@ -332,13 +333,13 @@ label {
   text-align: left;
 }
 
-img[src="/svg/linktree-logo.svg"] {
+img[src='/svg/linktree-logo.svg'] {
   height: 20px;
   width: 85px;
 }
 
-td[id^="id-user"],
-td[id^="admin-user"] {
+td[id^='id-user'],
+td[id^='admin-user'] {
   text-align: center;
   padding: 0;
 }
@@ -349,16 +350,16 @@ td[id^="admin-user"] {
   padding: 0 auto;
 }
 
-button[id^="btn-delete-user"]:disabled svg {
+button[id^='btn-delete-user']:disabled svg {
   cursor: default;
 }
 
-button[id^="btn-delete-user"]:disabled svg path {
+button[id^='btn-delete-user']:disabled svg path {
   fill: #d7dce1;
   stroke: #d7dce1;
 }
 
-@media (min-width: 600px){
+@media (min-width: 600px) {
   .modal__content {
     width: 80vw;
     gap: 20px;
