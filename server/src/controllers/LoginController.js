@@ -1,5 +1,3 @@
-const { getUserByUsername } = require('../../services/usuario')
-
 const LoginController = {
   index: async (req, res, next) => {
     let { usuario } = await req.cookies
