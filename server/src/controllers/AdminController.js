@@ -7,6 +7,8 @@ const {
 
 const { updateUser, getUserById } = require('../../services/usuario')
 
+const { getPlanoById } = require('../../services/plano')
+
 const AdminController = {
   index: async (req, res, next) => {
     let { usuario_id } = await req.cookies
@@ -45,9 +47,11 @@ const AdminController = {
   account: async (req, res, next) => {
     const { usuario_id } = req.cookies
     const usuario = await getUserById(usuario_id)
+    const plano = await getPlanoById(usuario.plano_id)
 
     res.render('account', {
-      usuario
+      usuario,
+      plano
     })
   },
 
