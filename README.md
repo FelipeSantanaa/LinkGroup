@@ -29,11 +29,24 @@ Windows, Linux e macOS:
 ```js
 Clone o repositório em seu VScode;
 git clone https://github.com/FelipeSantanaa/LinkGroup.git
-
+```
+Após clonar o projeto em sua máquina, crie um arquivo <b>.env</b> na raíz do projeto e preencha as informações
+de acordo com o seu banco de dados:
+~~~sql
+DB_NAME=linkgroup
+DB_USER=root
+DB_PWD= 
+DB_HOST=localhost
+DB_PORT=3306
+DB_DIALECT=mysql
+~~~
+Depois de criar o arquivo e preencher as informações, prossiga com os seguintes passos:
+```js
 Abra o terminal e digite cd ./server;
 
 Em seguida, digite npm install para instalar todas dependências necessárias.
 ```
+
 
 ## 🔐 Banco de dados
 Para criar o banco de dados, utilize os seguintes comandos em seu terminal:
