@@ -1,12 +1,9 @@
 const IndexController = {
   index: async (req, res, next) => {
-    let { admin, usuario } = req.cookies
+    let { admin, usuario_id } = req.cookies
 
-    if (usuario || admin) {
-      res.render('index-authenticated', {
-        usuarioLogado: usuario,
-        usuarioAdmin: admin
-      })
+    if (usuario_id || admin) {
+      res.render('index-authenticated')
     } else {
       res.render('index')
     }

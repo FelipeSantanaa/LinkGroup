@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs')
 module.exports = async (req, res, next) => {
   try {
     // limpeza de cookies
-    res.clearCookie('usuario')
+    res.clearCookie('usuario_id')
     res.clearCookie('admin')
 
     // busca dados do formulário
@@ -22,7 +22,7 @@ module.exports = async (req, res, next) => {
     }
 
     // definição de cookies
-    res.cookie('usuario', user)
+    res.cookie('usuario_id', user.id)
     res.cookie('admin', user.admin)
 
     next()
@@ -31,9 +31,7 @@ module.exports = async (req, res, next) => {
   } catch (e) {
     console.log(e)
     res.render('login', {
-      error: 'Usuário ou senha inválidos!',
-      usuarioLogado: req.cookies.usuario,
-      usuarioAdmin: req.cookies.admin
+      error: 'Usuário ou senha inválidos!'
     })
   }
 }

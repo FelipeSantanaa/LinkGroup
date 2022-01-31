@@ -1,8 +1,8 @@
 const LoginController = {
   index: async (req, res, next) => {
-    let { usuario } = await req.cookies
+    let { usuario_id } = await req.cookies
 
-    if (usuario) {
+    if (usuario_id) {
       res.redirect('../')
     } else {
       res.render('login', {

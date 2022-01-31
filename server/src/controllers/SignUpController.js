@@ -21,14 +21,14 @@ const SignUpController = {
       let creation = await createUser(user)
       if (creation) {
         // limpa os cookies
-        res.clearCookie('usuario')
+        res.clearCookie('usuario_id')
         res.clearCookie('admin')
 
         const usuario = await getUserByUsername(user.nome_usuario)
 
         if (usuario) {
           // definição de cookies
-          res.cookie('usuario', usuario)
+          res.cookie('usuario_id', usuario.id)
           res.cookie('admin', usuario.admin)
 
           res.redirect('./your-information')

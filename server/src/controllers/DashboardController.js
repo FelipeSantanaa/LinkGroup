@@ -4,8 +4,6 @@ const { destroyLinkByUserId } = require('../../services/links')
 
 const DashboardController = {
   index: async (req, res) => {
-    const { id } = req.cookies.usuario
-
     try {
       const usuarios = await getUsers()
       return res.render('dashboard', { usuarios })

@@ -9,11 +9,13 @@ const { updateUser, getUserById } = require('../../services/usuario')
 
 const AdminController = {
   index: async (req, res, next) => {
-    let { id } = await req.cookies.usuario
+    let { usuario_id } = await req.cookies
+    console.log('Usuário: ', usuario_id)
 
     try {
-      let links = await getLinksByUserId(id)
-      let usuario = await getUserById(id)
+      let links = await getLinksByUserId(usuario_id)
+      let usuario = await getUserById(usuario_id)
+      console.log(usuario)
 
       res.render('admin', {
         links,
@@ -25,11 +27,11 @@ const AdminController = {
   },
 
   appearance: async (req, res, next) => {
-    let { id } = await req.cookies.usuario
+    let { usuario_id } = await req.cookies
 
     try {
-      let links = await getLinksByUserId(id)
-      let usuario = await getUserById(id)
+      let links = await getLinksByUserId(usuario_id)
+      let usuario = await getUserById(usuario_id)
 
       res.render('appearance', {
         links,
@@ -41,8 +43,8 @@ const AdminController = {
   },
 
   account: async (req, res, next) => {
-    const { id } = req.cookies.usuario
-    const usuario = await getUserById(id)
+    const { usuario_id } = req.cookies
+    const usuario = await getUserById(usuario_id)
 
     res.render('account', {
       usuario
@@ -51,12 +53,12 @@ const AdminController = {
 
   addLink: async (req, res, next) => {
     let { title, url } = await req.body
-    let { usuario } = await req.cookies
+    let { usuario_id } = await req.cookies
 
     let link = {
       nome: title,
       url,
-      usuario_id: usuario.id,
+      usuario_id,
       criado_em: new Date(),
       modificado_em: new Date()
     }
@@ -72,10 +74,6 @@ const AdminController = {
   updateLink: async (req, res, next) => {
     let { link_id, title, url } = await req.body
     let modificado_em = new Date()
-
-    console.log(title)
-    console.log(url)
-    console.log(link_id)
     try {
       let update = await updateLink(link_id, {
         nome: title,
@@ -101,14 +99,14 @@ const AdminController = {
   },
 
   updateDataUser: async (req, res, next) => {
-    let { id } = await req.cookies.usuario
+    let { usuario_id } = await req.cookies
     let { name, email } = await req.body
     let modificado_em = new Date()
 
     let dados = { nome: name, email, modificado_em }
 
     try {
-      let update = await updateUser(id, dados)
+      let update = await updateUser(usuario_id, dados)
       res.redirect('../account')
     } catch (e) {
       console.log(e)
@@ -117,7 +115,7 @@ const AdminController = {
 
   updateHeader: async (req, res, next) => {
     let { title_profile, bio } = await req.body
-    let { id } = await req.cookies.usuario
+    let { usuario_id } = await req.cookies
     let modificado_em = new Date()
 
     let dados = {
@@ -127,7 +125,7 @@ const AdminController = {
     }
 
     try {
-      let update = await updateUser(id, dados)
+      let update = await updateUser(usuario_id, dados)
       res.redirect('../appearance')
     } catch (e) {
       console.log(e)

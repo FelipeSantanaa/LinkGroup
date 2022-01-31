@@ -1,7 +1,7 @@
 const login = async (req, res, next) => {
   try {
-    let { usuario } = await req.cookies
-    if (usuario) next()
+    let { usuario_id } = await req.cookies
+    if (usuario_id) next()
   } catch (e) {
     console.log(e)
     res.render('error', {
