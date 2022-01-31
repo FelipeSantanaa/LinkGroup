@@ -22,14 +22,6 @@
   <body>
     <main>
       <h1>Control Users</h1>
-      <!-- <button
-        type="button"
-        class="btn blue mobile"
-        id="cadastrarCliente"
-        onclick="openModal()"
-      >
-        New User
-      </button> -->
       <table class="records">
         <thead>
           <tr>
@@ -45,7 +37,11 @@
           <tr id="line-user-<%= usuario.id %>">
             <td id="id-user<%= usuario.id %>"><%= usuario.id %></td>
             <td id="name-user<%= usuario.id %>"><%= usuario.nome %></td>
-            <td id="email-user<%= usuario.id %>"><%= usuario.email %></td>
+            <td id="email-user<%= usuario.id %>">
+              <div class="email">
+                <%= usuario.email %>
+              </div>
+            </td>
             <td id="admin-user<%= usuario.id %>">
               <input type="hidden" name="" value="<%= usuario.admin %>" />
               <input type="checkbox" name="" id="" disabled />
@@ -60,7 +56,7 @@
                   enable-background="new 0 0 24 24"
                   class="icons"
                   id="btn-edit-user<%= usuario.id %>"
-                  onclick="openModal('<%= usuario.nome %>', '<%= usuario.email %>', )"
+                  onclick="openModal('<%= usuario.nome %>', '<%= usuario.email %>','<%= usuario.titulo_perfil %>', '<%= usuario.bio %>', '<%= usuario.nome_usuario %>',)"
                 >
                   <path
                     class="green-svg"
