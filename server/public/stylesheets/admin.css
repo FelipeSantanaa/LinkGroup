@@ -471,8 +471,11 @@ form[action='/admin/appearance/update'] {
 #countLength {
   position: absolute;
   right: 0;
-  bottom: -0.8rem;
   font-size: 0.7rem;
+}
+
+#save {
+  margin-top: 1.5rem;
 }
 
 .input__profile {

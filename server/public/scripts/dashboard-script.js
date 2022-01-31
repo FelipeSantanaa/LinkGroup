@@ -103,7 +103,6 @@ ${bio}</textarea
   </div>
 </div>`
   table.insertAdjacentHTML('afterend', modal)
-  // countLengthBio();
   enableButtonSave()
 
   const is_admin = document.querySelector('#is_admin')
@@ -114,6 +113,8 @@ ${bio}</textarea
     is_admin.checked = false
     is_admin.value = 0
   }
+
+  countLengthBio()
 }
 
 // Monitora checkbox Administrador e altera seu value
@@ -141,18 +142,6 @@ const clearFields = () => {
   const fields = document.querySelectorAll('.modal__field')
   fields.forEach(fields => (fields.value = ''))
 }
-
-// // Capturando e enviando inputs
-// const saveUser = () => {
-//   if (isValid) {
-//     const user = {
-//       nome: document.getElementById('name').value,
-//       email: document.getElementById('email').value
-//     }
-//     console.log(user)
-//     closeModal()
-//   }
-// }
 
 // Função para abrir o modal já com os campos preenchidos
 const fillFields = user => {
@@ -203,12 +192,12 @@ const enableButtonSave = () => {
 }
 
 function countLengthBio() {
-  const txtBio = document.getElementById('bio'),
+  const txtBio = document.getElementById('input-bio'),
     small = document.getElementById('countLength')
 
-  small.innerText = txtBio.value.length + '/80'
+  small.innerText = txtBio.textContent.length + '/80'
 
-  txtBio.addEventListener('input', function () {
-    small.innerText = txtBio.value.length + '/80'
+  txtBio.addEventListener('keypress', function () {
+    small.innerText = txtBio.textContent.length + '/80'
   })
 }

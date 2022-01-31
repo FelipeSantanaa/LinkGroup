@@ -46,6 +46,7 @@
   flex-flow: column wrap;
   opacity: 1;
   margin: 0.75rem auto 1rem;
+  width: 173px;
 }
 
 .device-header img {
