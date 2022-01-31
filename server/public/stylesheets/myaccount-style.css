@@ -255,9 +255,9 @@ form .input-field:first-child {
   }
 
   .user-image {
-    width: 30px;
+     border-radius: 50%;
+    width: 2.75rem;
     height: auto;
-    border-radius: 20px;
   }
 
   .side-header-container {
@@ -280,6 +280,7 @@ form .input-field:first-child {
   .side-items-nav-down {
     display: flex;
     flex-flow: column;
+    align-items: center;
   }
 
   .side-items-nav-down > a {
