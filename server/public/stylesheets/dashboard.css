@@ -41,6 +41,8 @@ main {
   padding: 0.25rem;
   font-size: 0.75rem;
   height: 2rem;
+  width: 150px;
+  word-wrap: break-word;
 }
 
 footer {
@@ -114,7 +116,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 50vw;
+  width: 90vw;
   margin: 40vh auto;
   padding-bottom: 20px;
   background-color: white;
@@ -228,5 +230,10 @@ button[id^='btn-delete-user']:disabled {
     padding: 0;
     min-width: 140px;
     text-align: center;
+  }
+
+  .modal__content {
+    width: 50vw;
+    margin: 40vh auto;
   }
 }
