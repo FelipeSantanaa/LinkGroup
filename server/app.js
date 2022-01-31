@@ -7,6 +7,7 @@ var logger = require('morgan')
 /* Middlewares, sessions and cookies */
 const session = require('express-session')
 const authLogin = require('./middlewares/validateLogin')
+const authAdmin = require('./middlewares/authAdmin')
 
 /* Routes */
 const indexRouter = require('./src/routes/index')
@@ -48,7 +49,7 @@ app.use('/error', errorRouter)
 app.use('/admin', authLogin, adminRouter)
 app.use('/your-information', authLogin, yourInformationRouter)
 app.use('/logout', authLogin, logoutRouter)
-app.use('/dashboard', authLogin, dashboardRouter)
+app.use('/dashboard', dashboardRouter)
 //
 
 app.use('/', indexRouter)
