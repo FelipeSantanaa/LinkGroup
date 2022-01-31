@@ -81,15 +81,17 @@
         const div = document.querySelectorAll('.buttons__preferences')
         const submit = document.getElementById('submit')
         let selecionados = 0
-        let e_sel = []
+        // let e_sel = []
         for (i = 0; i < elementos.length; i++) {
           if (elementos[i].checked) {
             div[i].classList.toggle('checked')
-            e_sel.push(elementos[i])
+            // e_sel.push(elementos[i])
             selecionados++
           }
           if (selecionados == 3) {
             submit.disabled = false
+          } else {
+            submit.disabled = true
           }
         }
       }

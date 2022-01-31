@@ -63,7 +63,7 @@
             <input
               type="checkbox"
               name="termos"
-              id="termos"
+              id="termos-e-condicoes"
               class="checkbox"
             />By creating an account you are agreeing to our
             <a href="#" target="_blank"> Terms and Conditions</a> and
@@ -87,16 +87,17 @@
     </aside>
 
     <script>
-      function termos() {
-        const checkbox = document.querySelector('.checkbox')
-        const botao = document.querySelector('.botao')
-
-        if (checkbox.checked) {
-          botao.disabled = false
-        } else {
-          botao.disabled = true
-        }
+      function termos (){
+          const checkbox = document.querySelector('.checkbox');
+          const botao = document.querySelector('.botao');
+                        
+          if(checkbox.checked){
+            botao.disabled = false;
+          } else {
+            botao.disabled = true;
+          }
       }
     </script>
+
   </body>
 </html>
