@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: "karla", sans-serif;
+  font-family: 'karla', sans-serif;
   position: relative;
 }
 
@@ -32,7 +32,7 @@ main {
   gap: 20px;
 }
 
-.records th{
+.records th {
   background-color: rgb(57, 224, 155);
 }
 
@@ -93,6 +93,16 @@ form {
 
 .red {
   background-color: #ff4949;
+}
+
+.green-svg {
+  fill: rgb(57 224 155);
+  stroke: rgb(57 224 155);
+}
+
+.red-svg {
+  fill: #ff4949;
+  stroke: #ff4949;
 }
 
 .modal {
@@ -184,13 +194,13 @@ form {
   text-align: left;
 }
 
-img[src="/svg/linktree-logo.svg"] {
+img[src='/svg/linktree-logo.svg'] {
   height: 20px;
   width: 85px;
 }
 
-td[id^="id-user"],
-td[id^="admin-user"] {
+td[id^='id-user'],
+td[id^='admin-user'] {
   text-align: center;
   padding: 0;
 }
@@ -201,9 +211,13 @@ td[id^="admin-user"] {
   padding: 0 auto;
 }
 
-button[id^='btn-delete-user']:disabled {
-  cursor: auto;
-  background: #d7dce1;
+button[id^='btn-delete-user']:disabled svg {
+  cursor: default;
+}
+
+button[id^='btn-delete-user']:disabled svg path {
+  fill: #d7dce1;
+  stroke: #d7dce1;
 }
 
 @media (min-width: 768px) {
@@ -214,14 +228,14 @@ button[id^='btn-delete-user']:disabled {
     width: 90%;
   }
 
-  .records th, 
+  .records th,
   .records td {
     height: 50px;
     padding: 0 20px;
     font-size: 1rem;
   }
 
-  .records th {  
+  .records th {
     background-color: rgb(57, 224, 155);
   }
 
