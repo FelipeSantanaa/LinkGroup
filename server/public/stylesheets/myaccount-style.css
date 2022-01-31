@@ -258,6 +258,7 @@ form .input-field:first-child {
      border-radius: 50%;
     width: 2.75rem;
     height: auto;
+    margin-bottom: 10px;
   }
 
   .side-header-container {
