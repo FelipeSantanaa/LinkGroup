@@ -35,12 +35,20 @@ Abra o terminal e digite cd ./server;
 Em seguida, digite npm install para instalar todas dependências necessárias.
 ```
 
+## 🔐 Banco de dados
+Para criar o banco de dados, utilize os seguintes comandos em seu terminal:
+~~~~sql
+npx sequelize-cli db:create
+npx sequelize-cli db:migrate
+~~~~
+
 ## ☕ Usando o Linkgroup
 
-Para usar o Linkgroup, siga estas etapas:
+Para iniciar o Linkgroup, siga estas etapas:
 
 ```js
-Seguindo os passos da instalação, assim que todas dependências forem instaladas, digite npm start no terminal;
+Seguindo os passos da instalação, assim que todas dependências e o banco de dados forem instaladas,
+digite npm start no terminal;
 Acesse em seu navegador localhost:3000.
 ```
 
