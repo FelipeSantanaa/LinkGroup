@@ -149,6 +149,7 @@ div.action button:disabled svg {
   color: var(--color-gray);
   margin-top: 1rem;
   padding: 1rem;
+  position: relative;
 }
 
 .profile__content {
@@ -190,8 +191,8 @@ form[action='/admin/appearance/update'] {
 
 #countLength {
   position: absolute;
-  right: 0;
-  bottom: -0.8rem;
+  right: 1rem;
+  bottom: 0;
   font-size: 0.7rem;
 }
 
