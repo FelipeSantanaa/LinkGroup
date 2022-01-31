@@ -71,6 +71,7 @@ header {
   }
 
   .logo-linktree {
+    margin-left: 10px;
     display: flex;
   }
 
@@ -188,21 +189,11 @@ form .input-field:first-child {
   color: white;
 }
 
-.btn-reset-password {
-  background-color: #3d444b;
-  color: white;
-}
 
 .btn-position {
   text-align: -webkit-center;
 }
 
-.btn-danger-zone {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  background-color: red;
-  color: white;
-}
 
 .end-buttons {
   display: block;
@@ -210,7 +201,6 @@ form .input-field:first-child {
 }
 
 /* HOVER BOTOES  */
-.btn-reset-password:hover,
 .btn-white:hover {
   background-color: rgb(37, 37, 37);
   color: white;
@@ -220,39 +210,14 @@ form .input-field:first-child {
   background-color: #8a58f5;
 }
 
-.btn-danger-zone:hover {
-  background-color: rgb(243, 54, 54);
-}
-
 /* SEGUNDO FORM */
 
-.reset-password,
 .form-information {
   background-color: #fff;
   flex-direction: column;
   border-radius: 15px;
 }
 
-.danger-zone,
-.actions-account {
-  display: flex;
-  flex-direction: column;
-}
-
-.danger-zone {
-  margin-bottom: 4rem;
-}
-
-.danger-zone > div,
-.actions-account > div {
-  margin-top: 0px;
-}
-
-.danger-zone h1,
-.actions-account h1 {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
 
 .footer-information,
 .name-information,
@@ -290,9 +255,10 @@ form .input-field:first-child {
   }
 
   .user-image {
-    width: 30px;
+     border-radius: 50%;
+    width: 2.75rem;
     height: auto;
-    border-radius: 20px;
+    margin-bottom: 10px;
   }
 
   .side-header-container {
@@ -315,6 +281,7 @@ form .input-field:first-child {
   .side-items-nav-down {
     display: flex;
     flex-flow: column;
+    align-items: center;
   }
 
   .side-items-nav-down > a {
@@ -334,5 +301,10 @@ form .input-field:first-child {
   .btn-purple {
     width: auto;
     margin-left: 0.5rem;
+  }
+
+  .logo-linktree{
+    margin: 0;
+    margin-top: 10px;
   }
 }
