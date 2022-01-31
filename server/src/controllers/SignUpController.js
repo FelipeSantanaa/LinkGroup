@@ -14,6 +14,7 @@ const SignUpController = {
     user.email = req.body.email
     user.senha = bcrypt.hashSync(req.body.password, 10)
     user.admin = 0
+    user.plano_id = 1
     user.criado_em = new Date()
     user.modificado_em = new Date()
 
