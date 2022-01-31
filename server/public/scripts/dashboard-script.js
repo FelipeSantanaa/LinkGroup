@@ -1,6 +1,6 @@
 // Abre modal
 
-const openModal = id => {
+const openModal = (nome, email) => {
   const table = document.querySelector('table')
   const modal = `<div class="modal active" id="modal">
   <div class="modal__content">
@@ -16,6 +16,7 @@ const openModal = id => {
         id="nome"
         class="modal__field"
         placeholder="Name"
+        value="${nome}"
         required
       />
       <input
@@ -23,6 +24,7 @@ const openModal = id => {
         id="email"
         class="modal__field"
         placeholder="Email"
+        value="${email}"
         required
       />
       <input type="hidden" name="id" value="${id}">

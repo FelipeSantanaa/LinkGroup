@@ -59,7 +59,7 @@
             required
             autocomplete="list"
           />
-          <label for="termos-de-condicoes" class="terms">
+          <label for="termos-e-condicoes" class="terms" onclick='termos()'>
             <input
               type="checkbox"
               name="termos"
@@ -69,7 +69,7 @@
             <a href="#" target="_blank"> Terms and Conditions</a> and
             <a href="#"> Privacy Police.</a>
           </label>
-          <button id="register" onclick="" type="submit">
+          <button id="register" class="botao" type="submit" disabled>
             Sign up with email
           </button>
         </form>
@@ -85,5 +85,20 @@
         class="banner"
       />
     </aside>
+
+    <script>
+      function termos (){
+          const checkbox = document.querySelector('.checkbox');
+          const botao = document.querySelector('.botao');
+    
+                        
+          if(checkbox.checked){
+            botao.disabled = false;
+          } else {
+            botao.disabled = true;
+          }
+      }
+    </script>
+
   </body>
 </html>

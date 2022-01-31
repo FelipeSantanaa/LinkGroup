@@ -52,15 +52,23 @@
             </td>
 
             <td>
-              <button
-                id="btn-edit-user<%= usuario.id %>"
-                type="button"
-                id="edit"
-                class="btn green"
-                onclick="openModal('<%= usuario.id %>')"
-              >
-                edit
-              </button>
+              <div class="action">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  font-style="italic"
+                  viewBox="0 0 12 12"
+                  enable-background="new 0 0 24 24"
+                  class="icons"
+                  id="btn-edit-user<%= usuario.id %>"
+                  onclick="openModal('<%= usuario.nome %>', '<%= usuario.email %>')"
+                >
+                  <path
+                    fill="#39e09b"
+                    stroke="#39e09b"
+                    d="M2.5,6.67188,8.46477.70711a1,1,0,0,1,1.41421,0L11.29289,2.121a1,1,0,0,1,0,1.41421L5.32813,9.5ZM4.32813,10.5,0,12,1.5,7.67188Z"
+                  ></path>
+                </svg>
+
               <form action="/dashboard/delete/<%= usuario.id %>" method="POST">
                 <input
                   type="hidden"
@@ -71,12 +79,25 @@
                   id="btn-delete-user<%= usuario.id %>"
                   type="submit"
                   id="delete"
-                  class="btn red"
+                  class="excluir"
                   <% if(usuario.admin == 1){ %>
                     disabled
                   <%}%>  
                 >
-                  delete
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    display="block"
+                    enable-background="new 0 0 24 24"
+                    class="icons">
+                    <path
+                      fill="#ff4949"
+                      stroke="#ff4949"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 2.5v-2h4v2M1 2.5h14M9.533 13.5l.25-9M6.217 4.5l.25 9M2.661 4.5l.889 11h8.9l.888-11"
+                    ></path>
+                  </svg>
                 </button>
               </form>
             </td>
@@ -87,7 +108,9 @@
       
     </main>
     <footer>
-      <img src="/svg/linktree-logo.svg" alt="Linktree Logo" />
+      <a href="/">
+        <img src="/svg/linktree-logo.svg" alt="Linktree Logo" />
+      </a>
     </footer>
     <script type="text/javascript" src="/scripts/dashboard-script.js"></script>
   </body>

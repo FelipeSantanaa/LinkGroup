@@ -13,7 +13,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  font-family: 'karla', sans-serif;
+  font-family: "karla", sans-serif;
   position: relative;
 }
 
@@ -22,21 +22,48 @@ td {
 }
 
 main {
+  padding: 2rem 0.5rem;
+  width: 100%;
+  margin: 0 auto;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
-  margin: 5vh auto;
-  padding: 50px;
-  box-shadow: 2px 2px 10px #ccc;
   gap: 20px;
+}
+
+.records th{
+  background-color: rgb(57, 224, 155);
+}
+
+.records th,
+.records td {
+  padding: 0.25rem;
+  font-size: 0.75rem;
+  height: 2rem;
+  width: 150px;
+  word-wrap: break-word;
 }
 
 footer {
   display: flex;
   justify-content: center;
   padding-bottom: 1.5rem;
+}
+
+.icons {
+  cursor: pointer;
+  width: 1rem;
+}
+
+.excluir {
+  border: none;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 form {
@@ -89,7 +116,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 50vw;
+  width: 90vw;
   margin: 40vh auto;
   padding-bottom: 20px;
   background-color: white;
@@ -157,31 +184,13 @@ form {
   text-align: left;
 }
 
-.records th {
-  height: 50px;
-  background-color: rgb(57, 224, 155);
-  padding: 0 20px;
-  font-size: 1.2rem;
-}
-.records td {
-  height: 50px;
-  padding: 0 20px;
-}
-
-.records th:last-child,
-.records td:last-child {
-  padding: 0;
-  min-width: 140px;
-  text-align: center;
-}
-
-img[src='/svg/linktree-logo.svg'] {
+img[src="/svg/linktree-logo.svg"] {
   height: 20px;
   width: 85px;
 }
 
-td[id^='id-user'],
-td[id^='admin-user'] {
+td[id^="id-user"],
+td[id^="admin-user"] {
   text-align: center;
   padding: 0;
 }
@@ -195,4 +204,36 @@ td[id^='admin-user'] {
 button[id^='btn-delete-user']:disabled {
   cursor: auto;
   background: #d7dce1;
+}
+
+@media (min-width: 768px) {
+  main {
+    box-shadow: 2px 2px 10px #ccc;
+    margin: 5vh auto;
+    padding: 50px;
+    width: 90%;
+  }
+
+  .records th, 
+  .records td {
+    height: 50px;
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+
+  .records th {  
+    background-color: rgb(57, 224, 155);
+  }
+
+  .records th:last-child,
+  .records td:last-child {
+    padding: 0;
+    min-width: 140px;
+    text-align: center;
+  }
+
+  .modal__content {
+    width: 50vw;
+    margin: 40vh auto;
+  }
 }

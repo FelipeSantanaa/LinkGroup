@@ -1,6 +1,6 @@
 const config = {
   username: 'root',
-  password: 'root',
+  password: '',
   database: 'linkgroup',
   host: 'localhost',
   dialect: 'mysql'
