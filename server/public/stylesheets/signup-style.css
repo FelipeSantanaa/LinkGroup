@@ -25,6 +25,11 @@ form {
     margin-top: 48px;
 }
 
+button:disabled{
+    background-color: rgb(231, 231, 231);
+    cursor: auto;
+}
+
 button {
     width: 100%;
     height: 48px;
@@ -38,7 +43,10 @@ button {
     font-weight: 400;
     text-align: center;
     cursor: pointer;
+
 }
+
+
 
 .logo {
     position: relative;
@@ -83,6 +91,10 @@ button {
     color: var(--primary-color);
 }
 
+input:focus {
+    border-color: black;
+}
+
 .terms {
     display: block;
     margin-top: 48px;
@@ -95,6 +107,7 @@ button {
 }
 
 .checkbox {
+    margin-right: 6px;
     cursor: pointer;
     border-bottom-left-radius: 2px;
     border-bottom-right-radius: 2px;

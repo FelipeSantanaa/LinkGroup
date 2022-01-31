@@ -2,8 +2,8 @@
 <aside class="aside">
   <section class="aside__profile">
     <span>My Linktree:</span>
-    <a class="a a--myLink" href="https://linktr.ee/altair.jesus"
-      >https://linktr.ee/username</a
+    <a class="a a--myLink" href="/<%= usuario.nome_usuario%>" target="_blank"
+      >https://linktr.ee/<%= usuario.nome_usuario%></a
     >
     <button id="button-share">Share</button>
   </section>
@@ -13,15 +13,25 @@
         <span>
           <div class="device-header">
             <img src="/img/default-profile.png" alt="Foto de Perfil">
-            <span>@username</span>
+            <span> 
+              <% if(usuario.titulo_perfil) { %> 
+              <%= usuario.titulo_perfil %> 
+              <% } else { %>
+              @<%= usuario.nome_usuario %>
+              <% } %>  
+          </span>
+            <p class="bio"><%= usuario.bio %></p>
           </div>
         </span>
         <span>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
-          <div class="device-content"></div>
+          <% for (link of links ) { %>
+            <div class="device-content">
+              <a href="<%= link.url %>" target="_blank">
+                <%= link.nome %>
+              </a>
+            </div>                         
+            
+          <% } %>
         </span>
         <span>
           <div class="device-footer">
@@ -61,11 +71,11 @@
       </li>
     </ul>
     <div class="modal__account">
-      <button id="my-account" onclick="myAccount()" value="https://linktr.ee/altair.jesus">
+      <button id="my-account" onclick="myAccount()" value="localhost:3000/<%= usuario.nome_usuario %>">
         <div>
           <img class="svg" src="/svg/linktree-min.svg" alt="">
           <p class="modal__logo">linktr.ee/</p>
-          <p class="modal__username">altair.jesus</p>
+          <p class="modal__username"><%= usuario.nome_usuario %></p>
         </div>
         <span id="copy">Copy</span>
       </button>
@@ -97,16 +107,16 @@
     }
   }
 
-  btnMobile.addEventListener('click', toggleMenu);
-  btnDesktop.addEventListener('click', toggleMenu);
-  btnHeadway.addEventListener('click', toggleMenu);
-  btnSupport.addEventListener('click', toggleMenu);
-  btnMobile.addEventListener('touchstart', toggleMenu);
-  btnDesktop.addEventListener('touchstart', toggleMenu);
-  btnHeadway.addEventListener('touchstart', toggleMenu);
-  btnSupport.addEventListener('touchstart', toggleMenu);
+  btnMobile.addEventListener('click', toggleMenu, { passive: true});
+  btnDesktop.addEventListener('click', toggleMenu, { passive: true});
+  btnHeadway.addEventListener('click', toggleMenu, { passive: true});
+  btnSupport.addEventListener('click', toggleMenu, { passive: true});
+  btnMobile.addEventListener('touchstart', toggleMenu, { passive: true});
+  btnDesktop.addEventListener('touchstart', toggleMenu, { passive: true});
+  btnHeadway.addEventListener('touchstart', toggleMenu, { passive: true});
+  btnSupport.addEventListener('touchstart', toggleMenu, { passive: true});
 
-  //Script Modal
+  // Script Modal
   function initModal(modalID) {
     const modal = document.getElementById(modalID);
     if (modal) {
@@ -121,8 +131,8 @@
 
   const share = document.getElementById('button-share');
   share.addEventListener('click', () => initModal('modal-share'))
-
-  //Script copiar conta
+  
+  // Script copiar conta
   function myAccount() {
     const linkAccount = document.getElementById('my-account'),
       copy = document.getElementById('copy')
@@ -132,25 +142,135 @@
       copy.innerHTML = "Copy"
     }, 1500);
   }
-
-  //Script para adicionar novos links
+  
+  // Script para adicionar novos links
   let countClick = 0
   function showFormLink() {
+
     const btnNewLink = document.getElementById('btn-newLink'),
       divNoLinks = document.getElementById('nolinks'),
       sectionNewLinks = document.getElementById('section__links--new-links'),
-      newForm = `<div class="form__container" id="form${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><div><form class='form__link' action='#' method='post'><input type='text' id="title" name="title" placeholder='Title'><input type='text' id="url" name="url" placeholder='URL'><button class='btn btn__add' type='submit'>Add</button></form><img class="form__svg btn trash" id="${countClick}" onclick="removeLink(${countClick})" src='/svg/trash.svg'></div></div>`
+
+      newForm = `<div class="form__container" id="formTemp${countClick}"><img class="form__svg" src="/svg/ellipsis.svg"><form class='form__link' action='/admin' method='post'><input type='text' id="titleTemp${countClick}" name="title" class="title" placeholder='Title'><input type='text' id="urlTemp${countClick}" name="url" placeholder='URL'><button id="btnAddTemp${countClick}" class='btn btn__add' type='submit' disabled >Add</button></form><img class="form__svg btn trash" onclick="removeLink('${countClick}')" src="/svg/trash.svg"/></div>`
       
-    divNoLinks.classList.add('disable')
+    // adiciona a class '.disable' somente se o elemento existir na página  
+    if (divNoLinks) divNoLinks.classList.add('disable')
+
     sectionNewLinks.insertAdjacentHTML('afterbegin', newForm)
     countClick++
   }
-
-  //Script para remover links (ocultar, a princípio)
-  function removeLink(counter) {
-    const divLink = document.getElementById(`form${counter}`)
-    divLink.classList.add('disable')
+  
+  // Script para remover links
+  function removeLink(id) {
+    const formLink = document.getElementById(`formTemp${id}`)
+    formLink.remove()
   }
+
+  // Script para habilitar edição dos inputs
+  function editLink(id){
+    // elementos
+    const inputTitle = document.getElementById(`title-link-${id}`),
+    inputURL = document.getElementById(`url-link-${id}`),
+    btnEdit = document.getElementById(`btn-edit-link-${id}`),
+    btnCancel = document.getElementById(`btn-cancel-link-${id}`)
+
+    // habilitando inputs
+    inputTitle.disabled = false
+    inputURL.disabled = false
+
+    // ocultar botão EDIT do forms e exibir botão CANCEL
+    btnEdit.classList.toggle('disable')
+    btnCancel.classList.toggle('disable')
+
+    // adicionando button 'Save'
+    const form = document.querySelector(`#form${id} .form__link form`)
+    form.innerHTML += `<button id="btn-update-link-${id}" class="btn btn__add form__button--update" type="submit" disabled>Save</button>`
+
+    // valida preenchimento das informações para habilitar botão Save
+    validationEditionForm(id)
+  }
+  
+  function cancelEditLink(id){
+    // elementos
+    const inputTitle = document.getElementById(`title-link-${id}`),
+    inputURL = document.getElementById(`url-link-${id}`),
+    btnEdit = document.getElementById(`btn-edit-link-${id}`)
+    btnCancel = document.getElementById(`btn-cancel-link-${id}`)
+
+    // desabilitando inputs
+    inputTitle.disabled = true
+    inputURL.disabled = true
+
+    // ocultar botão CANCEL do forms
+    btnCancel.classList.toggle('disable')
+    btnEdit.classList.toggle('disable')
+
+    // removendo button 'Save'
+    document.querySelector(`#form${id} div.form__link button.form__button--update`).remove()
+
+  }
+
+  // Função criada para habilitar o botão "Add" somente se o usuário preencher o Title e URL
+  function editFormLinkTemp(){
+    const formsTemps = document.querySelectorAll("div[id^='formTemp']")
+
+    formsTemps.forEach((form) => {
+      // console.log(form.childNodes[1])
+      titleTemp = form.childNodes[1].childNodes[0]
+      urlTemp = form.childNodes[1].childNodes[1]
+      btnTemp = form.childNodes[1].childNodes[2]
+
+      let count = 0
+
+      if(titleTemp.value) count++
+      if(urlTemp.value) count++
+
+      // console.log(count)
+
+      if(count == 2) {
+        btnTemp.disabled = false
+        btnTemp.style.backgroundColor = "#7c41ff"
+      }
+    })
+  }
+  setInterval((editFormLinkTemp), 1000)
+
+  function validationEditionForm(id){
+    const title = document.getElementById(`title-link-${id}`),
+     url = document.getElementById(`url-link-${id}`),
+     btnSave = document.getElementById(`btn-update-link-${id}`)
+
+    const storeTitle = title.value
+    const storeURL = url.value
+    let update = 0 
+
+    setInterval(() => {
+      if((title.value != storeTitle) || (url.value != storeURL)) update = 1
+      else update = 0
+
+      if(update == 1 && title.value.length > 0 && url.value.length > 0){
+        btnSave.disabled = false
+        btnSave.style.backgroundColor = "#7c41ff"
+      } else{
+        btnSave.disabled = true
+        btnSave.style.backgroundColor = "#d7dce1"
+      }
+    }, 1000);
+  }
+
+  // Script para atualizar quantidade de caracteres do textArea - Route admin/appearance
+  function countLengthBio(){
+    const txtBio = document.getElementById('bio'),
+    small = document.getElementById('countLength')
+
+    small.innerText = txtBio.value.length + '/80'
+
+    txtBio.addEventListener('input', function(){
+      small.innerText = txtBio.value.length + '/80'
+    })
+  }
+  countLengthBio()
+
 </script>
 </body>
 </html>

@@ -1,10 +1,9 @@
-var express = require('express');
-var router = express.Router();
-var IndexController = require('../controllers/IndexController')
-const SignupController = require('../controllers/SignupController');
+var express = require('express')
+var router = express.Router()
+const IndexController = require('../controllers/IndexController')
+const LinksController = require('../controllers/LinksController')
 
-/* GET home page. */
-router.get('/', IndexController.index);
-router.get('/register', SignupController.index)
+router.get('/', IndexController.index)
+router.get('/:username', LinksController.index)
 
-module.exports = router;
+module.exports = router

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="icon"
+      href="https://d1nnwinjc04txl.cloudfront.net/favicon-32x32.png?v=530918d2c86b9dd11c4fde40fa99d1b4"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="/stylesheets/dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main>
+      <h1>Control Users</h1>
+      <table class="records">
+        <thead>
+          <tr>
+            <th id="id">ID</th>
+            <th id="name">Name</th>
+            <th id="email">Email</th>
+            <th id="admin">Admin</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (usuario of usuarios) { %>
+          <tr id="line-user-<%= usuario.id %>">
+            <td id="id-user<%= usuario.id %>"><%= usuario.id %></td>
+            <td id="name-user<%= usuario.id %>"><%= usuario.nome %></td>
+            <td id="email-user<%= usuario.id %>">
+              <div class="email">
+                <%= usuario.email %>
+              </div>
+            </td>
+            <td id="admin-user<%= usuario.id %>">
+              <input type="hidden" name="" value="<%= usuario.admin %>" />
+              <input type="checkbox" name="" id="" disabled />
+            </td>
+
+            <td>
+              <div class="action">
+                <button 
+                  type="submit"
+                  onclick="openModal('<%= usuario.nome %>', '<%= usuario.email %>','<%= usuario.titulo_perfil %>', '<%= usuario.bio %>', '<%= usuario.nome_usuario %>', '<%= usuario.id %>', '<%= usuario.admin %>')"
+                  <% if ((usuario.id != usuarioLogado) && (usuario.nome == 'Administrator')) { %>
+                    disabled
+                  <% } %>
+                    >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  font-style="italic"
+                  viewBox="0 0 12 12"
+                  enable-background="new 0 0 24 24"
+                  class="icons"
+                  id="btn-edit-user<%= usuario.id %>"                  
+                >
+                  <path
+                  <% if ((usuario.id != usuarioLogado) && (usuario.nome == 'Administrator')) { %>
+                  class="grey-svg"
+                  <% } else { %>
+                    class="green-svg"
+                  <% } %>  
+                    d="M2.5,6.67188,8.46477.70711a1,1,0,0,1,1.41421,0L11.29289,2.121a1,1,0,0,1,0,1.41421L5.32813,9.5ZM4.32813,10.5,0,12,1.5,7.67188Z"
+                  ></path>
+                </svg>
+              </button>
+
+              <form action="/dashboard/delete/<%= usuario.id %>" method="POST">
+                <input
+                  type="hidden"
+                  name="delete-user-<%= usuario.id%>"
+                  value="<%= usuario.id%>"s
+                />
+                <button
+                  id="btn-delete-user<%= usuario.id %>"
+                  type="submit"
+                  class="excluir"
+                  <% if((usuario.admin == 1) && ((usuario.nome == 'Administrator') || (usuario.id == usuarioLogado))){ %>
+                    disabled
+                  <%}%>  
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    display="block"
+                    enable-background="new 0 0 24 24"
+                    class="icons">
+                    <path
+                      class="red-svg"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 2.5v-2h4v2M1 2.5h14M9.533 13.5l.25-9M6.217 4.5l.25 9M2.661 4.5l.889 11h8.9l.888-11"
+                    ></path>
+                  </svg>
+              </form>
+            </td>
+          </tr>
+          <% } %>
+        </tbody>
+      </table>
+      
+    </main>
+    <footer>
+      <a href="/">
+        <img src="/svg/linktree-logo.svg" alt="Linktree Logo" />
+      </a>
+    </footer>
+    <script type="text/javascript" src="/scripts/dashboard-script.js"></script>
+  </body>
+</html>

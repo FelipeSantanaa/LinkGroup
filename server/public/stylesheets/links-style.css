@@ -1,0 +1,98 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex: 1 1 0;
+  height: 100%;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 1.5rem 0.75rem;
+  width: 100%;
+}
+
+html {
+  font-family: 'Karla', 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 680px;
+  padding-bottom: 80px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > div,
+main > section {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.user-image img {
+  border-radius: 50%;
+  height: 96px;
+  width: auto;
+  margin-top: 3rem;
+}
+
+.user-name {
+  padding-top: 15px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.user-name span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.user-links {
+  margin-top: 1rem;
+  text-align: -webkit-center;
+}
+
+.links {
+  align-items: center;
+  background-color: rgb(57, 224, 155);
+  border: 2px solid rgb(57, 224, 155);
+  color: white;
+  display: flex;
+  font-weight: bold;
+  height: 4rem;
+  justify-content: center;
+  transition: cubic-bezier(0.08, 0.59, 0.29, 0.99) 0.25s;
+  width: 100%;
+}
+
+.links:hover {
+  background-color: white;
+  color: rgb(57, 224, 155);
+}
+
+.linktree-logo {
+  width: 100px;
+  height: auto;
+}

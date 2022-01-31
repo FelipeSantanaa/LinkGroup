@@ -4,20 +4,88 @@
     <nav class="nav__header">
       <a class="active" href="/admin">Links</a>
       <a href="/admin/appearance">Appearance</a>
-      <a href="#">Settings</a>
+      <% if (usuario.admin == 1) { %>
+      <a href="../dashboard" target="_blank">Settings</a>
+      <% } %>
       <a href="#">PRO</a>
     </nav>
     <section class="section__analytics">
       <span class="span__bold">Lifetime Analytics:</span>
     </section>
     <section class="section__links">
-      <button class="btn button button--newLink" id="btn-newLink" onclick="showFormLink()">
+      <button
+        class="btn button button--newLink"
+        id="btn-newLink"
+        onclick="showFormLink()"
+      >
         Add New Link
       </button>
+      <% if (links.length == 0) {%>
       <div id="nolinks">
         <p>You don't have any links to display.</p>
         <p>Click the button above to add one.</p>
       </div>
-      <div id="section__links--new-links"></div>
+      <% } %>
+
+      <div id="section__links--new-links">
+        <!-- renderizando links do usuário cadastrados -->
+        <% for (link of links) { %>
+        <div class="form__container" id="form<%= link.id %>">
+          <img class="form__svg" src="/svg/ellipsis.svg" />
+
+          <div class="form__link">
+            <form action="/admin/update" method="POST">
+              <input
+                type="text"
+                id="title-link-<%= link.id %>"
+                name="title"
+                placeholder="Title"
+                value="<%= link.nome %>"
+                class="title"
+                disabled
+              /><input
+                type="text"
+                id="url-link-<%= link.id %>"
+                name="url"
+                placeholder="URL"
+                value="<%= link.url %>"
+                disabled
+              />
+              <input type="hidden" name="link_id" value="<%= link.id %>" />
+            </form>
+          </div>
+
+          <div class="form__buttons">
+            <button
+              class="disable"
+              id="btn-cancel-link-<%= link.id %>"
+              type="submit"
+              onclick="cancelEditLink('<%= link.id %>')"
+            >
+              <img class="btn" src="/svg/cancel.svg" />
+            </button>
+
+            <button
+              class=""
+              id="btn-edit-link-<%= link.id %>"
+              type="submit"
+              onclick="editLink('<%= link.id %>')"
+            >
+              <img class="btn" src="/svg/edit.svg" />
+            </button>
+
+            <form action="/admin/delete" method="POST">
+              <input type="hidden" name="link_id" value="<%= link.id %>" />
+              <button type="submit" onclick="removeLink('<%= link.id %>')">
+                <img class="btn" src="/svg/trash.svg" />
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <% } %>
+      </div>
     </section>
-<%- include('./partials/footer-admin') %>
+    <%- include('./partials/footer-admin') %>
+  </main>
+</div>
